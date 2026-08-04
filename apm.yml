@@ -49,11 +49,12 @@ marketplace:
       tags: [math, geodesy, ellipsoid, datum, coordinates]
 
     - name: dotnet
-      description: C# and .NET skills for modern language best practices and 
-        generic math over System.Numerics.
+      description: C# and .NET skills for modern language best practices, 
+        generic math over System.Numerics, SIMD vectorization, and 
+        enumerable/LINQ iteration performance.
       source: ./plugins/dotnet
-      version: 0.1.0
-      tags: [csharp, dotnet, generic-math, best-practices]
+      version: 0.3.0
+      tags: [csharp, dotnet, generic-math, best-practices, simd, enumerable, linq]
 
     - name: apm-authoring
       description: Skills for authoring, consuming, and publishing APM packages,

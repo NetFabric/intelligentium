@@ -197,14 +197,17 @@
     {
       "identifier": "urn:air:github.com:netfabric:dotnet",
       "displayName": "dotnet",
-      "description": "C# and .NET skills for modern language best practices and generic math over System.Numerics.",
+      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, and enumerable/LINQ iteration performance.",
       "tags": [
         "csharp",
         "dotnet",
         "generic-math",
-        "best-practices"
+        "best-practices",
+        "simd",
+        "enumerable",
+        "linq"
       ],
-      "version": "0.1.0",
+      "version": "0.3.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -220,6 +223,19 @@
               "nullable reference types",
               "pattern matching",
               "primary constructors"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:dotnet:dotnet-enumerable",
+            "displayName": "dotnet-enumerable",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/dotnet/.apm/skills/dotnet-enumerable/SKILL.md",
+            "description": "Write and optimize C#/.NET enumerables, iterators, and LINQ usage. USE FOR: choosing IEnumerable<T>/IReadOnlyCollection<T>/IReadOnlyList<T>/ICollection<T>/IList<T>/IAsyncEnumerable<T> for params/returns; foreach codegen and value-type vs reference-type enumerator performance (List<T>, arrays, Span<T>, ImmutableArray<T>, ArraySegment<T>); avoiding boxed enumerator allocations; Count() vs Any() vs Count property complexity traps; First()/Single()(OrDefault) cost and predicate-overload collapsing; ToList()/ToArray() allocation cost vs lazy evaluation; returning Enumerable.Empty<T>()/yield break instead of null; writing yield-based iterators, lazy validation, coroutines, behavior trees; writing async iterators with await foreach/yield return, EnumeratorCancellation/WithCancellation token propagation, ConfigureAwait; handling enumerables via reflection/Roslyn (NetFabric.Reflection/CodeAnalysis). DO NOT USE FOR: SIMD/vectorized span math (dotnet-simd); generic math over numeric types (dotnet-generic-math).",
+            "representativeQueries": [
+              "choosing IEnumerable<T>/IReadOnlyCollection<T>/IReadOnlyList<T>/ICollection<T>/IList<T>/IAsyncEnumerable<T> for params/returns",
+              "foreach codegen and value-type vs reference-type enumerator performance (List<T>, arrays, Span<T>, ImmutableArray<T>, ArraySegment<T>)",
+              "avoiding boxed enumerator allocations",
+              "Count() vs Any() vs Count property complexity traps"
             ]
           },
           {

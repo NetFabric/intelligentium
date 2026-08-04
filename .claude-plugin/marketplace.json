@@ -47,13 +47,16 @@
     },
     {
       "name": "dotnet",
-      "description": "C# and .NET skills for modern language best practices and generic math over System.Numerics.",
-      "version": "0.1.0",
+      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, and enumerable/LINQ iteration performance.",
+      "version": "0.3.0",
       "tags": [
         "csharp",
         "dotnet",
         "generic-math",
-        "best-practices"
+        "best-practices",
+        "simd",
+        "enumerable",
+        "linq"
       ],
       "source": "./plugins/dotnet"
     },
