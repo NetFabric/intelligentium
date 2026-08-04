@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="Intelligentium — NetFabric's AI Plugin Marketplace">
 <meta name="twitter:description" content="A curated marketplace of skills, agents, hooks, MCP servers, and tools — versioned, deterministic, and installable in one command via APM.">
 
-<link rel="icon" href="data:,">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
   :root{
     --bg-0:#05060a;
@@ -241,17 +241,69 @@
   .card p{margin:0; color:var(--muted); font-size:0.93rem; line-height:1.55;}
 
   /* plugins */
+  .plugin-filters{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    margin-bottom:36px;
+  }
+  .plugin-search{
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
+    padding:12px 16px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,0.04);
+    color:var(--text);
+    font-size:0.95rem;
+    font-family:inherit;
+  }
+  .plugin-search::placeholder{color:var(--muted);}
+  .plugin-search:focus{outline:none; border-color:rgba(124,92,255,0.5);}
+  .tag-filters{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+  }
+  .tag-filter{
+    font-size:0.78rem;
+    color:var(--muted);
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--border);
+    padding:5px 12px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:all .15s ease;
+    font-family:inherit;
+  }
+  .tag-filter:hover{color:var(--text); border-color:rgba(124,92,255,0.4);}
+  .tag-filter.active{
+    color:var(--bg-0);
+    background:var(--accent-2);
+    border-color:var(--accent-2);
+  }
+  .plugin-empty{
+    display:none;
+    text-align:center;
+    color:var(--muted);
+    padding:40px 0;
+  }
   .plugins-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:20px;
   }
+  .plugin[hidden]{display:none;}
   .plugin{
     position:relative;
+    display:block;
     background:var(--bg-2);
     border:1px solid var(--border);
     border-radius:var(--radius);
     padding:26px;
+    text-decoration:none;
     backdrop-filter:blur(6px);
     transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
     overflow:hidden;
@@ -438,58 +490,63 @@
     <h2>The catalog</h2>
     <p>Seven plugins, ready to install. Each links to its source in the repository.</p>
   </div>
+  <div class="plugin-filters">
+    <input type="text" class="plugin-search" id="plugin-search" placeholder="Search plugins…" aria-label="Search plugins">
+    <div class="tag-filters" id="plugin-tag-filters"></div>
+  </div>
   <div class="plugins-grid" id="plugins-grid">
     <!-- populated by data below, also present as static HTML for no-JS / SEO -->
-    <div class="plugin" data-plugin>
+    <a class="plugin" data-plugin data-name="math-foundations" data-tags="math,geometry,angles,trigonometry,vectors,coordinates" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/math-foundations" target="_blank" rel="noopener">
       <h3><code>math-foundations</code></h3>
       <p>Core abstract math skills for angles, trigonometry, vectors, and coordinate system conversions.</p>
       <div class="tags">
         <span class="tag">math</span><span class="tag">geometry</span><span class="tag">angles</span><span class="tag">trigonometry</span><span class="tag">vectors</span><span class="tag">coordinates</span>
       </div>
-    </div>
-    <div class="plugin" data-plugin>
+    </a>
+    <a class="plugin" data-plugin data-name="math-rotation" data-tags="math,rotation,quaternion,interpolation,orientation" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/math-rotation" target="_blank" rel="noopener">
       <h3><code>math-rotation</code></h3>
       <p>Abstract math skills for 3D rotation representations, quaternion algebra, and interpolation on manifolds.</p>
       <div class="tags">
         <span class="tag">math</span><span class="tag">rotation</span><span class="tag">quaternion</span><span class="tag">interpolation</span><span class="tag">orientation</span>
       </div>
-    </div>
-    <div class="plugin" data-plugin>
+    </a>
+    <a class="plugin" data-plugin data-name="math-geodesy" data-tags="math,geodesy,ellipsoid,datum,coordinates" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/math-geodesy" target="_blank" rel="noopener">
       <h3><code>math-geodesy</code></h3>
       <p>Abstract math skills for geodetic coordinates, reference ellipsoids, and datum transformations.</p>
       <div class="tags">
         <span class="tag">math</span><span class="tag">geodesy</span><span class="tag">ellipsoid</span><span class="tag">datum</span><span class="tag">coordinates</span>
       </div>
-    </div>
-    <div class="plugin" data-plugin>
+    </a>
+    <a class="plugin" data-plugin data-name="dotnet" data-tags="csharp,dotnet,generic-math,best-practices" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/dotnet" target="_blank" rel="noopener">
       <h3><code>dotnet</code></h3>
       <p>C# and .NET skills for modern language best practices and generic math over System.Numerics.</p>
       <div class="tags">
         <span class="tag">csharp</span><span class="tag">dotnet</span><span class="tag">generic-math</span><span class="tag">best-practices</span>
       </div>
-    </div>
-    <div class="plugin" data-plugin>
+    </a>
+    <a class="plugin" data-plugin data-name="apm-authoring" data-tags="apm,skills,plugin,marketplace,authoring,ci" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/apm-authoring" target="_blank" rel="noopener">
       <h3><code>apm-authoring</code></h3>
       <p>Skills for authoring, consuming, and publishing APM packages, plus configuring apm-action CI workflows.</p>
       <div class="tags">
         <span class="tag">apm</span><span class="tag">skills</span><span class="tag">plugin</span><span class="tag">marketplace</span><span class="tag">authoring</span><span class="tag">ci</span>
       </div>
-    </div>
-    <div class="plugin" data-plugin>
+    </a>
+    <a class="plugin" data-plugin data-name="agent-authoring" data-tags="agents-md,skill,authoring,documentation" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/agent-authoring" target="_blank" rel="noopener">
       <h3><code>agent-authoring</code></h3>
       <p>Skills for authoring AGENTS.md project-context files and SKILL.md agent skills.</p>
       <div class="tags">
         <span class="tag">agents-md</span><span class="tag">skill</span><span class="tag">authoring</span><span class="tag">documentation</span>
       </div>
-    </div>
-    <div class="plugin" data-plugin>
+    </a>
+    <a class="plugin" data-plugin data-name="agentic-discovery" data-tags="ard,discovery,mcp,a2a,agents,catalog" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/agentic-discovery" target="_blank" rel="noopener">
       <h3><code>agentic-discovery</code></h3>
       <p>Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities.</p>
       <div class="tags">
         <span class="tag">ard</span><span class="tag">discovery</span><span class="tag">mcp</span><span class="tag">a2a</span><span class="tag">agents</span><span class="tag">catalog</span>
       </div>
-    </div>
+    </a>
   </div>
+  <p class="plugin-empty" id="plugin-empty">No plugins match your filters.</p>
 </section>
 
 <section id="ard">
@@ -529,6 +586,47 @@
       el.style.setProperty('--y', (e.clientY - rect.top) + 'px');
     });
   });
+
+  (function initPluginFilters(){
+    const plugins = Array.from(document.querySelectorAll('.plugin[data-plugin]'));
+    const searchInput = document.getElementById('plugin-search');
+    const tagContainer = document.getElementById('plugin-tag-filters');
+    const emptyState = document.getElementById('plugin-empty');
+    const activeTags = new Set();
+
+    const allTags = [...new Set(plugins.flatMap(el => el.dataset.tags.split(',')))].sort();
+    allTags.forEach(tag=>{
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'tag-filter';
+      btn.textContent = tag;
+      btn.dataset.tag = tag;
+      btn.addEventListener('click', ()=>{
+        if(activeTags.has(tag)){ activeTags.delete(tag); btn.classList.remove('active'); }
+        else { activeTags.add(tag); btn.classList.add('active'); }
+        applyFilters();
+      });
+      tagContainer.appendChild(btn);
+    });
+
+    function applyFilters(){
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+      plugins.forEach(el=>{
+        const name = el.dataset.name.toLowerCase();
+        const description = el.querySelector('p').textContent.toLowerCase();
+        const tags = el.dataset.tags.split(',');
+        const matchesText = !query || name.includes(query) || description.includes(query);
+        const matchesTags = activeTags.size === 0 || tags.some(tag => activeTags.has(tag));
+        const visible = matchesText && matchesTags;
+        el.hidden = !visible;
+        if(visible) visibleCount++;
+      });
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+  })();
 </script>
 </body>
 </html>
