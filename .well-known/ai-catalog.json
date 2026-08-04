@@ -382,14 +382,17 @@
     {
       "identifier": "urn:air:github.com:netfabric:agent-authoring",
       "displayName": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files and SKILL.md agent skills.",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, building apps with the GitHub Copilot SDK, and automating Copilot CLI in GitHub Actions.",
       "tags": [
         "agents-md",
         "skill",
         "authoring",
-        "documentation"
+        "documentation",
+        "copilot-sdk",
+        "copilot-cli",
+        "github-actions"
       ],
-      "version": "0.1.0",
+      "version": "0.3.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -404,6 +407,26 @@
               "authoring SKILL.md skill files (use create-skill)",
               "APM package/plugin authoring (use apm-producer)",
               "language-specific style rules (use language skills e.g. csharp-best-practices)"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:copilot-github-actions",
+            "displayName": "copilot-github-actions",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/copilot-github-actions/SKILL.md",
+            "description": "Automate GitHub Copilot CLI in GitHub Actions workflows. USE FOR: installing/running `copilot -p` in workflow steps, choosing GITHUB_TOKEN vs a personal access token (COPILOT_GITHUB_TOKEN) for authentication, setting the copilot-requests write permission, minimal-permission tool allowlisting (--allow-tool, --deny-tool, --no-ask-user, -s/--silent, --output-format=json), triggers (schedule, workflow_dispatch, push), the recommended GitHub Agentic Workflows (gh-aw) alternative to direct CLI invocation, and security/cost considerations (fork PR prompt-injection risk, billing attribution, cost centers). DO NOT USE FOR: embedding the Copilot agent runtime into your own application (use copilot-sdk instead); general GitHub Actions authoring unrelated to Copilot; the Copilot code review or PR features outside of CLI automation.",
+            "representativeQueries": [
+              "installing/running `copilot -p` in workflow steps, choosing GITHUB_TOKEN vs a personal access token (COPILOT_GITHUB_TOKEN) for authentication, setting the copilot-requests write permission, minimal-permission tool allowlisting (--allow-tool, --deny-tool, --no-ask-user, -s/--silent, --output-format=json), triggers (schedule, workflow_dispatch, push), the recommended GitHub Agentic Workflows (gh-aw) alternative to direct CLI invocation, and security/cost considerations (fork PR prompt-injection risk, billing attribution, cost centers)"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:copilot-sdk",
+            "displayName": "copilot-sdk",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/copilot-sdk/SKILL.md",
+            "description": "Embed the GitHub Copilot agent runtime into your own application using the Copilot SDK. USE FOR: CopilotClient/createSession setup, streaming responses, custom tools, permission handlers, hooks (pre/post-tool-use, session-start), custom agents and sub-agent delegation, MCP servers, skill and plugin directories, session persistence, fleet mode, steering/queueing, calling the SDK from skill scripts/ to run one bounded non-deterministic AI step inside an otherwise deterministic script, and choosing an auth/deployment path (CLI setup, backend services, multi-tenancy, GitHub OAuth, BYOK). Covers Node.js/TypeScript (@github/copilot-sdk), Python (github-copilot-sdk), Go (github.com/github/copilot-sdk/go), Rust (github-copilot-sdk crate), .NET (GitHub.Copilot.SDK), and Java (copilot-sdk-java). DO NOT USE FOR: authoring SKILL.md files consumed by VS Code Copilot (use create-skill instead); using the Copilot IDE extension or chat UI directly; general LLM/chat API integration unrelated to the Copilot SDK.",
+            "representativeQueries": [
+              "CopilotClient/createSession setup, streaming responses, custom tools, permission handlers, hooks (pre/post-tool-use, session-start), custom agents and sub-agent delegation, MCP servers, skill and plugin directories, session persistence, fleet mode, steering/queueing, calling the SDK from skill scripts/ to run one bounded non-deterministic AI step inside an otherwise deterministic script, and choosing an auth/deployment path (CLI setup, backend services, multi-tenancy, GitHub OAuth, BYOK). Covers Node.js/TypeScript (@github/copilot-sdk), Python (github-copilot-sdk), Go (github.com/github/copilot-sdk/go), Rust (github-copilot-sdk crate), .NET (GitHub.Copilot.SDK), and Java (copilot-sdk-java)"
             ]
           },
           {

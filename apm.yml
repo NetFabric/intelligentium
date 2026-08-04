@@ -73,12 +73,13 @@ marketplace:
       tags: [apm, skills, plugin, marketplace, authoring, ci]
 
     - name: agent-authoring
-      description: Skills for authoring AGENTS.md project-context files and 
-        SKILL.md agent skills.
+      description: Skills for authoring AGENTS.md project-context files, SKILL.md 
+        agent skills, building apps with the GitHub Copilot SDK, and automating 
+        Copilot CLI in GitHub Actions.
       source: ./plugins/agent-authoring
-      version: 0.1.0
+      version: 0.3.0
       tag_pattern: "agent-authoring-v{version}"
-      tags: [agents-md, skill, authoring, documentation]
+      tags: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, github-actions]
 
     - name: agentic-discovery
       description: Skill for the Agentic Resource Discovery (ARD) open 

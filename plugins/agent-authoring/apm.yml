@@ -1,9 +1,11 @@
 name: agent-authoring
-version: 0.1.0
-description: Skills for authoring AGENTS.md project-context files and SKILL.md agent skills.
+version: 0.3.0
+description: Skills for authoring AGENTS.md project-context files, SKILL.md agent
+  skills, building apps with the GitHub Copilot SDK, and automating Copilot CLI
+  in GitHub Actions.
 author: NetFabric
 license: MIT
-keywords: [agents-md, skill, authoring, documentation]
+keywords: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, github-actions]
 # Which agent platforms to deploy to.
 # Resolution order: --target flag > this field > auto-detect from filesystem.
 # Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf

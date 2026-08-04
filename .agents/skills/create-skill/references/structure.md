@@ -62,6 +62,8 @@ Verify a description is comment-safe: `node -e "console.log(require('js-yaml').l
 | `scripts/` | Automation run by skill (e.g. codegen, scaffolding) | Python preferred; any language permitted |
 | `assets/` | Templates, sample data, images | Link from SKILL.md or reference files |
 
+A `scripts/` script isn't limited to pure deterministic code — it can embed the [copilot-sdk](../../copilot-sdk/SKILL.md) to call out to Copilot for one bounded, non-deterministic step (e.g. classify input, summarize a diff) and then resume deterministic control flow. Use this when only part of the pipeline needs judgment; keep the AI call scoped to that step so the rest of the script stays testable and reproducible.
+
 ## SKILL.md Required Sections
 
 1. Frontmatter
