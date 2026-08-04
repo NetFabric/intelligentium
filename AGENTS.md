@@ -11,7 +11,7 @@ Intelligentium is NetFabric's [APM](https://microsoft.github.io/apm/) marketplac
 
 - Rebuild marketplace manifest: `apm pack` → writes `.claude-plugin/marketplace.json`
 - Rebuild ARD catalog: `npm run generate:ard` → writes `.well-known/ai-catalog.json`
-- Run both after any change to `apm.yml`, a plugin's `apm.yml`, or any `SKILL.md`, and commit the resulting diffs — both files are consumed directly from the repo, not built at install time.
+- `apm pack` is the only one you still need to run and commit by hand. The ARD catalog is fully automated by `.github/workflows/ard-catalog.yml`: it regenerates and auto-commits/pushes `.well-known/ai-catalog.json` on push to `main`, and on same-repo PR branches too (so the catalog never drifts while a PR is open); fork PRs can't be auto-pushed to (`GITHUB_TOKEN` has no write access there) so that job fails loudly instead, telling the contributor to run `npm run generate:ard` locally.
 - `apm compile` only processes instructions/prompts/agents; skill-only plugins report "No instruction files found" — expected, not an error.
 - Per-plugin GitHub Releases are automated: `.github/workflows/plugin-releases.yml` runs `npm run release:plugins` on every push to `main` that touches `apm.yml`. For each `marketplace.packages` entry whose `version` has no matching tag yet (tag named per that package's `tag_pattern`, e.g. `dotnet-v0.7.0`), it tags the commit, pushes it, and runs `gh release create` with notes listing the commits under that plugin's own `plugins/<name>` path since its previous release tag. Bump a package's `version` in root `apm.yml` (and its own `plugins/<name>/apm.yml`) to trigger its next release.
 

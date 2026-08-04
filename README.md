@@ -63,7 +63,7 @@ Intelligentium publishes an [ARD](https://github.com/agentic-resource-discovery/
 https://netfabric.github.io/intelligentium/.well-known/ai-catalog.json
 ```
 
-The catalog is generated from `apm.yml` via `npm run generate:ard` (see [scripts/generate-ai-catalog.mjs](scripts/generate-ai-catalog.mjs)) and kept in sync by CI on every change to `apm.yml` or a plugin's `SKILL.md`.
+The catalog is generated from `apm.yml` via `npm run generate:ard` (see [scripts/generate-ai-catalog.mjs](scripts/generate-ai-catalog.mjs)) and kept in sync automatically by CI — on every push to `main` and on same-repo pull requests — whenever `apm.yml` or a plugin's `SKILL.md` changes.
 
 ---
 
