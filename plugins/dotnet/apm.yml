@@ -1,9 +1,9 @@
 name: dotnet
-version: 0.3.0
-description: C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, and enumerable/LINQ iteration performance.
+version: 0.4.0
+description: C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, and BenchmarkDotNet benchmarking.
 author: NetFabric
 license: MIT
-keywords: [csharp, dotnet, generic-math, best-practices, simd, performance, vectorization, benchmarking, enumerable, linq, iterators, yield, collections]
+keywords: [csharp, dotnet, generic-math, best-practices, simd, performance, vectorization, benchmarking, benchmarkdotnet, enumerable, linq, iterators, yield, collections]
 # Which agent platforms to deploy to.
 # Resolution order: --target flag > this field > auto-detect from filesystem.
 # Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf

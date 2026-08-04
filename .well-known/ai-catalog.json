@@ -197,7 +197,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:dotnet",
       "displayName": "dotnet",
-      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, and enumerable/LINQ iteration performance.",
+      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, and BenchmarkDotNet benchmarking.",
       "tags": [
         "csharp",
         "dotnet",
@@ -205,9 +205,10 @@
         "best-practices",
         "simd",
         "enumerable",
-        "linq"
+        "linq",
+        "benchmarking"
       ],
-      "version": "0.3.0",
+      "version": "0.4.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -223,6 +224,19 @@
               "nullable reference types",
               "pattern matching",
               "primary constructors"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:dotnet:dotnet-benchmarking",
+            "displayName": "dotnet-benchmarking",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/dotnet/.apm/skills/dotnet-benchmarking/SKILL.md",
+            "description": "Measure C#/.NET performance with BenchmarkDotNet instead of stopwatches. USE FOR: BenchmarkDotNet console project setup, BenchmarkSwitcher.FromAssembly; [Benchmark]/[Benchmark(Baseline = true)]; [Params]; [GlobalSetup]/[GlobalCleanup]; [MemoryDiagnoser] allocation columns; [BenchmarkCategory]/[GroupBenchmarksBy]/[CategoriesColumn]/[HideColumns]; reading Mean/Error/StdDev/Ratio/Allocated results and BenchmarkDotNet.Artifacts output; avoiding dead-code elimination via return values; comparing .NET runtimes/versions via AddJob/WithRuntime; ManualConfig job classes with WithEnvironmentVariable and RatioStyle.Trend; testing environment-variable variants via .runsettings, `dotnet test -e`/`-s`, Visual Studio run-settings. DO NOT USE FOR: SIMD API selection (dotnet-simd, has its own SIMD-width benchmarking config); LINQ/enumerable tradeoffs (dotnet-enumerable); generic math (dotnet-generic-math).",
+            "representativeQueries": [
+              "BenchmarkDotNet console project setup, BenchmarkSwitcher.FromAssembly",
+              "[Benchmark]/[Benchmark(Baseline = true)]",
+              "[Params]",
+              "[GlobalSetup]/[GlobalCleanup]"
             ]
           },
           {

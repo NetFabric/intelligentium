@@ -50,11 +50,11 @@ marketplace:
 
     - name: dotnet
       description: C# and .NET skills for modern language best practices, 
-        generic math over System.Numerics, SIMD vectorization, and 
-        enumerable/LINQ iteration performance.
+        generic math over System.Numerics, SIMD vectorization, 
+        enumerable/LINQ iteration performance, and BenchmarkDotNet benchmarking.
       source: ./plugins/dotnet
-      version: 0.3.0
-      tags: [csharp, dotnet, generic-math, best-practices, simd, enumerable, linq]
+      version: 0.4.0
+      tags: [csharp, dotnet, generic-math, best-practices, simd, enumerable, linq, benchmarking]
 
     - name: apm-authoring
       description: Skills for authoring, consuming, and publishing APM packages,
