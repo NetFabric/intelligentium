@@ -28,6 +28,8 @@ Expose the most-capable interface a return type can honestly provide; consume th
 | Reuse LINQ query variables instead of `.ToList()` mid-pipeline | keeps lazy evaluation; `ToList()`/`ToArray()` force an allocation + full copy |
 | Use `First(predicate)` / `Count(predicate)` overloads | one enumerator instead of `Where(predicate).First()` |
 | Avoid `Single()`/`SingleOrDefault()` in production hot paths | it enumerates to the end even on the first match, just to prove uniqueness |
+| Use `CollectionsMarshal.AsSpan(list)` for hot-path `List<T>` iteration | random-access span over the internal array, bypassing `List<T>.Enumerator` — matches array/`Span<T>` speed; never resize the list while the span is alive |
+| Prefer `foreach` over `for` when iterating a field/property/method-returned array or span | `foreach` caches the reference into a local once, enabling reliable bounds-check elimination; `for` re-reads the field/property each iteration |
 
 Full benchmark data for arrays/`Span<T>`/`List<T>`/`ImmutableArray<T>`/`ArraySegment<T>`: [references/iteration-performance.md](references/iteration-performance.md). `Count`/`Any`/`First`/`Single`/`ToList` complexity: [references/linq-patterns.md](references/linq-patterns.md).
 
@@ -55,7 +57,7 @@ Splitting eager validation from the `yield`-based local function avoids the surp
 | File | Load When |
 |------|-----------|
 | [references/enumerable-interfaces.md](references/enumerable-interfaces.md) | Choosing which collection interface to expose/consume; `IEnumerable`/`IEnumerator`, `IReadOnlyCollection<T>`/`IReadOnlyList<T>`, `ICollection<T>`/`IList<T>`, `IAsyncEnumerable<T>` semantics |
-| [references/iteration-performance.md](references/iteration-performance.md) | `foreach` codegen, value-type vs reference-type enumerators, array/`Span<T>`/`List<T>`/`ImmutableArray<T>`/`ArraySegment<T>` iteration benchmarks, bounds-check elimination |
+| [references/iteration-performance.md](references/iteration-performance.md) | `foreach` codegen, value-type vs reference-type enumerators, array/`Span<T>`/`List<T>`/`ImmutableArray<T>`/`ArraySegment<T>` iteration benchmarks, bounds-check elimination, `CollectionsMarshal.AsSpan` |
 | [references/linq-patterns.md](references/linq-patterns.md) | `Count()`/`Any()`, `First()`/`Single()`(`OrDefault`), `ToList()`/`ToArray()` cost, query composition & lazy evaluation, `null` vs `Enumerable.Empty<T>()`, `IQueryable`, why LINQ operators don't apply to `IAsyncEnumerable<T>` |
 | [references/custom-iterators.md](references/custom-iterators.md) | Writing `yield`-based iterators (sync and async), lazy-evaluation pitfalls, enumerable vs enumerator return types, coroutines, behavior trees |
 | [references/async-enumeration.md](references/async-enumeration.md) | Consuming `IAsyncEnumerable<T>` with `await foreach`, `foreach` vs `await foreach` diagnostics, cancellation (`[EnumeratorCancellation]`, `WithCancellation`), `ConfigureAwait` on async streams, `IAsyncEnumerable<T>` vs `Task<IReadOnlyList<T>>` |
