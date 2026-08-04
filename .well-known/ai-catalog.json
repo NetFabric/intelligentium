@@ -197,7 +197,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:dotnet",
       "displayName": "dotnet",
-      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, and solution/project setup (Directory.Build.props, central package management, SourceLink).",
+      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).",
       "tags": [
         "csharp",
         "dotnet",
@@ -208,9 +208,12 @@
         "linq",
         "benchmarking",
         "slnx",
-        "sourcelink"
+        "sourcelink",
+        "code-agents",
+        "aspire",
+        "hooks"
       ],
-      "version": "0.5.0",
+      "version": "0.6.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -226,6 +229,19 @@
               "nullable reference types",
               "pattern matching",
               "primary constructors"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:dotnet:dotnet-agent-guardrails",
+            "displayName": "dotnet-agent-guardrails",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/dotnet/.apm/skills/dotnet-agent-guardrails/SKILL.md",
+            "description": "Deterministic guardrails that make .NET/C# repos safe for AI code agents: .editorconfig + dotnet format, TreatWarningsAsErrors, custom Roslyn analyzer projects for architecture rules, full test suites as the behavioral contract, Aspire as the agent-native orchestration/observability layer, and Copilot/Claude Code hooks as the governance layer. USE FOR: writing AGENTS.md/CLAUDE.md rules for a .NET repo used by code agents; defining what 'done' means for agent-generated .NET changes; wiring a Roslyn analyzer project via ProjectReference OutputItemType=Analyzer; enforcing dotnet format exit code 0 and TreatWarningsAsErrors; using Aspire telemetry/traces so agents reason about running systems, not just source; writing hooks that validate or block agent actions. DO NOT USE FOR: general AGENTS.md authoring for non-.NET repos (agents-md); C# style rules (csharp-best-practices); non-agent solution scaffolding (dotnet-solution-setup); BenchmarkDotNet usage (dotnet-benchmarking).",
+            "representativeQueries": [
+              "writing AGENTS.md/CLAUDE.md rules for a .NET repo used by code agents",
+              "defining what 'done' means for agent-generated .NET changes",
+              "wiring a Roslyn analyzer project via ProjectReference OutputItemType=Analyzer",
+              "enforcing dotnet format exit code 0 and TreatWarningsAsErrors"
             ]
           },
           {
