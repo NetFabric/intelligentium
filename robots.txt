@@ -1,1 +1,1 @@
-Agentmap: https://netfabric.github.io/intelligentium/.well-known/ai-catalog.json
+Agentmap: https://intelligentium.ai/.well-known/ai-catalog.json

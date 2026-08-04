@@ -2,7 +2,7 @@
 
 **Intelligentium** is the official NetFabric marketplace for AI plugins — a curated marketplace of intelligence modules you can install, combine, and run across your agents, workflows, and automation systems.
 
-🌐 **Website:** [netfabric.github.io/intelligentium](https://netfabric.github.io/intelligentium/)
+🌐 **Website:** [intelligentium.ai](https://intelligentium.ai/)
 
 ---
 
@@ -60,7 +60,7 @@ apm install <plugin-name>@intelligentium
 Intelligentium publishes an [ARD](https://github.com/agentic-resource-discovery/spec) v0.9 catalog so agents and registries can discover its plugins/skills programmatically:
 
 ```
-https://netfabric.github.io/intelligentium/.well-known/ai-catalog.json
+https://intelligentium.ai/.well-known/ai-catalog.json
 ```
 
 The catalog is generated from `apm.yml` via `npm run generate:ard` (see [scripts/generate-ai-catalog.mjs](scripts/generate-ai-catalog.mjs)) and kept in sync automatically by CI — on every push to `main` and on same-repo pull requests — whenever `apm.yml` or a plugin's `SKILL.md` changes.

@@ -2,8 +2,8 @@
   "specVersion": "1.0",
   "host": {
     "displayName": "NetFabric Intelligentium",
-    "identifier": "did:web:netfabric.github.io:intelligentium",
-    "documentationUrl": "https://github.com/NetFabric/intelligentium"
+    "identifier": "did:web:intelligentium.ai",
+    "documentationUrl": "https://intelligentium.ai"
   },
   "entries": [
     {

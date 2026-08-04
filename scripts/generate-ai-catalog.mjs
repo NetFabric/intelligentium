@@ -113,8 +113,8 @@ function main() {
     specVersion: "1.0",
     host: {
       displayName: "NetFabric Intelligentium",
-      identifier: `did:web:${REPO_OWNER.toLowerCase()}.github.io:${REPO_NAME}`,
-      documentationUrl: `https://github.com/${REPO_OWNER}/${REPO_NAME}`,
+      identifier: "did:web:intelligentium.ai",
+      documentationUrl: "https://intelligentium.ai",
     },
     entries: packages.map(buildPluginEntry),
   };
