@@ -74,12 +74,13 @@ marketplace:
 
     - name: agent-authoring
       description: Skills for authoring AGENTS.md project-context files, SKILL.md 
-        agent skills, building apps with the GitHub Copilot SDK, and automating 
-        Copilot CLI in GitHub Actions.
+        agent skills, building apps with the GitHub Copilot SDK, automating 
+        Copilot CLI in GitHub Actions, and converting data to/from TOON 
+        (Token-Oriented Object Notation) to cut LLM token usage.
       source: ./plugins/agent-authoring
-      version: 0.3.0
+      version: 0.4.0
       tag_pattern: "agent-authoring-v{version}"
-      tags: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, github-actions]
+      tags: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, github-actions, toon, token-oriented-object-notation, tokens, llm]
 
     - name: agentic-discovery
       description: Skill for the Agentic Resource Discovery (ARD) open 

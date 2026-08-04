@@ -382,7 +382,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:agent-authoring",
       "displayName": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, building apps with the GitHub Copilot SDK, and automating Copilot CLI in GitHub Actions.",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, and converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage.",
       "tags": [
         "agents-md",
         "skill",
@@ -390,9 +390,13 @@
         "documentation",
         "copilot-sdk",
         "copilot-cli",
-        "github-actions"
+        "github-actions",
+        "toon",
+        "token-oriented-object-notation",
+        "tokens",
+        "llm"
       ],
-      "version": "0.3.0",
+      "version": "0.4.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -437,6 +441,16 @@
             "description": "Create or update VS Code Copilot agent skills (SKILL.md + reference files). Use when: authoring a new skill from scratch, improving or restructuring an existing skill, deciding how to split content across files, writing skill frontmatter, choosing trigger phrases for the description field, organizing reference files. Covers skill architecture, compact writing rules, frontmatter constraints, and research workflow via context7/microsoftdocs MCPs. DO NOT USE FOR: general coding tasks, VS Code extension development, non-skill documentation.",
             "representativeQueries": [
               "general coding tasks, VS Code extension development, non-skill documentation"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:toon",
+            "displayName": "toon",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/toon/SKILL.md",
+            "description": "Convert data to/from TOON (Token-Oriented Object Notation) for lower-token LLM context. Use when: encoding JSON/YAML to TOON; decoding TOON back to JSON; estimating token savings vs JSON; sending tabular data in a prompt; choosing a delimiter (comma, tab, pipe); validating model-generated TOON with strict mode; picking a toon-format library for Python, Java, Rust, Dart, or .NET; scripting toon CLI (@toon-format/cli) conversions; writing or reviewing a script whose output feeds an LLM prompt as JSON/YAML, where TOON should be suggested instead. Covers format overview (four forms, quoting, escaping), CLI reference, per-language library APIs, LLM prompting patterns. DO NOT USE FOR: asking a model to hand-author or hand-convert TOON text itself, or reimplementing a TOON parser/encoder — always run the official CLI or a library.",
+            "representativeQueries": [
+              "asking a model to hand-author or hand-convert TOON text itself, or reimplementing a TOON parser/encoder — always run the official CLI or a library"
             ]
           }
         ]

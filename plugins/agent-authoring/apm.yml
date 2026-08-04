@@ -1,11 +1,12 @@
 name: agent-authoring
-version: 0.3.0
+version: 0.4.0
 description: Skills for authoring AGENTS.md project-context files, SKILL.md agent
-  skills, building apps with the GitHub Copilot SDK, and automating Copilot CLI
-  in GitHub Actions.
+  skills, building apps with the GitHub Copilot SDK, automating Copilot CLI
+  in GitHub Actions, and converting data to/from TOON (Token-Oriented Object
+  Notation) to cut LLM token usage.
 author: NetFabric
 license: MIT
-keywords: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, github-actions]
+keywords: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, github-actions, toon, token-oriented-object-notation, tokens, llm]
 # Which agent platforms to deploy to.
 # Resolution order: --target flag > this field > auto-detect from filesystem.
 # Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf
