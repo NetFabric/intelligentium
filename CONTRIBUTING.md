@@ -24,7 +24,8 @@ Master copies of skills live in `.agents/skills/` at the repo root (used by this
 
 1. Add `plugins/<plugin>/.apm/skills/<skill-name>/SKILL.md` with `name`/`description` frontmatter and the skill body. Add any `references/*.md` files it links to.
 2. If the skill also exists as a master copy, mirror the change in `.agents/skills/<skill-name>/`.
-3. Regenerate build artifacts (see [Verifying Changes](#verifying-changes)).
+3. Add a row for the skill in `plugins/<plugin>/README.md`'s skills table.
+4. Regenerate build artifacts (see [Verifying Changes](#verifying-changes)).
 
 ## Adding a New Plugin Package
 
@@ -33,7 +34,8 @@ Master copies of skills live in `.agents/skills/` at the repo root (used by this
 3. Fill in `plugins/<name>/apm.yml` (`description`, `keywords`, `targets`) and add the skill(s) under `.apm/skills/`.
 4. Register the package in the root [apm.yml](apm.yml)'s `marketplace.packages` list (`name`, `description`, `source: ./plugins/<name>`, `version`, `tags`).
 5. Add a row for it in the [README.md](README.md) plugin table.
-6. Regenerate build artifacts (see [Verifying Changes](#verifying-changes)).
+6. Add `plugins/<name>/README.md` (name, description, a table of its skills linking to `.apm/skills/<skill>`, and the `apm install <name>@intelligentium` command). Every plugin must have one — keep its skills table in sync whenever a skill is added, removed, or renamed.
+7. Regenerate build artifacts (see [Verifying Changes](#verifying-changes)).
 
 ## Verifying Changes
 
