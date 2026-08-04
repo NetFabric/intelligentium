@@ -17,6 +17,7 @@ Intelligentium is NetFabric's [APM](https://microsoft.github.io/apm/) marketplac
 
 ## Conventions
 
+- Plugin `scripts/` folders (automation shipped inside a skill) must be Python-only in this marketplace — this is an Intelligentium-specific normalization to minimize runtime dependencies and keep skill behavior deterministic across consumers. This does **not** apply to the generic `create-skill` skill's own guidance (which permits any language) or to this repo's own build tooling under root [scripts/](scripts/) (Node.js, unaffected).
 - `apm plugin init <name>` scaffolds a **nested** `<name>/<name>/` folder — flatten with `mv "<name>/<name>"/* "<name>/"`.
 - Never hand-author `plugin.json` — delete it and let `apm pack` synthesize it from `apm.yml`.
 - SKILL.md frontmatter `description` fields are not valid standalone YAML (they contain unescaped `USE FOR:` colons) — parse them with the regexes in [scripts/generate-ai-catalog.mjs](scripts/generate-ai-catalog.mjs), not `yaml.load` on the raw frontmatter block.
