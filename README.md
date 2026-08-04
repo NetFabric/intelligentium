@@ -2,6 +2,8 @@
 
 **Intelliforge** is the official NetFabric marketplace for AI plugins — a curated vault of intelligence modules you can install, combine, and run across your agents, workflows, and automation systems.
 
+🌐 **Website:** [netfabric.github.io/intelliforge](https://netfabric.github.io/intelliforge/)
+
 ---
 
 ## ✨ What’s Inside
