@@ -1,6 +1,6 @@
 # Intelligentium
 
-**Intelligentium** is the official NetFabric marketplace for AI plugins — a curated vault of intelligence modules you can install, combine, and run across your agents, workflows, and automation systems.
+**Intelligentium** is the official NetFabric marketplace for AI plugins — a curated marketplace of intelligence modules you can install, combine, and run across your agents, workflows, and automation systems.
 
 🌐 **Website:** [netfabric.github.io/intelligentium](https://netfabric.github.io/intelligentium/)
 
