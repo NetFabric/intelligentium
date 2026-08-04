@@ -1,6 +1,6 @@
 ---
 name: 3d-rotation-theory
-description: Abstract math for 3D rotation representations and conversions. USE FOR: understanding axis-angle representation; Euler angles (yaw/pitch/roll, convention choices); rotation matrices (SO(3)); quaternion-based rotation; converting between representations; identifying and avoiding gimbal lock; composing rotations; half-angle formula; right-hand rule. DO NOT USE FOR: quaternion arithmetic details (use quaternion-algebra); slerp/lerp interpolation (use interpolation-on-manifolds); coordinate system definitions (use coordinate-system-conversions).
+description: "Abstract math for 3D rotation representations and conversions. USE FOR: understanding axis-angle representation; Euler angles (yaw/pitch/roll, convention choices); rotation matrices (SO(3)); quaternion-based rotation; converting between representations; identifying and avoiding gimbal lock; composing rotations; half-angle formula; right-hand rule. DO NOT USE FOR: quaternion arithmetic details (use quaternion-algebra); slerp/lerp interpolation (use interpolation-on-manifolds); coordinate system definitions (use coordinate-system-conversions)."
 ---
 
 # 3D Rotation Theory

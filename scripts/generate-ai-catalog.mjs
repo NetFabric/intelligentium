@@ -29,9 +29,9 @@ function representativeQueries(description, max = 4) {
     .slice(0, max);
 }
 
-// SKILL.md frontmatter descriptions contain unescaped "USE FOR:" colons, which
-// make them invalid plain YAML scalars — so name/description are pulled with
-// targeted regexes instead of a full YAML parse of the frontmatter block.
+// SKILL.md frontmatter descriptions contain "USE FOR:"-style colons, so the
+// description value must be a quoted YAML scalar — parse the whole
+// frontmatter block as real YAML rather than regexing out raw text.
 function readSkillEntry(pluginName, skillDir, skillsRoot) {
   const skillPath = join(skillsRoot, skillDir, "SKILL.md");
   const raw = readFileSync(skillPath, "utf8");
@@ -39,14 +39,12 @@ function readSkillEntry(pluginName, skillDir, skillsRoot) {
   if (!frontmatterMatch) {
     throw new Error(`No frontmatter found in ${skillPath}`);
   }
-  const frontmatter = frontmatterMatch[1];
-  const nameMatch = frontmatter.match(/^name:\s*(.+)$/m);
-  const descriptionMatch = frontmatter.match(/^description:\s*([\s\S]*)$/m);
-  if (!nameMatch || !descriptionMatch) {
+  const frontmatter = yaml.load(frontmatterMatch[1]);
+  if (!frontmatter?.name || !frontmatter?.description) {
     throw new Error(`Missing name/description frontmatter in ${skillPath}`);
   }
-  const name = nameMatch[1].trim();
-  const description = descriptionMatch[1].trim();
+  const name = frontmatter.name.trim();
+  const description = frontmatter.description.trim();
   const relPath = `plugins/${pluginName}/.apm/skills/${skillDir}/SKILL.md`;
 
   return {

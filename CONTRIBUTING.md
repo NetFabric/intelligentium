@@ -22,7 +22,7 @@ Master copies of skills live in `.agents/skills/` at the repo root (used by this
 
 ## Adding a Skill to an Existing Plugin
 
-1. Add `plugins/<plugin>/.apm/skills/<skill-name>/SKILL.md` with `name`/`description` frontmatter and the skill body. Add any `references/*.md` files it links to.
+1. Add `plugins/<plugin>/.apm/skills/<skill-name>/SKILL.md` with `name`/`description` frontmatter and the skill body. Add any `references/*.md` files it links to. **Double-quote the `description` value** (`description: "..."`) — trigger-phrase descriptions contain colons that break strict YAML parsers when left unquoted.
 2. If the skill also exists as a master copy, mirror the change in `.agents/skills/<skill-name>/`.
 3. Add a row for the skill in `plugins/<plugin>/README.md`'s skills table.
 4. Regenerate build artifacts (see [Verifying Changes](#verifying-changes)).

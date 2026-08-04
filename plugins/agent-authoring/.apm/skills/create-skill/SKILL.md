@@ -1,6 +1,6 @@
 ---
 name: create-skill
-description: Create or update VS Code Copilot agent skills (SKILL.md + reference files). Use when: authoring a new skill from scratch, improving or restructuring an existing skill, deciding how to split content across files, writing skill frontmatter, choosing trigger phrases for the description field, organizing reference files. Covers skill architecture, compact writing rules, frontmatter constraints, and research workflow via context7/microsoftdocs MCPs. DO NOT USE FOR: general coding tasks, VS Code extension development, non-skill documentation.
+description: "Create or update VS Code Copilot agent skills (SKILL.md + reference files). Use when: authoring a new skill from scratch, improving or restructuring an existing skill, deciding how to split content across files, writing skill frontmatter, choosing trigger phrases for the description field, organizing reference files. Covers skill architecture, compact writing rules, frontmatter constraints, and research workflow via context7/microsoftdocs MCPs. DO NOT USE FOR: general coding tasks, VS Code extension development, non-skill documentation."
 ---
 
 # Create Skill
@@ -18,12 +18,12 @@ description: Create or update VS Code Copilot agent skills (SKILL.md + reference
 
 ```yaml
 ---
-name: <kebab-case>          # matches folder name
-description: <≤1024 chars>  # trigger phrases; relevance context; exclusions
+name: <kebab-case>            # matches folder name
+description: "<≤1024 chars>"  # double-quoted; trigger phrases; relevance context; exclusions
 ---
 ```
 
-**Description rules:** keyword-rich; list trigger phrases; state exclusions with "DO NOT USE FOR:"; ≤1024 chars; never write a literal `#` preceded by whitespace — YAML treats it as a comment and silently truncates the rest of the value (reword instead, e.g. "colon-prefixed directives" not "`#:`"). Full rules → [references/structure.md](references/structure.md#yaml-safety-in-descriptions).
+**Description rules:** always wrap the value in double quotes — descriptions routinely contain colons ("USE FOR:", "DO NOT USE FOR:") that break strict YAML parsers when left unquoted; keyword-rich; list trigger phrases; state exclusions with "DO NOT USE FOR:"; ≤1024 chars; never write a literal `#` preceded by whitespace — YAML treats it as a comment and silently truncates the rest of the value (reword instead, e.g. "colon-prefixed directives" not "`#:`"). Full rules → [references/structure.md](references/structure.md#yaml-safety-in-descriptions).
 
 ## Workflow: New Skill
 

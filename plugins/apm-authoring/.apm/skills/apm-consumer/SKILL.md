@@ -1,6 +1,6 @@
 ---
 name: apm-consumer
-description: Manage APM packages as a consumer: install, update, remove agent context (skills, prompts, agents, instructions, MCP/LSP servers). Use when: apm init; apm install packages; apm update / outdated; apm uninstall / prune; private or org packages; local bundles; authentication (GITHUB_APM_PAT); apm run scripts; apm audit; drift detection; governance ramp; apm doctor; troubleshooting install failures; managing apm.yml dependencies; lockfile (apm.lock.yaml) semantics; MCP server wiring; LSP server config. Covers: targets (copilot, claude, cursor, codex, gemini, windsurf, kiro), harness auto-detection, what to commit. DO NOT USE FOR: authoring or publishing packages (use apm-producer); writing apm-policy.yml.
+description: "Manage APM packages as a consumer: install, update, remove agent context (skills, prompts, agents, instructions, MCP/LSP servers). Use when: apm init; apm install packages; apm update / outdated; apm uninstall / prune; private or org packages; local bundles; authentication (GITHUB_APM_PAT); apm run scripts; apm audit; drift detection; governance ramp; apm doctor; troubleshooting install failures; managing apm.yml dependencies; lockfile (apm.lock.yaml) semantics; MCP server wiring; LSP server config. Covers: targets (copilot, claude, cursor, codex, gemini, windsurf, kiro), harness auto-detection, what to commit. DO NOT USE FOR: authoring or publishing packages (use apm-producer); writing apm-policy.yml."
 ---
 
 # APM Consumer

@@ -35,15 +35,18 @@
 
 ## YAML Safety in Descriptions
 
-Descriptions are unquoted plain YAML scalars. Some character sequences break or silently corrupt parsing:
+**Always wrap the `description` value in double quotes** (`description: "..."`). Trigger-phrase descriptions routinely contain colons ("USE FOR:", "DO NOT USE FOR:", "Use when:"), and an unquoted YAML plain scalar treats `: ` (colon + space) mid-value as the start of a new mapping key — this throws a real parse error (`bad indentation of a mapping entry` / `mapping values are not allowed in this context`) in any strict YAML parser, including tools that load SKILL.md frontmatter directly. Earlier guidance in this repo assumed that was "tolerated" because apm's own frontmatter reader was regex-based — that assumption was wrong: other tooling (e.g. editor extensions) does strict-parse this frontmatter and fails loudly. Quoting is the only reliable fix; don't rely on rewording to dodge colons.
+
+Inside a double-quoted scalar, only two characters need escaping: `\"` and `\\`. Everything else — colons, single quotes/apostrophes, backticks, parentheses — is safe as-is.
 
 | Sequence | Effect | Fix |
 |----------|--------|-----|
-| ` #` (space + hash) | Starts a YAML comment — a strict parser silently drops everything after it, with no error | Never use the raw token; reword (e.g. "colon-prefixed directives" instead of "`#:`") |
-| `: ` (colon + space) mid-value | Ambiguous with a new mapping key; strict parsers (`js-yaml`) throw `bad indentation of a mapping entry` | Tolerated in this repo only because SKILL.md frontmatter is parsed via regex, not `yaml.load` — avoid introducing new instances where avoidable |
-| Leading `- ? : , [ ] { } # & * ! \| > ' " % @` \` | A scalar can't start with these unquoted | Don't start a description with these characters |
+| `: ` (colon + space) mid-value | Starts a new mapping key in an unquoted scalar — parse error | Wrap the whole value in double quotes |
+| ` #` (space + hash) | Starts a YAML comment — silently drops everything after it, with no error, even when quoted incorrectly | Keep the value inside the quotes; never let a `#` fall outside them |
+| Literal `"` inside the value | Would end the quoted scalar early | Escape as `\"` |
+| Leading `- ? : , [ ] { } # & * ! \| > ' " % @` \` (if ever unquoted) | A scalar can't start with these unquoted | Moot once the whole value is quoted |
 
-Verify a description is comment-safe: `node -e "console.log(require('js-yaml').load('description: ' + require('fs').readFileSync('SKILL.md','utf8').split(/\ndescription: /)[1].split('\n')[0]))"` — if the printed value is truncated versus the source line, reword it.
+Verify: `node -e "const yaml=require('js-yaml'); const fm=require('fs').readFileSync('SKILL.md','utf8').match(/^---\n([\s\S]*?)\n---/)[1]; console.log(yaml.load(fm))"` — this must succeed without throwing and print the full, untruncated description.
 
 ## Reference File Conventions
 
