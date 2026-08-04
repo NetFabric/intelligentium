@@ -1,1 +1,2 @@
 Agentmap: https://intelligentium.ai/.well-known/ai-catalog.json
+Sitemap: https://intelligentium.ai/sitemap.xml

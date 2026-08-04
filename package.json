@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "generate:ard": "node scripts/generate-ai-catalog.mjs",
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "release:plugins": "node scripts/release-plugins.mjs"
   },
   "devDependencies": {
