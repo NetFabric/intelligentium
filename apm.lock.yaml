@@ -1,0 +1,393 @@
+lockfile_version: '1'
+generated_at: '2026-08-04T16:46:01.860264+00:00'
+apm_version: 0.27.0
+dependencies:
+- repo_url: netfabric/intelliforge
+  name: agent-authoring
+  host: github.com
+  resolved_commit: b8f47eb1a685f33f537b946d02952ff2c1499ade
+  version: 0.1.0
+  virtual_path: plugins/agent-authoring
+  is_virtual: true
+  package_type: apm_package
+  deployed_files:
+  - .agents/skills/agents-md
+  - .agents/skills/agents-md/SKILL.md
+  - .agents/skills/agents-md/references/anatomy-and-discovery.md
+  - .agents/skills/agents-md/references/authoring-workflow.md
+  - .agents/skills/agents-md/references/quality-and-security.md
+  - .agents/skills/create-skill
+  - .agents/skills/create-skill/SKILL.md
+  - .agents/skills/create-skill/references/research-workflow.md
+  - .agents/skills/create-skill/references/structure.md
+  - .agents/skills/create-skill/references/writing-style.md
+  deployed_file_hashes:
+    .agents/skills/agents-md/SKILL.md: sha256:7e8b20f6d3457114f6507f42317810cfaefa5ecb5256f9a2d13a1567e4048ee2
+    .agents/skills/agents-md/references/anatomy-and-discovery.md: sha256:a1146d237f8973a3d78052290cf55a58d23ed0bb8030d8f6c11ac38849c04795
+    .agents/skills/agents-md/references/authoring-workflow.md: sha256:efad24313e8ed24a26c018eebf37023aae3c3cd1a37b652de942eb3122d15e23
+    .agents/skills/agents-md/references/quality-and-security.md: sha256:ade7c66bac09bdd48565491f7a7d96b1221b3bfb44f642659b8ede88268c34b2
+    .agents/skills/create-skill/SKILL.md: sha256:a340f4227c789b78a9da76ac8e831542a5dc3ccb3013fbee346b11db5784548b
+    .agents/skills/create-skill/references/research-workflow.md: sha256:ad05a64d8bf6d133a1be2a0e8b789f5a2601ef6e3b00bd9e29c69d6ca3b60f65
+    .agents/skills/create-skill/references/structure.md: sha256:47eddd4a10506bbc44982d46a705fd60618ab0fd909c1788f9df6b9ceb1e0aae
+    .agents/skills/create-skill/references/writing-style.md: sha256:63283a512f97aa588ef96af98228c105b32aee86de50865a92779c4a32fee106
+  content_hash: sha256:f14b9e81ff941c54552c6e2fa5f815e17e3bf4bd1f30ccbddbe3a5cbe88bf67a
+  discovered_via: intelliforge
+  marketplace_plugin_name: agent-authoring
+  declared_license: MIT
+- repo_url: netfabric/intelliforge
+  name: apm-authoring
+  host: github.com
+  resolved_commit: b8f47eb1a685f33f537b946d02952ff2c1499ade
+  version: 0.1.0
+  virtual_path: plugins/apm-authoring
+  is_virtual: true
+  package_type: apm_package
+  deployed_files:
+  - .agents/skills/apm-actions
+  - .agents/skills/apm-actions/SKILL.md
+  - .agents/skills/apm-actions/references/auth-and-security.md
+  - .agents/skills/apm-actions/references/inputs-outputs.md
+  - .agents/skills/apm-actions/references/modes.md
+  - .agents/skills/apm-actions/references/pack-and-restore.md
+  - .agents/skills/apm-consumer
+  - .agents/skills/apm-consumer/SKILL.md
+  - .agents/skills/apm-consumer/references/commands.md
+  - .agents/skills/apm-consumer/references/manifest-and-lockfile.md
+  - .agents/skills/apm-consumer/references/mcp-lsp-servers.md
+  - .agents/skills/apm-producer
+  - .agents/skills/apm-producer/SKILL.md
+  - .agents/skills/apm-producer/references/compile.md
+  - .agents/skills/apm-producer/references/pack-and-publish.md
+  - .agents/skills/apm-producer/references/primitives.md
+  deployed_file_hashes:
+    .agents/skills/apm-actions/SKILL.md: sha256:ee1b04e6b58cdae48446282aa5c9e8f5481522a2ffb3d861fbfe3b8df998e350
+    .agents/skills/apm-actions/references/auth-and-security.md: sha256:1621f3329105bed7e9a53a508c7c6884ec373ea2d95eb8eee41b4c4f04bb4f7c
+    .agents/skills/apm-actions/references/inputs-outputs.md: sha256:a1f7909c7aac826f8eb2a5f998126a5911e0237bd379db50f403fff7889f9aa7
+    .agents/skills/apm-actions/references/modes.md: sha256:934081792f85d0b5e345c82fceb2fb78f767b7bafaa88e0b81dfc06e1850f9b7
+    .agents/skills/apm-actions/references/pack-and-restore.md: sha256:4b20bd8520e7afa739fc94f46805e051dcf840265143ca26753d9e530ae7538d
+    .agents/skills/apm-consumer/SKILL.md: sha256:5b40db6f69c2757da73d70e78b914e44e3baaa9ace7ec7c1bc58129852f5bd1c
+    .agents/skills/apm-consumer/references/commands.md: sha256:bdd654c1ab8562a134f740608d4b9961e3b2f9bd0fa55f9f6c7deda7ec9c676e
+    .agents/skills/apm-consumer/references/manifest-and-lockfile.md: sha256:085cccc4fcfb2b16eae3e76f9b08476cc97f6b663a486b7f38d17671c6144dd6
+    .agents/skills/apm-consumer/references/mcp-lsp-servers.md: sha256:fad436bc31c9b6a0189fd1b4929e251cb06f9f327888ae7685a54298ee8a3af9
+    .agents/skills/apm-producer/SKILL.md: sha256:883a5656ceb27179efce03b8743e11fd7c179556205e732294f18f74dcfb0207
+    .agents/skills/apm-producer/references/compile.md: sha256:cd72a55e0f886d88ef25d23a153c75914001c041b6f9c7a06e9ff4102e21e2e0
+    .agents/skills/apm-producer/references/pack-and-publish.md: sha256:130294f50564589de7def3ce573d3cd80526fd3477d05cf2be318011e78c26b7
+    .agents/skills/apm-producer/references/primitives.md: sha256:c94aa32c926e030c9f1e366a37c075ba2fdc0f2974259e201fc7424867d4a90f
+  content_hash: sha256:4b8006e96eb05314ecf79321a97e30eca5adb148e71a8f005ef9f49c3c075edf
+  discovered_via: intelliforge
+  marketplace_plugin_name: apm-authoring
+  declared_license: MIT
+- repo_url: netfabric/intelliforge
+  name: agentic-discovery
+  host: github.com
+  resolved_commit: b8f47eb1a685f33f537b946d02952ff2c1499ade
+  version: 0.1.0
+  virtual_path: plugins/agentic-discovery
+  is_virtual: true
+  package_type: apm_package
+  deployed_files:
+  - .agents/skills/agentic-resource-discovery
+  - .agents/skills/agentic-resource-discovery/SKILL.md
+  - .agents/skills/agentic-resource-discovery/references/api.md
+  - .agents/skills/agentic-resource-discovery/references/data-model.md
+  - .agents/skills/agentic-resource-discovery/references/publishing.md
+  - .agents/skills/agentic-resource-discovery/references/trust.md
+  deployed_file_hashes:
+    .agents/skills/agentic-resource-discovery/SKILL.md: sha256:e219dca372c86ce7862223081853a9c177089d55bda237dfa164ea356668585f
+    .agents/skills/agentic-resource-discovery/references/api.md: sha256:44d7904e8bfeae5478a45a89af7f4c8bd45d3147c717aced2e611b9da889e2f5
+    .agents/skills/agentic-resource-discovery/references/data-model.md: sha256:a8ddf9ba7d458250aeb8ca82e4a4959cf8116af1ba1b6990d7cd285800d110b7
+    .agents/skills/agentic-resource-discovery/references/publishing.md: sha256:8375f828574e63af643d3febce3644c31c96678485f5646478a1133c65c9c03e
+    .agents/skills/agentic-resource-discovery/references/trust.md: sha256:7785efe494655391e0a002df6c0f749e5a70b28a75d828ae22b607602dc3a419
+  content_hash: sha256:2680ad6cffe2b8921ea14a32c36356fbd67b0c3ccfc456a5412ebb79598a100c
+  discovered_via: intelliforge
+  marketplace_plugin_name: agentic-discovery
+  declared_license: MIT
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/agentic-resource-discovery
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agentic-discovery
+  active_owner: netfabric/intelliforge/plugins/agentic-discovery
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/agentic-resource-discovery/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agentic-discovery
+  active_owner: netfabric/intelliforge/plugins/agentic-discovery
+  content_hash: sha256:e219dca372c86ce7862223081853a9c177089d55bda237dfa164ea356668585f
+- kind: project-relative
+  target: agents
+  value: .agents/skills/agentic-resource-discovery/references/api.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agentic-discovery
+  active_owner: netfabric/intelliforge/plugins/agentic-discovery
+  content_hash: sha256:44d7904e8bfeae5478a45a89af7f4c8bd45d3147c717aced2e611b9da889e2f5
+- kind: project-relative
+  target: agents
+  value: .agents/skills/agentic-resource-discovery/references/data-model.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agentic-discovery
+  active_owner: netfabric/intelliforge/plugins/agentic-discovery
+  content_hash: sha256:a8ddf9ba7d458250aeb8ca82e4a4959cf8116af1ba1b6990d7cd285800d110b7
+- kind: project-relative
+  target: agents
+  value: .agents/skills/agentic-resource-discovery/references/publishing.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agentic-discovery
+  active_owner: netfabric/intelliforge/plugins/agentic-discovery
+  content_hash: sha256:8375f828574e63af643d3febce3644c31c96678485f5646478a1133c65c9c03e
+- kind: project-relative
+  target: agents
+  value: .agents/skills/agentic-resource-discovery/references/trust.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agentic-discovery
+  active_owner: netfabric/intelliforge/plugins/agentic-discovery
+  content_hash: sha256:7785efe494655391e0a002df6c0f749e5a70b28a75d828ae22b607602dc3a419
+- kind: project-relative
+  target: agents
+  value: .agents/skills/agents-md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agent-authoring
+  active_owner: netfabric/intelliforge/plugins/agent-authoring
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/agents-md/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agent-authoring
+  active_owner: netfabric/intelliforge/plugins/agent-authoring
+  content_hash: sha256:7e8b20f6d3457114f6507f42317810cfaefa5ecb5256f9a2d13a1567e4048ee2
+- kind: project-relative
+  target: agents
+  value: .agents/skills/agents-md/references/anatomy-and-discovery.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agent-authoring
+  active_owner: netfabric/intelliforge/plugins/agent-authoring
+  content_hash: sha256:a1146d237f8973a3d78052290cf55a58d23ed0bb8030d8f6c11ac38849c04795
+- kind: project-relative
+  target: agents
+  value: .agents/skills/agents-md/references/authoring-workflow.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agent-authoring
+  active_owner: netfabric/intelliforge/plugins/agent-authoring
+  content_hash: sha256:efad24313e8ed24a26c018eebf37023aae3c3cd1a37b652de942eb3122d15e23
+- kind: project-relative
+  target: agents
+  value: .agents/skills/agents-md/references/quality-and-security.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agent-authoring
+  active_owner: netfabric/intelliforge/plugins/agent-authoring
+  content_hash: sha256:ade7c66bac09bdd48565491f7a7d96b1221b3bfb44f642659b8ede88268c34b2
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-actions
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-actions/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:ee1b04e6b58cdae48446282aa5c9e8f5481522a2ffb3d861fbfe3b8df998e350
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-actions/references/auth-and-security.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:1621f3329105bed7e9a53a508c7c6884ec373ea2d95eb8eee41b4c4f04bb4f7c
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-actions/references/inputs-outputs.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:a1f7909c7aac826f8eb2a5f998126a5911e0237bd379db50f403fff7889f9aa7
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-actions/references/modes.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:934081792f85d0b5e345c82fceb2fb78f767b7bafaa88e0b81dfc06e1850f9b7
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-actions/references/pack-and-restore.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:4b20bd8520e7afa739fc94f46805e051dcf840265143ca26753d9e530ae7538d
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-consumer
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-consumer/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:5b40db6f69c2757da73d70e78b914e44e3baaa9ace7ec7c1bc58129852f5bd1c
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-consumer/references/commands.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:bdd654c1ab8562a134f740608d4b9961e3b2f9bd0fa55f9f6c7deda7ec9c676e
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-consumer/references/manifest-and-lockfile.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:085cccc4fcfb2b16eae3e76f9b08476cc97f6b663a486b7f38d17671c6144dd6
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-consumer/references/mcp-lsp-servers.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:fad436bc31c9b6a0189fd1b4929e251cb06f9f327888ae7685a54298ee8a3af9
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-producer
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-producer/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:883a5656ceb27179efce03b8743e11fd7c179556205e732294f18f74dcfb0207
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-producer/references/compile.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:cd72a55e0f886d88ef25d23a153c75914001c041b6f9c7a06e9ff4102e21e2e0
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-producer/references/pack-and-publish.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:130294f50564589de7def3ce573d3cd80526fd3477d05cf2be318011e78c26b7
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apm-producer/references/primitives.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/apm-authoring
+  active_owner: netfabric/intelliforge/plugins/apm-authoring
+  content_hash: sha256:c94aa32c926e030c9f1e366a37c075ba2fdc0f2974259e201fc7424867d4a90f
+- kind: project-relative
+  target: agents
+  value: .agents/skills/create-skill
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agent-authoring
+  active_owner: netfabric/intelliforge/plugins/agent-authoring
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/create-skill/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agent-authoring
+  active_owner: netfabric/intelliforge/plugins/agent-authoring
+  content_hash: sha256:a340f4227c789b78a9da76ac8e831542a5dc3ccb3013fbee346b11db5784548b
+- kind: project-relative
+  target: agents
+  value: .agents/skills/create-skill/references/research-workflow.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agent-authoring
+  active_owner: netfabric/intelliforge/plugins/agent-authoring
+  content_hash: sha256:ad05a64d8bf6d133a1be2a0e8b789f5a2601ef6e3b00bd9e29c69d6ca3b60f65
+- kind: project-relative
+  target: agents
+  value: .agents/skills/create-skill/references/structure.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agent-authoring
+  active_owner: netfabric/intelliforge/plugins/agent-authoring
+  content_hash: sha256:47eddd4a10506bbc44982d46a705fd60618ab0fd909c1788f9df6b9ceb1e0aae
+- kind: project-relative
+  target: agents
+  value: .agents/skills/create-skill/references/writing-style.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelliforge/plugins/agent-authoring
+  active_owner: netfabric/intelliforge/plugins/agent-authoring
+  content_hash: sha256:63283a512f97aa588ef96af98228c105b32aee86de50865a92779c4a32fee106
