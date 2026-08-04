@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Intelligentium — NetFabric's AI Plugin Marketplace</title>
 <meta name="description" content="Intelligentium is NetFabric's APM marketplace of AI plugins: skills, agents, hooks, MCP servers, and tools, installable in one command.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://intelligentium.ai/">
+<link rel="ai-catalog" href="https://intelligentium.ai/.well-known/ai-catalog.json">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Intelligentium">
+<meta property="og:title" content="Intelligentium — NetFabric's AI Plugin Marketplace">
+<meta property="og:description" content="A curated marketplace of skills, agents, hooks, MCP servers, and tools — versioned, deterministic, and installable in one command via APM.">
+<meta property="og:url" content="https://intelligentium.ai/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Intelligentium — NetFabric's AI Plugin Marketplace">
+<meta name="twitter:description" content="A curated marketplace of skills, agents, hooks, MCP servers, and tools — versioned, deterministic, and installable in one command via APM.">
+
 <link rel="icon" href="data:,">
 <style>
   :root{
@@ -320,6 +333,33 @@
   footer a:hover{color:var(--text);}
   footer .links{display:flex; gap:20px; flex-wrap:wrap;}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Intelligentium",
+      "url": "https://intelligentium.ai/",
+      "description": "Intelligentium is NetFabric's APM marketplace of AI plugins: skills, agents, hooks, MCP servers, and tools, installable in one command.",
+      "publisher": { "@type": "Organization", "name": "NetFabric", "url": "https://github.com/NetFabric" }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Intelligentium plugin catalog",
+      "itemListElement": [
+        { "@type": "SoftwareSourceCode", "position": 1, "name": "math-foundations", "description": "Core abstract math skills for angles, trigonometry, vectors, and coordinate system conversions.", "keywords": "math, geometry, angles, trigonometry, vectors, coordinates", "codeRepository": "https://github.com/NetFabric/intelligentium/tree/main/plugins/math-foundations" },
+        { "@type": "SoftwareSourceCode", "position": 2, "name": "math-rotation", "description": "Abstract math skills for 3D rotation representations, quaternion algebra, and interpolation on manifolds.", "keywords": "math, rotation, quaternion, interpolation, orientation", "codeRepository": "https://github.com/NetFabric/intelligentium/tree/main/plugins/math-rotation" },
+        { "@type": "SoftwareSourceCode", "position": 3, "name": "math-geodesy", "description": "Abstract math skills for geodetic coordinates, reference ellipsoids, and datum transformations.", "keywords": "math, geodesy, ellipsoid, datum, coordinates", "codeRepository": "https://github.com/NetFabric/intelligentium/tree/main/plugins/math-geodesy" },
+        { "@type": "SoftwareSourceCode", "position": 4, "name": "dotnet", "description": "C# and .NET skills for modern language best practices and generic math over System.Numerics.", "keywords": "csharp, dotnet, generic-math, best-practices", "codeRepository": "https://github.com/NetFabric/intelligentium/tree/main/plugins/dotnet" },
+        { "@type": "SoftwareSourceCode", "position": 5, "name": "apm-authoring", "description": "Skills for authoring, consuming, and publishing APM packages, plus configuring apm-action CI workflows.", "keywords": "apm, skills, plugin, marketplace, authoring, ci", "codeRepository": "https://github.com/NetFabric/intelligentium/tree/main/plugins/apm-authoring" },
+        { "@type": "SoftwareSourceCode", "position": 6, "name": "agent-authoring", "description": "Skills for authoring AGENTS.md project-context files and SKILL.md agent skills.", "keywords": "agents-md, skill, authoring, documentation", "codeRepository": "https://github.com/NetFabric/intelligentium/tree/main/plugins/agent-authoring" },
+        { "@type": "SoftwareSourceCode", "position": 7, "name": "agentic-discovery", "description": "Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities.", "keywords": "ard, discovery, mcp, a2a, agents, catalog", "codeRepository": "https://github.com/NetFabric/intelligentium/tree/main/plugins/agentic-discovery" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="glow"></div>
