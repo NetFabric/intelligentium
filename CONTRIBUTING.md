@@ -1,6 +1,6 @@
-# Contributing to Intelliforge
+# Contributing to Intelligentium
 
-Intelliforge is an [APM](https://microsoft.github.io/apm/) marketplace: a collection of `plugins/<name>/` packages, each bundling one or more Copilot skills, published for install via `apm install <plugin>@intelliforge`.
+Intelligentium is an [APM](https://microsoft.github.io/apm/) marketplace: a collection of `plugins/<name>/` packages, each bundling one or more Copilot skills, published for install via `apm install <plugin>@intelligentium`.
 
 ## Prerequisites
 

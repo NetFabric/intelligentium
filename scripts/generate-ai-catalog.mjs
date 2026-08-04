@@ -9,7 +9,7 @@ import yaml from "js-yaml";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const REPO_OWNER = "NetFabric";
-const REPO_NAME = "intelliforge";
+const REPO_NAME = "intelligentium";
 const REPO_BRANCH = "main";
 const HOST_DOMAIN = "github.com";
 
@@ -112,7 +112,7 @@ function main() {
   const catalog = {
     specVersion: "1.0",
     host: {
-      displayName: "NetFabric Intelliforge",
+      displayName: "NetFabric Intelligentium",
       identifier: `did:web:${REPO_OWNER.toLowerCase()}.github.io:${REPO_NAME}`,
       documentationUrl: `https://github.com/${REPO_OWNER}/${REPO_NAME}`,
     },

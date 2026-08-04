@@ -1,14 +1,14 @@
-# Intelliforge
+# Intelligentium
 
-**Intelliforge** is the official NetFabric marketplace for AI plugins — a curated vault of intelligence modules you can install, combine, and run across your agents, workflows, and automation systems.
+**Intelligentium** is the official NetFabric marketplace for AI plugins — a curated vault of intelligence modules you can install, combine, and run across your agents, workflows, and automation systems.
 
-🌐 **Website:** [netfabric.github.io/intelliforge](https://netfabric.github.io/intelliforge/)
+🌐 **Website:** [netfabric.github.io/intelligentium](https://netfabric.github.io/intelligentium/)
 
 ---
 
 ## ✨ What’s Inside
 
-Intelliforge provides a growing ecosystem of AI‑ready plugins, including:
+Intelligentium provides a growing ecosystem of AI‑ready plugins, including:
 
 - **Skills** — reusable capabilities your agents can call  
 - **Agents** — autonomous or semi‑autonomous units  
@@ -24,10 +24,10 @@ composition, and integration straightforward.
 ## 🚀 Getting Started
 
 ### 1. Add the Marketplace  
-Register Intelliforge as a marketplace in [APM](https://microsoft.github.io/apm/):
+Register Intelligentium as a marketplace in [APM](https://microsoft.github.io/apm/):
 
 ```bash
-apm marketplace add netfabric/intelliforge
+apm marketplace add netfabric/intelligentium
 ```
 
 ### 2. Explore the Catalog
@@ -50,17 +50,17 @@ Each plugin ships with an APM manifest for deterministic installation and
 dependency management:
 
 ```bash
-apm install <plugin-name>@intelliforge
+apm install <plugin-name>@intelligentium
 ```
 
 ---
 
 ## 🔎 Agentic Resource Discovery (ARD)
 
-Intelliforge publishes an [ARD](https://github.com/agentic-resource-discovery/spec) v0.9 catalog so agents and registries can discover its plugins/skills programmatically:
+Intelligentium publishes an [ARD](https://github.com/agentic-resource-discovery/spec) v0.9 catalog so agents and registries can discover its plugins/skills programmatically:
 
 ```
-https://netfabric.github.io/intelliforge/.well-known/ai-catalog.json
+https://netfabric.github.io/intelligentium/.well-known/ai-catalog.json
 ```
 
 The catalog is generated from `apm.yml` via `npm run generate:ard` (see [scripts/generate-ai-catalog.mjs](scripts/generate-ai-catalog.mjs)) and kept in sync by CI on every change to `apm.yml` or a plugin's `SKILL.md`.
@@ -69,7 +69,7 @@ The catalog is generated from `apm.yml` via `npm run generate:ard` (see [scripts
 
 ## 🧩 Plugin Structure
 
-Every Intelliforge module adheres to a consistent layout, enabling:
+Every Intelligentium module adheres to a consistent layout, enabling:
 
 - predictable installation  
 - clean dependency graphs  

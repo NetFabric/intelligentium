@@ -1,8 +1,8 @@
 {
-  "name": "intelliforge",
+  "name": "intelligentium",
   "private": true,
   "version": "0.1.0",
-  "description": "Build tooling for the NetFabric Intelliforge APM marketplace.",
+  "description": "Build tooling for the NetFabric Intelligentium APM marketplace.",
   "type": "module",
   "scripts": {
     "generate:ard": "node scripts/generate-ai-catalog.mjs"

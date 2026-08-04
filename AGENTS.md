@@ -1,6 +1,6 @@
 ## Project overview
 
-Intelliforge is NetFabric's [APM](https://microsoft.github.io/apm/) marketplace: `plugins/<name>/` packages, each bundling one or more Copilot skills (`SKILL.md` + `references/`), installable via `apm install <plugin>@intelliforge`. Root [apm.yml](apm.yml) lists every package under `marketplace.packages`. Master skill copies live in `.agents/skills/`; plugins publish themed subsets — keep both in sync.
+Intelligentium is NetFabric's [APM](https://microsoft.github.io/apm/) marketplace: `plugins/<name>/` packages, each bundling one or more Copilot skills (`SKILL.md` + `references/`), installable via `apm install <plugin>@intelligentium`. Root [apm.yml](apm.yml) lists every package under `marketplace.packages`. Master skill copies live in `.agents/skills/`; plugins publish themed subsets — keep both in sync.
 
 ## Setup commands
 
