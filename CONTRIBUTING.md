@@ -48,6 +48,10 @@ npm run generate:ard      # rebuilds .well-known/ai-catalog.json from apm.yml
 
 Commit the regenerated `.claude-plugin/marketplace.json` and `.well-known/ai-catalog.json` — both are consumed directly from the repo (by `apm marketplace add` and ARD crawlers respectively), not built at install time.
 
+## Releasing a Plugin
+
+Bump the package's `version` in both root [apm.yml](apm.yml) and `plugins/<name>/apm.yml`. Once merged to `main`, `.github/workflows/plugin-releases.yml` tags the commit (`<name>-v<version>`, per that package's `tag_pattern`) and creates a GitHub Release listing the commits under `plugins/<name>` since its previous release. No manual tagging needed.
+
 ## Pull Requests
 
 - Keep the title a short, imperative summary (e.g. "Add math-foundations plugin").
