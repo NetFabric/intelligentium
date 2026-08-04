@@ -250,12 +250,9 @@
             "displayName": "dotnet-agent-guardrails",
             "type": "application/ai-skill+md",
             "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/dotnet/.apm/skills/dotnet-agent-guardrails/SKILL.md",
-            "description": "Deterministic guardrails that make .NET/C# repos safe for AI code agents: .editorconfig + dotnet format, TreatWarningsAsErrors, custom Roslyn analyzer projects for architecture rules, full test suites as the behavioral contract, Aspire as the agent-native orchestration/observability layer, and Copilot/Claude Code hooks as the governance layer. USE FOR: writing AGENTS.md/CLAUDE.md rules for a .NET repo used by code agents; defining what 'done' means for agent-generated .NET changes; wiring a Roslyn analyzer project via ProjectReference OutputItemType=Analyzer; enforcing dotnet format exit code 0 and TreatWarningsAsErrors; using Aspire telemetry/traces so agents reason about running systems, not just source; writing hooks that validate or block agent actions. DO NOT USE FOR: general AGENTS.md authoring for non-.NET repos (agents-md); C# style rules (csharp-best-practices); non-agent solution scaffolding (dotnet-solution-setup); BenchmarkDotNet usage (dotnet-benchmarking).",
+            "description": "Deterministic guardrails for defining the review/validation process in .NET/C# development agents and agent squads: .editorconfig + dotnet format, TreatWarningsAsErrors, custom Roslyn analyzers, full test suites, Aspire telemetry, and Copilot/Claude Code hooks as the gates a change must pass. USE FOR: defining what 'done' means and which deterministic checks gate an agent-generated .NET change before merge, for a single agent or a squad of agents/subagents sharing a repo. DO NOT USE FOR: general AGENTS.md authoring for non-.NET repos (agents-md); C# style rules (csharp-best-practices); non-agent solution scaffolding (dotnet-solution-setup); BenchmarkDotNet usage (dotnet-benchmarking).",
             "representativeQueries": [
-              "writing AGENTS.md/CLAUDE.md rules for a .NET repo used by code agents",
-              "defining what 'done' means for agent-generated .NET changes",
-              "wiring a Roslyn analyzer project via ProjectReference OutputItemType=Analyzer",
-              "enforcing dotnet format exit code 0 and TreatWarningsAsErrors"
+              "defining what 'done' means and which deterministic checks gate an agent-generated .NET change before merge, for a single agent or a squad of agents/subagents sharing a repo"
             ]
           },
           {
