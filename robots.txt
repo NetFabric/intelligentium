@@ -1,0 +1,1 @@
+Agentmap: https://netfabric.github.io/intelliforge/.well-known/ai-catalog.json

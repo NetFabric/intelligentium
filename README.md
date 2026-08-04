@@ -28,9 +28,20 @@ Register Intelliforge as a marketplace in [APM](https://microsoft.github.io/apm/
 apm marketplace add netfabric/intelliforge
 ```
 
-### 2. Explore the Catalog  
+### 2. Explore the Catalog
+
 Browse the `plugins` folder to discover modules that extend your agents,
-workflows, or automation pipelines.  
+workflows, or automation pipelines.
+
+| Plugin | Description |
+|--------|-------------|
+| [math-foundations](plugins/math-foundations) | Core abstract math skills for angles, trigonometry, vectors, and coordinate system conversions |
+| [math-rotation](plugins/math-rotation) | Abstract math skills for 3D rotation representations, quaternion algebra, and interpolation on manifolds |
+| [math-geodesy](plugins/math-geodesy) | Abstract math skills for geodetic coordinates, reference ellipsoids, and datum transformations |
+| [dotnet](plugins/dotnet) | C# and .NET skills for modern language best practices and generic math over `System.Numerics` |
+| [apm-authoring](plugins/apm-authoring) | Skills for authoring, consuming, and publishing APM packages, plus configuring apm-action CI workflows |
+| [agent-authoring](plugins/agent-authoring) | Skills for authoring AGENTS.md project-context files and SKILL.md agent skills |
+| [agentic-discovery](plugins/agentic-discovery) | Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities |
 
 ### 3. Install Plugins via APM  
 Each plugin ships with an APM manifest for deterministic installation and
@@ -39,6 +50,18 @@ dependency management:
 ```bash
 apm install <plugin-name>@intelliforge
 ```
+
+---
+
+## 🔎 Agentic Resource Discovery (ARD)
+
+Intelliforge publishes an [ARD](https://github.com/agentic-resource-discovery/spec) v0.9 catalog so agents and registries can discover its plugins/skills programmatically:
+
+```
+https://netfabric.github.io/intelliforge/.well-known/ai-catalog.json
+```
+
+The catalog is generated from `apm.yml` via `npm run generate:ard` (see [scripts/generate-ai-catalog.mjs](scripts/generate-ai-catalog.mjs)) and kept in sync by CI on every change to `apm.yml` or a plugin's `SKILL.md`.
 
 ---
 
@@ -57,5 +80,6 @@ This consistency ensures that plugins remain interoperable and easy to automate.
 ## 🛠 Contributing
 
 Contributions are welcome — new skills, agents, hooks, MCP servers, and tools
-help expand the ecosystem. Follow the existing structure to ensure compatibility
-with APM and the broader Intelliforge marketplace.
+help expand the ecosystem. See [CONTRIBUTING.md](CONTRIBUTING.md) for the
+repository layout and the steps to add a skill or plugin. Coding agents working
+in this repo should also read [AGENTS.md](AGENTS.md).

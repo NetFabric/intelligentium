@@ -1,0 +1,13 @@
+{
+  "name": "intelliforge",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Build tooling for the NetFabric Intelliforge APM marketplace.",
+  "type": "module",
+  "scripts": {
+    "generate:ard": "node scripts/generate-ai-catalog.mjs"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

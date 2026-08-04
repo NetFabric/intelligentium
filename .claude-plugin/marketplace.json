@@ -1,0 +1,101 @@
+{
+  "name": "intelliforge",
+  "owner": {
+    "name": "Netfabric",
+    "url": "https://github.com/NetFabric"
+  },
+  "plugins": [
+    {
+      "name": "math-foundations",
+      "description": "Core abstract math skills for angles, trigonometry, vectors, and coordinate system conversions.",
+      "version": "0.1.0",
+      "tags": [
+        "math",
+        "geometry",
+        "angles",
+        "trigonometry",
+        "vectors",
+        "coordinates"
+      ],
+      "source": "./plugins/math-foundations"
+    },
+    {
+      "name": "math-rotation",
+      "description": "Abstract math skills for 3D rotation representations, quaternion algebra, and interpolation on manifolds.",
+      "version": "0.1.0",
+      "tags": [
+        "math",
+        "rotation",
+        "quaternion",
+        "interpolation",
+        "orientation"
+      ],
+      "source": "./plugins/math-rotation"
+    },
+    {
+      "name": "math-geodesy",
+      "description": "Abstract math skills for geodetic coordinates, reference ellipsoids, and datum transformations.",
+      "version": "0.1.0",
+      "tags": [
+        "math",
+        "geodesy",
+        "ellipsoid",
+        "datum",
+        "coordinates"
+      ],
+      "source": "./plugins/math-geodesy"
+    },
+    {
+      "name": "dotnet",
+      "description": "C# and .NET skills for modern language best practices and generic math over System.Numerics.",
+      "version": "0.1.0",
+      "tags": [
+        "csharp",
+        "dotnet",
+        "generic-math",
+        "best-practices"
+      ],
+      "source": "./plugins/dotnet"
+    },
+    {
+      "name": "apm-authoring",
+      "description": "Skills for authoring, consuming, and publishing APM packages, plus configuring apm-action CI workflows.",
+      "version": "0.1.0",
+      "tags": [
+        "apm",
+        "skills",
+        "plugin",
+        "marketplace",
+        "authoring",
+        "ci"
+      ],
+      "source": "./plugins/apm-authoring"
+    },
+    {
+      "name": "agent-authoring",
+      "description": "Skills for authoring AGENTS.md project-context files and SKILL.md agent skills.",
+      "version": "0.1.0",
+      "tags": [
+        "agents-md",
+        "skill",
+        "authoring",
+        "documentation"
+      ],
+      "source": "./plugins/agent-authoring"
+    },
+    {
+      "name": "agentic-discovery",
+      "description": "Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities.",
+      "version": "0.1.0",
+      "tags": [
+        "ard",
+        "discovery",
+        "mcp",
+        "a2a",
+        "agents",
+        "catalog"
+      ],
+      "source": "./plugins/agentic-discovery"
+    }
+  ]
+}

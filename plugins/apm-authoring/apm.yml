@@ -1,0 +1,24 @@
+name: apm-authoring
+version: 0.1.0
+description: Skills for authoring, consuming, and publishing APM packages, plus configuring apm-action CI workflows.
+author: NetFabric
+license: MIT
+keywords: [apm, skills, plugin, marketplace, authoring, ci]
+# Which agent platforms to deploy to.
+# Resolution order: --target flag > this field > auto-detect from filesystem.
+# Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf
+targets:
+- copilot
+- claude
+- cursor
+- codex
+- gemini
+- windsurf
+- kiro
+dependencies:
+  apm: []
+  mcp: []
+includes: auto
+devDependencies:
+  apm: []
+scripts: {}

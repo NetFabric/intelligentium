@@ -1,0 +1,70 @@
+name: intelliforge
+version: 0.1.0
+description: NetFabric's marketplace of AI plugins - skills, agents, hooks, MCP servers, and tools installable via APM.
+license: MIT
+marketplace:
+  owner:
+    name: Netfabric
+    url: https://github.com/NetFabric
+
+  # Default tag pattern used to resolve version ranges for each package.
+  build:
+    tagPattern: "v{version}"
+
+  # Output targets (map form). 'claude' is enabled by default;
+  # uncomment 'codex' below to publish the Codex artifact too.
+  # Each output writes to its profile default path; add 'path:'
+  # under a key to override.
+  outputs:
+    claude: {}
+    # codex: {}
+    #
+    # Note: enabling codex requires every package below to declare
+    # 'category:' (e.g. category: Productivity).
+
+  # CI tip: build one or all formats with a machine-readable manifest:
+  #   apm pack --marketplace=claude,codex --json | jq -r '.marketplace.outputs[].path'
+
+  packages:
+    - name: math-foundations
+      description: Core abstract math skills for angles, trigonometry, vectors, and coordinate system conversions.
+      source: ./plugins/math-foundations
+      version: 0.1.0
+      tags: [math, geometry, angles, trigonometry, vectors, coordinates]
+
+    - name: math-rotation
+      description: Abstract math skills for 3D rotation representations, quaternion algebra, and interpolation on manifolds.
+      source: ./plugins/math-rotation
+      version: 0.1.0
+      tags: [math, rotation, quaternion, interpolation, orientation]
+
+    - name: math-geodesy
+      description: Abstract math skills for geodetic coordinates, reference ellipsoids, and datum transformations.
+      source: ./plugins/math-geodesy
+      version: 0.1.0
+      tags: [math, geodesy, ellipsoid, datum, coordinates]
+
+    - name: dotnet
+      description: C# and .NET skills for modern language best practices and generic math over System.Numerics.
+      source: ./plugins/dotnet
+      version: 0.1.0
+      tags: [csharp, dotnet, generic-math, best-practices]
+
+    - name: apm-authoring
+      description: Skills for authoring, consuming, and publishing APM packages, plus configuring apm-action CI workflows.
+      source: ./plugins/apm-authoring
+      version: 0.1.0
+      tags: [apm, skills, plugin, marketplace, authoring, ci]
+
+    - name: agent-authoring
+      description: Skills for authoring AGENTS.md project-context files and SKILL.md agent skills.
+      source: ./plugins/agent-authoring
+      version: 0.1.0
+      tags: [agents-md, skill, authoring, documentation]
+
+    - name: agentic-discovery
+      description: Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities.
+      source: ./plugins/agentic-discovery
+      version: 0.1.0
+      tags: [ard, discovery, mcp, a2a, agents, catalog]
+

@@ -1,0 +1,31 @@
+name: Update ARD catalog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - apm.yml
+      - "plugins/**/SKILL.md"
+      - scripts/generate-ai-catalog.mjs
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install --no-fund --no-audit
+      - run: npm run generate:ard
+      - name: Commit updated catalog
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .well-known/ai-catalog.json
+          git diff --cached --quiet || git commit -m "chore: regenerate ai-catalog.json [skip ci]"
+          git push

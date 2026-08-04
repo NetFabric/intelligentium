@@ -1,0 +1,24 @@
+name: math-geodesy
+version: 0.1.0
+description: Abstract math skills for geodetic coordinates, reference ellipsoids, and datum transformations.
+author: NetFabric
+license: MIT
+keywords: [math, geodesy, ellipsoid, datum, coordinates, wgs84]
+# Which agent platforms to deploy to.
+# Resolution order: --target flag > this field > auto-detect from filesystem.
+# Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf
+targets:
+- copilot
+- claude
+- cursor
+- codex
+- gemini
+- windsurf
+- kiro
+dependencies:
+  apm: []
+  mcp: []
+includes: auto
+devDependencies:
+  apm: []
+scripts: {}

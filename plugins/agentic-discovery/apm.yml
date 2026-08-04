@@ -1,0 +1,24 @@
+name: agentic-discovery
+version: 0.1.0
+description: Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities.
+author: NetFabric
+license: MIT
+keywords: [ard, discovery, mcp, a2a, agents, catalog]
+# Which agent platforms to deploy to.
+# Resolution order: --target flag > this field > auto-detect from filesystem.
+# Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf
+targets:
+- copilot
+- claude
+- cursor
+- codex
+- gemini
+- windsurf
+- kiro
+dependencies:
+  apm: []
+  mcp: []
+includes: auto
+devDependencies:
+  apm: []
+scripts: {}

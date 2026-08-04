@@ -1,0 +1,357 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "NetFabric Intelliforge",
+    "identifier": "did:web:netfabric.github.io:intelliforge",
+    "documentationUrl": "https://github.com/NetFabric/intelliforge"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:github.com:netfabric:math-foundations",
+      "displayName": "math-foundations",
+      "description": "Core abstract math skills for angles, trigonometry, vectors, and coordinate system conversions.",
+      "tags": [
+        "math",
+        "geometry",
+        "angles",
+        "trigonometry",
+        "vectors",
+        "coordinates"
+      ],
+      "version": "0.1.0",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "urn:air:github.com:netfabric:math-foundations:angles-and-circular-arithmetic",
+            "displayName": "angles-and-circular-arithmetic",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/math-foundations/.apm/skills/angles-and-circular-arithmetic/SKILL.md",
+            "description": "Abstract math for angle measurement, unit systems, and circular arithmetic. USE FOR: implementing angle types; converting between degrees/radians/gradians/revolutions; reducing angles to canonical range [0, Full); computing reference angles and quadrants; implementing safe modular arithmetic with negative inputs; angle addition and subtraction; classifying angles by sign and size. DO NOT USE FOR: trigonometric functions (use trigonometric-functions); coordinate conversions (use coordinate-system-conversions); interpolation (use interpolation-on-manifolds).",
+            "representativeQueries": [
+              "implementing angle types",
+              "converting between degrees/radians/gradians/revolutions",
+              "reducing angles to canonical range [0, Full)",
+              "computing reference angles and quadrants"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:math-foundations:coordinate-system-conversions",
+            "displayName": "coordinate-system-conversions",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/math-foundations/.apm/skills/coordinate-system-conversions/SKILL.md",
+            "description": "Abstract math for converting between 2D and 3D coordinate systems. USE FOR: Cartesian to/from polar (r, θ); Cartesian to/from spherical (r, azimuth, polar/colatitude); azimuth vs. elevation vs. colatitude conventions; canonical range enforcement after conversion; precision near the origin and poles; choosing azimuth reference direction. DO NOT USE FOR: angle unit conversions (use angles-and-circular-arithmetic); geodetic (lat/lon) coordinates (use geodetic-coordinate-bounds); rotation representations (use 3d-rotation-theory).",
+            "representativeQueries": [
+              "Cartesian to/from polar (r, θ)",
+              "Cartesian to/from spherical (r, azimuth, polar/colatitude)",
+              "azimuth vs. elevation vs. colatitude conventions",
+              "canonical range enforcement after conversion"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:math-foundations:trigonometric-functions",
+            "displayName": "trigonometric-functions",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/math-foundations/.apm/skills/trigonometric-functions/SKILL.md",
+            "description": "Abstract math for trigonometric functions: definitions, domains, ranges, key identities, and inverse functions. USE FOR: implementing sin/cos/tan/cot/sec/csc; implementing arcsin/arccos/arctan/atan2/acot/asec/acsc; validating input domains for inverse trig; applying Pythagorean and angle-sum identities; choosing atan vs atan2; precision near domain boundaries. DO NOT USE FOR: angle unit conversions (use angles-and-circular-arithmetic); coordinate system conversions (use coordinate-system-conversions); rotation representations (use 3d-rotation-theory).",
+            "representativeQueries": [
+              "implementing sin/cos/tan/cot/sec/csc",
+              "implementing arcsin/arccos/arctan/atan2/acot/asec/acsc",
+              "validating input domains for inverse trig",
+              "applying Pythagorean and angle-sum identities"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:math-foundations:vector-algebra",
+            "displayName": "vector-algebra",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/math-foundations/.apm/skills/vector-algebra/SKILL.md",
+            "description": "Abstract math for vector algebra in 2D and 3D Euclidean space. USE FOR: implementing vector operations (add, subtract, negate, scalar multiply/divide); dot product and geometric interpretation; 3D cross product; 2D pseudo-cross product (scalar z-component); vector magnitude and normalization; angle between two vectors; linear interpolation; checking zero/unit/finite vectors. 2D is a special case of 3D with z=0. DO NOT USE FOR: quaternion operations (use quaternion-algebra); rotation representations (use 3d-rotation-theory); coordinate system conversions (use coordinate-system-conversions).",
+            "representativeQueries": [
+              "implementing vector operations (add, subtract, negate, scalar multiply/divide)",
+              "dot product and geometric interpretation",
+              "3D cross product",
+              "2D pseudo-cross product (scalar z-component)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "urn:air:github.com:netfabric:math-rotation",
+      "displayName": "math-rotation",
+      "description": "Abstract math skills for 3D rotation representations, quaternion algebra, and interpolation on manifolds.",
+      "tags": [
+        "math",
+        "rotation",
+        "quaternion",
+        "interpolation",
+        "orientation"
+      ],
+      "version": "0.1.0",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "urn:air:github.com:netfabric:math-rotation:3d-rotation-theory",
+            "displayName": "3d-rotation-theory",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/math-rotation/.apm/skills/3d-rotation-theory/SKILL.md",
+            "description": "Abstract math for 3D rotation representations and conversions. USE FOR: understanding axis-angle representation; Euler angles (yaw/pitch/roll, convention choices); rotation matrices (SO(3)); quaternion-based rotation; converting between representations; identifying and avoiding gimbal lock; composing rotations; half-angle formula; right-hand rule. DO NOT USE FOR: quaternion arithmetic details (use quaternion-algebra); slerp/lerp interpolation (use interpolation-on-manifolds); coordinate system definitions (use coordinate-system-conversions).",
+            "representativeQueries": [
+              "understanding axis-angle representation",
+              "Euler angles (yaw/pitch/roll, convention choices)",
+              "rotation matrices (SO(3))",
+              "quaternion-based rotation"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:math-rotation:interpolation-on-manifolds",
+            "displayName": "interpolation-on-manifolds",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/math-rotation/.apm/skills/interpolation-on-manifolds/SKILL.md",
+            "description": "Abstract math for interpolating angles, vectors, and quaternions on curved manifolds. USE FOR: implementing Lerp (linear interpolation) for vectors; Nlerp (normalized lerp) for directions; Slerp (spherical linear interpolation) for quaternions and unit vectors; shortest-path sign flip when dot product is negative; choosing between Lerp/Nlerp/Slerp; angular lerp with wrap-around. DO NOT USE FOR: quaternion arithmetic (use quaternion-algebra); rotation representation conversions (use 3d-rotation-theory); angle unit conversions (use angles-and-circular-arithmetic).",
+            "representativeQueries": [
+              "implementing Lerp (linear interpolation) for vectors",
+              "Nlerp (normalized lerp) for directions",
+              "Slerp (spherical linear interpolation) for quaternions and unit vectors",
+              "shortest-path sign flip when dot product is negative"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:math-rotation:quaternion-algebra",
+            "displayName": "quaternion-algebra",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/math-rotation/.apm/skills/quaternion-algebra/SKILL.md",
+            "description": "Abstract math for quaternion algebra (hypercomplex numbers ℍ). USE FOR: implementing quaternion multiplication (Hamilton product, non-commutative); conjugate, norm, and inverse; unit quaternions on S³ as double cover of SO(3); rotating 3D vectors with quaternions; understanding why q and −q represent the same rotation; normalizing after operations; constructing rotation quaternions from axis-angle. DO NOT USE FOR: converting between rotation representations (use 3d-rotation-theory); slerp/lerp interpolation (use interpolation-on-manifolds); basic vector cross/dot products (use vector-algebra).",
+            "representativeQueries": [
+              "implementing quaternion multiplication (Hamilton product, non-commutative)",
+              "conjugate, norm, and inverse",
+              "unit quaternions on S³ as double cover of SO(3)",
+              "rotating 3D vectors with quaternions"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "urn:air:github.com:netfabric:math-geodesy",
+      "displayName": "math-geodesy",
+      "description": "Abstract math skills for geodetic coordinates, reference ellipsoids, and datum transformations.",
+      "tags": [
+        "math",
+        "geodesy",
+        "ellipsoid",
+        "datum",
+        "coordinates"
+      ],
+      "version": "0.1.0",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "urn:air:github.com:netfabric:math-geodesy:geodetic-coordinate-bounds",
+            "displayName": "geodetic-coordinate-bounds",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/math-geodesy/.apm/skills/geodetic-coordinate-bounds/SKILL.md",
+            "description": "Abstract math for geodetic coordinate constraints: valid ranges, wrap semantics, and coordinate type distinctions. USE FOR: validating latitude ∈ [−90°, +90°] and longitude ∈ (−180°, +180°]; understanding why latitude is clamped but longitude wraps; difference between geodetic and geocentric latitude; ellipsoidal height vs. orthometric (MSL) height; antimeridian handling; normalizing out-of-range coordinates. DO NOT USE FOR: reference ellipsoid parameters (use reference-ellipsoids); datum transformations (use helmert-datum-transformation); coordinate system conversions (use coordinate-system-conversions).",
+            "representativeQueries": [
+              "validating latitude ∈ [−90°, +90°] and longitude ∈ (−180°, +180°]",
+              "understanding why latitude is clamped but longitude wraps",
+              "difference between geodetic and geocentric latitude",
+              "ellipsoidal height vs. orthometric (MSL) height"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:math-geodesy:helmert-datum-transformation",
+            "displayName": "helmert-datum-transformation",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/math-geodesy/.apm/skills/helmert-datum-transformation/SKILL.md",
+            "description": "Abstract math for the 7-parameter (Helmert) similarity transformation used to convert coordinates between geodetic datums. USE FOR: implementing datum-to-datum 3D coordinate transformations; understanding the 7 Helmert parameters (3 translations, 3 rotations, 1 scale); applying the linearized vs. full rotation matrix form; composing transformations; transforming to/from WGS84. DO NOT USE FOR: geodetic coordinate validation (use geodetic-coordinate-bounds); reference ellipsoid parameters (use reference-ellipsoids); map projections.",
+            "representativeQueries": [
+              "implementing datum-to-datum 3D coordinate transformations",
+              "understanding the 7 Helmert parameters (3 translations, 3 rotations, 1 scale)",
+              "applying the linearized vs. full rotation matrix form",
+              "composing transformations"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:math-geodesy:reference-ellipsoids",
+            "displayName": "reference-ellipsoids",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/math-geodesy/.apm/skills/reference-ellipsoids/SKILL.md",
+            "description": "Abstract math for reference ellipsoids used in geodesy. USE FOR: computing semi-minor axis from flattening; eccentricity and eccentricity squared; first and second eccentricity; arithmetic mean radius; radii of curvature in the meridian and prime vertical; ellipsoid surface area; ellipsoid volume; understanding WGS84/GRS80 parameters; implementing Ellipsoid<T> types. DO NOT USE FOR: geodetic coordinate bounds (use geodetic-coordinate-bounds); datum transformations (use helmert-datum-transformation); map projections.",
+            "representativeQueries": [
+              "computing semi-minor axis from flattening",
+              "eccentricity and eccentricity squared",
+              "first and second eccentricity",
+              "arithmetic mean radius"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "urn:air:github.com:netfabric:dotnet",
+      "displayName": "dotnet",
+      "description": "C# and .NET skills for modern language best practices and generic math over System.Numerics.",
+      "tags": [
+        "csharp",
+        "dotnet",
+        "generic-math",
+        "best-practices"
+      ],
+      "version": "0.1.0",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "urn:air:github.com:netfabric:dotnet:csharp-best-practices",
+            "displayName": "csharp-best-practices",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/dotnet/.apm/skills/csharp-best-practices/SKILL.md",
+            "description": "Modern .NET and C# best practices for code quality, performance, and correctness. USE FOR: choosing struct/class/record/readonly-record-struct; nullable reference types; pattern matching; primary constructors; collection expressions; required members; init-only properties; file-scoped namespaces; global usings; async/await patterns; ConfigureAwait; ValueTask vs Task; CancellationToken propagation; IAsyncEnumerable; Span<T>/Memory<T> usage; avoiding boxing; readonly struct; ArrayPool<T>; FrozenDictionary/FrozenSet; LINQ vs loops in hot paths; ArgumentNullException.ThrowIfNull; ThrowIfNegative; ThrowIfZero; IReadOnlyList return types; error handling patterns; GeneratedRegex; LoggerMessage; source generators for regex and logging. DO NOT USE FOR: generic math interfaces (use dotnet-generic-math); ASP.NET Core middleware; EF Core modeling.",
+            "representativeQueries": [
+              "choosing struct/class/record/readonly-record-struct",
+              "nullable reference types",
+              "pattern matching",
+              "primary constructors"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:dotnet:dotnet-generic-math",
+            "displayName": "dotnet-generic-math",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/dotnet/.apm/skills/dotnet-generic-math/SKILL.md",
+            "description": "C# 11+ generic math with static abstract interface members in System.Numerics. USE FOR: writing generic numeric algorithms; constraining type parameters to INumber<T>/IFloatingPoint<T>/ITrigonometricFunctions<T>; implementing custom numeric types with operator overloads; defining static abstract interfaces (IAngleUnits pattern); CreateChecked/Saturating/Truncating cross-type conversions; AdditiveIdentity/MultiplicativeIdentity; singleton bridge pattern for static abstract at runtime; ISpanFormattable/ISpanParsable; generic Sum/Average/Lerp methods; Half/float/double/decimal compatibility. DO NOT USE FOR: Unity math; pre-.NET 7 System.Math/MathF workarounds; Python/JavaScript numerics.",
+            "representativeQueries": [
+              "writing generic numeric algorithms",
+              "constraining type parameters to INumber<T>/IFloatingPoint<T>/ITrigonometricFunctions<T>",
+              "implementing custom numeric types with operator overloads",
+              "defining static abstract interfaces (IAngleUnits pattern)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "urn:air:github.com:netfabric:apm-authoring",
+      "displayName": "apm-authoring",
+      "description": "Skills for authoring, consuming, and publishing APM packages, plus configuring apm-action CI workflows.",
+      "tags": [
+        "apm",
+        "skills",
+        "plugin",
+        "marketplace",
+        "authoring",
+        "ci"
+      ],
+      "version": "0.1.0",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "urn:air:github.com:netfabric:apm-authoring:apm-actions",
+            "displayName": "apm-actions",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/apm-authoring/.apm/skills/apm-actions/SKILL.md",
+            "description": "Configure and use the microsoft/apm-action GitHub Action for CI/CD workflows. Use when: writing workflows that install/pack/restore APM agent primitives; install mode (apm install from apm.yml); isolated mode (inline dependencies, no apm.yml); setup-only mode; update mode (refresh branch/tag refs, apm update --yes); pack mode (.tar.gz bundles); bundle-format apm vs plugin; restore mode (bundle:, apm unpack); multi-bundle restore (bundles-file); release mode (tag-triggered publish pipeline); cross-job artifact workflows; apm-action inputs/outputs; audit-report SARIF security scanning; private repo / cross-org authentication (GITHUB_APM_PAT); marketplace artifact publishing from CI; troubleshooting apm-action mutual-exclusivity errors. DO NOT USE FOR: local apm CLI usage as a consumer (use apm-consumer); authoring/publishing packages, apm.yml marketplace block, plugin.json (use apm-producer).",
+            "representativeQueries": [
+              "local apm CLI usage as a consumer (use apm-consumer)",
+              "authoring/publishing packages, apm.yml marketplace block, plugin.json (use apm-producer)"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:apm-authoring:apm-consumer",
+            "displayName": "apm-consumer",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/apm-authoring/.apm/skills/apm-consumer/SKILL.md",
+            "description": "Manage APM packages as a consumer: install, update, remove agent context (skills, prompts, agents, instructions, MCP/LSP servers). Use when: apm init; apm install packages; apm update / outdated; apm uninstall / prune; private or org packages; local bundles; authentication (GITHUB_APM_PAT); apm run scripts; apm audit; drift detection; governance ramp; apm doctor; troubleshooting install failures; managing apm.yml dependencies; lockfile (apm.lock.yaml) semantics; MCP server wiring; LSP server config. Covers: targets (copilot, claude, cursor, codex, gemini, windsurf, kiro), harness auto-detection, what to commit. DO NOT USE FOR: authoring or publishing packages (use apm-producer); writing apm-policy.yml.",
+            "representativeQueries": [
+              "authoring or publishing packages (use apm-producer)",
+              "writing apm-policy.yml"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:apm-authoring:apm-producer",
+            "displayName": "apm-producer",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/apm-authoring/.apm/skills/apm-producer/SKILL.md",
+            "description": "Author and publish APM packages: create primitives, compile, pack, and distribute. Use when: apm plugin init; authoring under .apm/ (skills, prompts, agents, instructions, hooks, commands); SKILL.md authoring; .prompt.md; .agent.md; .instructions.md frontmatter; apm compile strategies (distributed vs single-file); apm preview; apm view; apm pack bundles; apm publish; apm marketplace init / add / update; plugin.json; marketplace block in apm.yml; apm lifecycle; package-relative links; versioning; releasing from CI; dev-only primitives; devDependencies. Covers: .apm/ layout, primitive-to-target compatibility matrix, compilation placement, bundle format, marketplace.json. DO NOT USE FOR: installing packages from others (use apm-consumer); org-wide policy enforcement (apm-policy.yml).",
+            "representativeQueries": [
+              "installing packages from others (use apm-consumer)",
+              "org-wide policy enforcement (apm-policy.yml)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "urn:air:github.com:netfabric:agent-authoring",
+      "displayName": "agent-authoring",
+      "description": "Skills for authoring AGENTS.md project-context files and SKILL.md agent skills.",
+      "tags": [
+        "agents-md",
+        "skill",
+        "authoring",
+        "documentation"
+      ],
+      "version": "0.1.0",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:agents-md",
+            "displayName": "agents-md",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/agent-authoring/.apm/skills/agents-md/SKILL.md",
+            "description": "Author and maintain AGENTS.md files — the open, tool-agnostic format for giving coding agents project context. Use when: creating AGENTS.md; writing an agent instructions file; root or nested AGENTS.md for monorepos; migrating CLAUDE.md, AGENT.md, .cursor/rules, or copilot-instructions.md to AGENTS.md; greenfield project setup before code exists; brownfield onboarding for an existing codebase; documenting build/test/lint commands, code style, PR/commit conventions, and security considerations for agents; AGENTS.md discovery and precedence rules. Works for any language, framework, or project size. DO NOT USE FOR: authoring SKILL.md skill files (use create-skill); APM package/plugin authoring (use apm-producer); language-specific style rules (use language skills e.g. csharp-best-practices).",
+            "representativeQueries": [
+              "authoring SKILL.md skill files (use create-skill)",
+              "APM package/plugin authoring (use apm-producer)",
+              "language-specific style rules (use language skills e.g. csharp-best-practices)"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:create-skill",
+            "displayName": "create-skill",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/agent-authoring/.apm/skills/create-skill/SKILL.md",
+            "description": "Create or update VS Code Copilot agent skills (SKILL.md + reference files). Use when: authoring a new skill from scratch, improving or restructuring an existing skill, deciding how to split content across files, writing skill frontmatter, choosing trigger phrases for the description field, organizing reference files. Covers skill architecture, compact writing rules, frontmatter constraints, and research workflow via context7/microsoftdocs MCPs. DO NOT USE FOR: general coding tasks, VS Code extension development, non-skill documentation.",
+            "representativeQueries": [
+              "general coding tasks, VS Code extension development, non-skill documentation"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "urn:air:github.com:netfabric:agentic-discovery",
+      "displayName": "agentic-discovery",
+      "description": "Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities.",
+      "tags": [
+        "ard",
+        "discovery",
+        "mcp",
+        "a2a",
+        "agents",
+        "catalog"
+      ],
+      "version": "0.1.0",
+      "type": "application/ai-skill+md",
+      "url": "https://raw.githubusercontent.com/NetFabric/intelliforge/main/plugins/agentic-discovery/.apm/skills/agentic-resource-discovery/SKILL.md",
+      "representativeQueries": [
+        "creating ai-catalog.json manifests",
+        "catalog entry schema",
+        "URN identifier format (urn:air:<publisher>:<namespace>:<name>)",
+        "hosting at /.well-known/ai-catalog.json"
+      ]
+    }
+  ]
+}
