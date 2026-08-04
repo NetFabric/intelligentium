@@ -47,8 +47,8 @@
     },
     {
       "name": "dotnet",
-      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).",
-      "version": "0.6.0",
+      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), file-based apps (dotnet run file.cs, colon directives), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).",
+      "version": "0.7.0",
       "tags": [
         "csharp",
         "dotnet",
@@ -62,7 +62,8 @@
         "sourcelink",
         "code-agents",
         "aspire",
-        "hooks"
+        "hooks",
+        "file-based-apps"
       ],
       "source": "./plugins/dotnet"
     },

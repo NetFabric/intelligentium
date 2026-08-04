@@ -33,6 +33,18 @@
 - Exclusions prevent false activations — include them
 - Count chars: `echo -n "text" | wc -c`
 
+## YAML Safety in Descriptions
+
+Descriptions are unquoted plain YAML scalars. Some character sequences break or silently corrupt parsing:
+
+| Sequence | Effect | Fix |
+|----------|--------|-----|
+| ` #` (space + hash) | Starts a YAML comment — a strict parser silently drops everything after it, with no error | Never use the raw token; reword (e.g. "colon-prefixed directives" instead of "`#:`") |
+| `: ` (colon + space) mid-value | Ambiguous with a new mapping key; strict parsers (`js-yaml`) throw `bad indentation of a mapping entry` | Tolerated in this repo only because SKILL.md frontmatter is parsed via regex, not `yaml.load` — avoid introducing new instances where avoidable |
+| Leading `- ? : , [ ] { } # & * ! \| > ' " % @` \` | A scalar can't start with these unquoted | Don't start a description with these characters |
+
+Verify a description is comment-safe: `node -e "console.log(require('js-yaml').load('description: ' + require('fs').readFileSync('SKILL.md','utf8').split(/\ndescription: /)[1].split('\n')[0]))"` — if the printed value is truncated versus the source line, reword it.
+
 ## Reference File Conventions
 
 | Convention | Rule |

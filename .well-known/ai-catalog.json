@@ -197,7 +197,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:dotnet",
       "displayName": "dotnet",
-      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).",
+      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), file-based apps (dotnet run file.cs, colon directives), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).",
       "tags": [
         "csharp",
         "dotnet",
@@ -211,9 +211,10 @@
         "sourcelink",
         "code-agents",
         "aspire",
-        "hooks"
+        "hooks",
+        "file-based-apps"
       ],
-      "version": "0.6.0",
+      "version": "0.7.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -229,6 +230,19 @@
               "nullable reference types",
               "pattern matching",
               "primary constructors"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:dotnet:csharp-file-based-app",
+            "displayName": "csharp-file-based-app",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/dotnet/.apm/skills/csharp-file-based-app/SKILL.md",
+            "description": "Build, run, and publish .NET applications from a single C# file without a .csproj, using .NET 10 SDK file-based apps. USE FOR: dotnet run file.cs; dotnet run --file; shebang/shell-executable C# scripts; colon-prefixed directives (sdk, package, project, property, include); converting a file-based app to a project with dotnet project convert; publishing file-based apps with native AOT; packaging a file-based app as a .NET tool (PackAsTool); user secrets for file-based apps; flat *.run.json launch profiles; dotnet build/clean/publish/pack/restore on a .cs file; build caching behavior and dotnet clean file-based-apps; folder layout to avoid project-file cone conflicts. DO NOT USE FOR: traditional .csproj solution scaffolding (use dotnet-solution-setup); C# language idioms unrelated to the SDK/CLI (use csharp-best-practices); benchmarking (use dotnet-benchmarking).",
+            "representativeQueries": [
+              "dotnet run file.cs",
+              "dotnet run --file",
+              "shebang/shell-executable C# scripts",
+              "colon-prefixed directives (sdk, package, project, property, include)"
             ]
           },
           {

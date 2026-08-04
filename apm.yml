@@ -53,11 +53,12 @@ marketplace:
         generic math over System.Numerics, SIMD vectorization, 
         enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, 
         solution/project setup (Directory.Build.props, central package 
-        management, SourceLink), and deterministic guardrails for AI code 
-        agents (analyzers, hooks, Aspire, testing).
+        management, SourceLink), file-based apps (dotnet run file.cs, 
+        colon directives), and deterministic guardrails for AI code agents 
+        (analyzers, hooks, Aspire, testing).
       source: ./plugins/dotnet
-      version: 0.6.0
-      tags: [csharp, dotnet, generic-math, best-practices, simd, enumerable, linq, benchmarking, slnx, sourcelink, code-agents, aspire, hooks]
+      version: 0.7.0
+      tags: [csharp, dotnet, generic-math, best-practices, simd, enumerable, linq, benchmarking, slnx, sourcelink, code-agents, aspire, hooks, file-based-apps]
 
     - name: apm-authoring
       description: Skills for authoring, consuming, and publishing APM packages,

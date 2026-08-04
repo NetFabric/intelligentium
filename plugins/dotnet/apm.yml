@@ -1,9 +1,9 @@
 name: dotnet
-version: 0.6.0
-description: C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).
+version: 0.7.0
+description: C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), file-based apps (dotnet run file.cs, colon directives), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).
 author: NetFabric
 license: MIT
-keywords: [csharp, dotnet, generic-math, best-practices, simd, performance, vectorization, benchmarking, benchmarkdotnet, enumerable, linq, iterators, yield, collections, slnx, editorconfig, sourcelink, central-package-management, msbuild, code-agents, agents-md, roslyn-analyzers, aspire, hooks, testing]
+keywords: [csharp, dotnet, generic-math, best-practices, simd, performance, vectorization, benchmarking, benchmarkdotnet, enumerable, linq, iterators, yield, collections, slnx, editorconfig, sourcelink, central-package-management, msbuild, code-agents, agents-md, roslyn-analyzers, aspire, hooks, testing, file-based-apps, dotnet-run, single-file]
 # Which agent platforms to deploy to.
 # Resolution order: --target flag > this field > auto-detect from filesystem.
 # Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf

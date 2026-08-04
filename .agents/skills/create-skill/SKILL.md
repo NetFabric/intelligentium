@@ -23,7 +23,7 @@ description: <≤1024 chars>  # trigger phrases; relevance context; exclusions
 ---
 ```
 
-**Description rules:** keyword-rich; list trigger phrases; state exclusions with "DO NOT USE FOR:"; ≤1024 chars.
+**Description rules:** keyword-rich; list trigger phrases; state exclusions with "DO NOT USE FOR:"; ≤1024 chars; never write a literal `#` preceded by whitespace — YAML treats it as a comment and silently truncates the rest of the value (reword instead, e.g. "colon-prefixed directives" not "`#:`"). Full rules → [references/structure.md](references/structure.md#yaml-safety-in-descriptions).
 
 ## Workflow: New Skill
 
