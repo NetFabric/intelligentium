@@ -1,9 +1,9 @@
 name: dotnet
-version: 0.1.0
-description: C# and .NET skills for modern language best practices and generic math over System.Numerics.
+version: 0.2.0
+description: C# and .NET skills for modern language best practices, generic math over System.Numerics, and SIMD vectorization.
 author: NetFabric
 license: MIT
-keywords: [csharp, dotnet, generic-math, best-practices]
+keywords: [csharp, dotnet, generic-math, best-practices, simd, performance, vectorization, benchmarking]
 # Which agent platforms to deploy to.
 # Resolution order: --target flag > this field > auto-detect from filesystem.
 # Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf
