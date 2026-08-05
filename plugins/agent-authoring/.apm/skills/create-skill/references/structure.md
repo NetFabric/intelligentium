@@ -1,21 +1,20 @@
 # Skill Structure Reference
 
+Skills are a cross-harness convention, not a single-tool feature — Copilot, Claude Code, Cursor, Codex, Gemini CLI, Windsurf, Kiro, OpenCode, and others all discover skills the same way.
+
 ## Folder Layout
 
 ```text
+.agents/skills/<skill-name>/     # harness-neutral (preferred); every harness above reads this path
+  SKILL.md
+  references/
+
 ~/.agents/skills/<skill-name>/   # user-global (all workspaces)
-  SKILL.md
-  references/
-
-.agents/skills/<skill-name>/     # workspace-scoped (preferred)
-  SKILL.md
-  references/
-
-# Fallback (legacy):
-.github/copilot/skills/<skill-name>/
 ```
 
-## Frontmatter Spec
+Some harnesses also accept their own native path alongside `.agents/skills/`: `.github/skills/<name>/` (Copilot), `.claude/skills/<name>/` (Claude Code). When authoring through APM, source lives at `.apm/skills/<name>/SKILL.md`; `apm install`/`apm compile` deploys the harness-neutral copy automatically.
+
+## SKILL.md Frontmatter Spec
 
 | Field | Required | Constraint | Notes |
 |-------|----------|-----------|-------|

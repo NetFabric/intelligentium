@@ -83,8 +83,8 @@
     },
     {
       "name": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, and converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage.",
-      "version": "0.4.0",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, and following Markdown formatting best practices.",
+      "version": "0.5.0",
       "tags": [
         "agents-md",
         "skill",
@@ -96,7 +96,9 @@
         "toon",
         "token-oriented-object-notation",
         "tokens",
-        "llm"
+        "llm",
+        "markdown",
+        "formatting"
       ],
       "source": "./plugins/agent-authoring"
     },

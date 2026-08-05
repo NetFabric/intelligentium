@@ -379,7 +379,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:agent-authoring",
       "displayName": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, and converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage.",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, and following Markdown formatting best practices.",
       "tags": [
         "agents-md",
         "skill",
@@ -391,9 +391,11 @@
         "toon",
         "token-oriented-object-notation",
         "tokens",
-        "llm"
+        "llm",
+        "markdown",
+        "formatting"
       ],
-      "version": "0.4.0",
+      "version": "0.5.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -435,9 +437,22 @@
             "displayName": "create-skill",
             "type": "application/ai-skill+md",
             "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/create-skill/SKILL.md",
-            "description": "Create or update VS Code Copilot agent skills (SKILL.md + reference files). Use when: authoring a new skill from scratch, improving or restructuring an existing skill, deciding how to split content across files, writing skill frontmatter, choosing trigger phrases for the description field, organizing reference files. Covers skill architecture, compact writing rules, frontmatter constraints, and research workflow via context7/microsoftdocs MCPs. DO NOT USE FOR: general coding tasks, VS Code extension development, non-skill documentation.",
+            "description": "Create or update AI agent skills (SKILL.md + reference files) for any harness that supports the format: GitHub Copilot, Claude Code, Cursor, Codex, Gemini CLI, Windsurf, Kiro, OpenCode, and more. Use when: authoring a new skill from scratch, improving or restructuring an existing skill, deciding how to split content across files, writing skill frontmatter, choosing trigger phrases for the description field, organizing reference files. Covers skill architecture, compact writing rules, frontmatter constraints, and research workflow via context7/microsoftdocs MCPs. DO NOT USE FOR: general coding tasks, VS Code extension development, non-skill documentation.",
             "representativeQueries": [
               "general coding tasks, VS Code extension development, non-skill documentation"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:markdown-best-practices",
+            "displayName": "markdown-best-practices",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/markdown-best-practices/SKILL.md",
+            "description": "Write and review Markdown files for consistent, correctly-rendering formatting: heading hierarchy and spacing, list marker and indentation consistency, fenced code block languages and blank-line spacing, table pipe and column consistency, link and image conventions, and whitespace hygiene. USE FOR: authoring or reviewing README.md, SKILL.md, AGENTS.md, or any Markdown documentation; fixing inconsistent headings, lists, code fences, or tables; choosing link/image/emphasis styles; general Markdown formatting conventions. DO NOT USE FOR: non-Markdown formats (reStructuredText, AsciiDoc); prose tone or content-quality review; the SKILL.md authoring workflow itself (see create-skill); AGENTS.md content structure (see agents-md).",
+            "representativeQueries": [
+              "authoring or reviewing README.md, SKILL.md, AGENTS.md, or any Markdown documentation",
+              "fixing inconsistent headings, lists, code fences, or tables",
+              "choosing link/image/emphasis styles",
+              "general Markdown formatting conventions"
             ]
           },
           {

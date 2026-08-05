@@ -42,7 +42,7 @@ workflows, or automation pipelines.
 | [math-geodesy](plugins/math-geodesy) | Abstract math skills for geodetic coordinates, reference ellipsoids, and datum transformations |
 | [dotnet](plugins/dotnet) | C# and .NET skills for modern language best practices and generic math over `System.Numerics` |
 | [apm-authoring](plugins/apm-authoring) | Skills for authoring, consuming, and publishing APM packages, plus configuring apm-action CI workflows |
-| [agent-authoring](plugins/agent-authoring) | Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, and converting data to/from TOON (Token-Oriented Object Notation) |
+| [agent-authoring](plugins/agent-authoring) | Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, converting data to/from TOON (Token-Oriented Object Notation), and following Markdown formatting best practices |
 | [agentic-discovery](plugins/agentic-discovery) | Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities |
 | [ucp](plugins/ucp) | Skills for implementing (business/merchant) and consuming (platform/agent) the Universal Commerce Protocol (UCP) for agentic commerce discovery, checkout, and payments |
 
