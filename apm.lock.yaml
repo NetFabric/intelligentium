@@ -1,12 +1,12 @@
 lockfile_version: '1'
-generated_at: '2026-08-05T09:27:55.265728+00:00'
+generated_at: '2026-08-05T10:34:33.879609+00:00'
 apm_version: 0.27.0
 dependencies:
 - repo_url: netfabric/intelligentium
   name: agent-authoring
   host: github.com
-  resolved_commit: caed3feebaf43ead87c132c8918aed69f71867de
-  version: 0.4.0
+  resolved_commit: 4afc0b0a51046a479a96a697d0fa5e3e528c2d15
+  version: 0.5.0
   virtual_path: plugins/agent-authoring
   is_virtual: true
   package_type: apm_package
@@ -33,6 +33,12 @@ dependencies:
   - .agents/skills/create-skill/references/research-workflow.md
   - .agents/skills/create-skill/references/structure.md
   - .agents/skills/create-skill/references/writing-style.md
+  - .agents/skills/markdown-best-practices
+  - .agents/skills/markdown-best-practices/SKILL.md
+  - .agents/skills/markdown-best-practices/references/headings-and-structure.md
+  - .agents/skills/markdown-best-practices/references/links-images-and-whitespace.md
+  - .agents/skills/markdown-best-practices/references/lists-and-code-blocks.md
+  - .agents/skills/markdown-best-practices/references/tables.md
   - .agents/skills/toon
   - .agents/skills/toon/SKILL.md
   - .agents/skills/toon/references/cli-and-libraries.md
@@ -52,21 +58,26 @@ dependencies:
     .agents/skills/copilot-sdk/references/advanced-features.md: sha256:2569fa16d680cb03f488e31fb44ab49a8321545166d640cb569ecd31beb9bf9c
     .agents/skills/copilot-sdk/references/core-session-api.md: sha256:52602af806dd9ee95a214e1a25b1d8853f2f183f2cc4d4575a6502d1602ae8e2
     .agents/skills/copilot-sdk/references/language-quickstarts.md: sha256:d754b0268c63db6576c0edcc6d6f5539e1f8e91279b0586ed7e2bdf6d0095718
-    .agents/skills/copilot-sdk/references/setup-and-auth.md: sha256:529a27967259b847aecb9226c41c46686df03796ef0e61aa0da99a8a6b35cf0a
-    .agents/skills/create-skill/SKILL.md: sha256:6ed64132e6df52dc141cbe62a6f7ceb5d570e3bfff3dbc44b561b4edceaebce0
+    .agents/skills/copilot-sdk/references/setup-and-auth.md: sha256:b17b03ee2b6335971a47ea7cbfe16c88f4cf4ca1cf8e440dca2517352ae22861
+    .agents/skills/create-skill/SKILL.md: sha256:d2c247fd88a2daf7ab30ae7d25ed42e6bb406ac17aafd89808dd029817a8fb83
     .agents/skills/create-skill/references/research-workflow.md: sha256:ad05a64d8bf6d133a1be2a0e8b789f5a2601ef6e3b00bd9e29c69d6ca3b60f65
-    .agents/skills/create-skill/references/structure.md: sha256:0962c3f8f4d7c5b4e201dc5db7c239b26a2674df9cb1292547f7b82b89641137
+    .agents/skills/create-skill/references/structure.md: sha256:105753873d3cb6a5b3be0651c8ff34e8611998125c97c516a9153c2fd4a751a0
     .agents/skills/create-skill/references/writing-style.md: sha256:63283a512f97aa588ef96af98228c105b32aee86de50865a92779c4a32fee106
+    .agents/skills/markdown-best-practices/SKILL.md: sha256:bea1736832aba1b46aa6b5fd1c9f5504aca620a13e8d9830af74140587f3044b
+    .agents/skills/markdown-best-practices/references/headings-and-structure.md: sha256:5ab224aaac9580430c58883ae64bc8f48eea824dd4f86eeaf3c55d4c14f40874
+    .agents/skills/markdown-best-practices/references/links-images-and-whitespace.md: sha256:40890f9118576259aa0eafe487b095249a2a3dcf23e8cd597d491d63e346d2f2
+    .agents/skills/markdown-best-practices/references/lists-and-code-blocks.md: sha256:1a0a91658b8482252da1849690633be0fa5a6a997d12a24253737c3e83e413ae
+    .agents/skills/markdown-best-practices/references/tables.md: sha256:d4c8af9952b9e19ce9856d2b4919c6f445e596dffd09209962aa28951b1d1ec0
     .agents/skills/toon/SKILL.md: sha256:81aa0780366cbf2a4174de423131787b584dea8cf3d2d6c6337f247a2aaba029
     .agents/skills/toon/references/cli-and-libraries.md: sha256:62fddd27a4c77d3adef571d605064555ad3625035ed3cef6989a31f69c81bfa0
     .agents/skills/toon/references/format-spec.md: sha256:dada3b52077ed2991bf700bee6a0ed2f36c79aa93497fc6778eb438b451fac38
     .agents/skills/toon/references/llm-integration-patterns.md: sha256:cc5c20c4b740042cff6b90ad77fdfceb4ad008a02771adf1b809c078206e3c66
-  content_hash: sha256:080e3493379d5226cf4c1f985bbd50a603f77f2eaeecd6e4716e32da3134deec
+  content_hash: sha256:98fd943070a35479829816a6342724ca7d106b46fde4065bfabef8f11fe50d65
   declared_license: MIT
 - repo_url: netfabric/intelligentium
   name: agentic-discovery
   host: github.com
-  resolved_commit: caed3feebaf43ead87c132c8918aed69f71867de
+  resolved_commit: 4afc0b0a51046a479a96a697d0fa5e3e528c2d15
   version: 0.1.0
   virtual_path: plugins/agentic-discovery
   is_virtual: true
@@ -89,7 +100,7 @@ dependencies:
 - repo_url: netfabric/intelligentium
   name: apm-authoring
   host: github.com
-  resolved_commit: caed3feebaf43ead87c132c8918aed69f71867de
+  resolved_commit: 4afc0b0a51046a479a96a697d0fa5e3e528c2d15
   version: 0.1.0
   virtual_path: plugins/apm-authoring
   is_virtual: true
@@ -478,7 +489,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:529a27967259b847aecb9226c41c46686df03796ef0e61aa0da99a8a6b35cf0a
+  content_hash: sha256:b17b03ee2b6335971a47ea7cbfe16c88f4cf4ca1cf8e440dca2517352ae22861
 - kind: project-relative
   target: copilot
   value: .agents/skills/create-skill
@@ -496,7 +507,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:6ed64132e6df52dc141cbe62a6f7ceb5d570e3bfff3dbc44b561b4edceaebce0
+  content_hash: sha256:d2c247fd88a2daf7ab30ae7d25ed42e6bb406ac17aafd89808dd029817a8fb83
 - kind: project-relative
   target: copilot
   value: .agents/skills/create-skill/references/research-workflow.md
@@ -514,7 +525,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:0962c3f8f4d7c5b4e201dc5db7c239b26a2674df9cb1292547f7b82b89641137
+  content_hash: sha256:105753873d3cb6a5b3be0651c8ff34e8611998125c97c516a9153c2fd4a751a0
 - kind: project-relative
   target: copilot
   value: .agents/skills/create-skill/references/writing-style.md
@@ -524,6 +535,60 @@ deployments:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
   content_hash: sha256:63283a512f97aa588ef96af98228c105b32aee86de50865a92779c4a32fee106
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/markdown-best-practices
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/markdown-best-practices/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:bea1736832aba1b46aa6b5fd1c9f5504aca620a13e8d9830af74140587f3044b
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/markdown-best-practices/references/headings-and-structure.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:5ab224aaac9580430c58883ae64bc8f48eea824dd4f86eeaf3c55d4c14f40874
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/markdown-best-practices/references/links-images-and-whitespace.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:40890f9118576259aa0eafe487b095249a2a3dcf23e8cd597d491d63e346d2f2
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/markdown-best-practices/references/lists-and-code-blocks.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:1a0a91658b8482252da1849690633be0fa5a6a997d12a24253737c3e83e413ae
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/markdown-best-practices/references/tables.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:d4c8af9952b9e19ce9856d2b4919c6f445e596dffd09209962aa28951b1d1ec0
 - kind: project-relative
   target: copilot
   value: .agents/skills/toon

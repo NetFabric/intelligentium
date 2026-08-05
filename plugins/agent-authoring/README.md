@@ -5,7 +5,7 @@ Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, bui
 ## Skills
 
 | Skill | Description |
-|-------|-------------|
+| --- | --- |
 | [agents-md](.apm/skills/agents-md) | Author and maintain AGENTS.md files — the open, tool-agnostic format for giving coding agents project context |
 | [copilot-github-actions](.apm/skills/copilot-github-actions) | Automate GitHub Copilot CLI in GitHub Actions workflows |
 | [copilot-sdk](.apm/skills/copilot-sdk) | Embed the GitHub Copilot agent runtime into your own application using the Copilot SDK |

@@ -1,3 +1,5 @@
+# AGENTS.md
+
 ## Project overview
 
 Intelligentium is NetFabric's [APM](https://microsoft.github.io/apm/) marketplace: `plugins/<name>/` packages, each bundling one or more Copilot skills (`SKILL.md` + `references/`), installable via `apm install <plugin>@intelligentium`. Root [apm.yml](apm.yml) lists every package under `marketplace.packages`. This repo also dogfoods itself: root `apm.yml`'s `dependencies.apm` list installs a subset of its own packages into `.agents/skills/` so this workspace's own Copilot can use them (check that list, not this doc, for which packages are currently self-installed). `plugins/<name>/.apm/skills/<skill>/` is always the real source — `.agents/skills/<skill>/` for a self-installed package is apm-installed, hash-locked output, not a hand-authored master.
@@ -5,7 +7,7 @@ Intelligentium is NetFabric's [APM](https://microsoft.github.io/apm/) marketplac
 ## Setup commands
 
 - Install script deps: `npm install`
-- Requires the `apm` CLI on PATH (see https://microsoft.github.io/apm/ for install)
+- Requires the `apm` CLI on PATH (see <https://microsoft.github.io/apm/> for install)
 
 ## Build commands
 
@@ -24,11 +26,11 @@ Intelligentium is NetFabric's [APM](https://microsoft.github.io/apm/) marketplac
 - Never hand-author `plugin.json` — delete it and let `apm pack` synthesize it from `apm.yml`.
 - Every SKILL.md frontmatter `description` value must be double-quoted (`description: "..."`) — trigger-phrase descriptions routinely contain colons ("USE FOR:", "DO NOT USE FOR:") that an unquoted YAML plain scalar misparses as a new mapping key, which strict parsers reject outright (`bad indentation of a mapping entry` / `mapping values are not allowed in this context`). This was previously assumed "tolerated" because apm's own frontmatter reader was regex-based, not `yaml.load` — that assumption was wrong (other tooling strict-parses this frontmatter and fails), so quote every description; [scripts/generate-ai-catalog.mjs](scripts/generate-ai-catalog.mjs) now parses frontmatter with real `yaml.load`, not regex.
 - Never let a literal `#` preceded by whitespace fall outside the quotes in a YAML description (apm.yml or SKILL.md frontmatter) — it starts a real YAML comment and silently truncates the rest of the value for any strict parser. Reword instead (e.g. "colon-prefixed directives" not "`#:`").
-- If you edit a skill belonging to a package listed under root `apm.yml`'s `dependencies.apm` (this repo installs those on itself), **reinstall after publishing**: commit + push the `plugins/<name>` change to `main`, then run `apm install --target copilot` to refresh `.agents/skills/` and relock `apm.lock.yaml`; commit those resulting diffs too. `apm install` resolves this self-dependency from the GitHub remote at a pinned commit — it does **not** read local uncommitted `plugins/` changes, and running it before pushing will silently revert any direct edit you made under `.agents/skills/` back to the last-published version.
+- If you edit a skill belonging to a package listed under root `apm.yml`'s `dependencies.apm` (this repo installs those on itself), **reinstall after publishing**: commit + push the `plugins/<name>` change to `main`, then run `apm update --yes --target copilot` (not `apm install`) to refresh `.agents/skills/` and relock `apm.lock.yaml`; commit those resulting diffs too. These self-dependencies are unpinned (no `#tag`/`#sha`), so `apm install` alone just replays whatever commit is already cached in `apm.lock.yaml` and silently no-ops (exit 0, no file changes) even after you've pushed a new commit — only `apm update` re-resolves to the latest pushed ref. Running either command before pushing will still revert any direct edit you made under `.agents/skills/` back to the last-published version.
 
 ## Directory map
 
-```
+```text
 apm.yml                        # marketplace.packages: source of truth for published plugins
 plugins/<name>/apm.yml         # plugin manifest (name, version, tags, targets)
 plugins/<name>/.apm/skills/<skill>/SKILL.md   # real source of truth for every skill
