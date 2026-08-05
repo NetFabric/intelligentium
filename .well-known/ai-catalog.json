@@ -379,7 +379,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:agent-authoring",
       "displayName": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, and following Markdown formatting best practices.",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, and following Markdown formatting best practices.",
       "tags": [
         "agents-md",
         "skill",
@@ -387,6 +387,9 @@
         "documentation",
         "copilot-sdk",
         "copilot-cli",
+        "copilot-cli-custom-agents",
+        "custom-agents",
+        "subagents",
         "github-actions",
         "toon",
         "token-oriented-object-notation",
@@ -395,7 +398,7 @@
         "markdown",
         "formatting"
       ],
-      "version": "0.5.0",
+      "version": "0.6.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -410,6 +413,19 @@
               "authoring SKILL.md skill files (use create-skill)",
               "APM package/plugin authoring (use apm-producer)",
               "language-specific style rules (use language skills e.g. csharp-best-practices)"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:copilot-cli-custom-agents",
+            "displayName": "copilot-cli-custom-agents",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/copilot-cli-custom-agents/SKILL.md",
+            "description": "Create and maintain GitHub Copilot CLI custom agents (.agent.md files). USE FOR: authoring .github/agents or ~/.copilot/agents profiles; frontmatter fields (description, name, model, tools, mcp-servers, disable-model-invocation, user-invocable, deferred-tool-loading, skills, reasoning-effort, sidekick); writing descriptions that drive auto-delegation (the CLI routes on description quality, like skills); building orchestrator + specialist squads with the task tool; /fleet parallel subagents; built-in agents (explore, task, research, code-review, rubber-duck, security-review, general-purpose); subagent depth/concurrency limits; list_agents and write_agent coordination. DO NOT USE FOR: VS Code-only fields (agents: allowlist, handoffs, vscode/memory) or GitHub.com cloud agent configuration; MCP server authoring; SKILL.md authoring (use create-skill).",
+            "representativeQueries": [
+              "authoring .github/agents or ~/.copilot/agents profiles",
+              "frontmatter fields (description, name, model, tools, mcp-servers, disable-model-invocation, user-invocable, deferred-tool-loading, skills, reasoning-effort, sidekick)",
+              "writing descriptions that drive auto-delegation (the CLI routes on description quality, like skills)",
+              "building orchestrator + specialist squads with the task tool"
             ]
           },
           {
