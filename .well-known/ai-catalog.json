@@ -214,7 +214,7 @@
         "hooks",
         "file-based-apps"
       ],
-      "version": "0.7.0",
+      "version": "0.7.1",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -224,7 +224,7 @@
             "displayName": "csharp-best-practices",
             "type": "application/ai-skill+md",
             "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/dotnet/.apm/skills/csharp-best-practices/SKILL.md",
-            "description": "Modern .NET and C# best practices for code quality, performance, and correctness. USE FOR: choosing struct/class/record/readonly-record-struct; nullable reference types; pattern matching; primary constructors; collection expressions; required members; init-only properties; file-scoped namespaces; global usings; async/await patterns; ConfigureAwait; ValueTask vs Task; CancellationToken propagation; IAsyncEnumerable; Span<T>/Memory<T> usage; avoiding boxing; readonly struct; ArrayPool<T>; FrozenDictionary/FrozenSet; LINQ vs loops in hot paths; ArgumentNullException.ThrowIfNull; ThrowIfNegative; ThrowIfZero; IReadOnlyList return types; error handling patterns; GeneratedRegex; LoggerMessage; source generators for regex and logging. DO NOT USE FOR: generic math interfaces (use dotnet-generic-math); ASP.NET Core middleware; EF Core modeling.",
+            "description": "Modern .NET and C# best practices for code quality, performance, and correctness. USE FOR: choosing struct/class/record/readonly-record-struct; nullable reference types; pattern matching; primary constructors; collection expressions; required members; init-only properties; file-scoped namespaces; global usings; async/await patterns; ConfigureAwait; ValueTask vs Task; CancellationToken propagation; IAsyncEnumerable; Span<T>/Memory<T> usage; avoiding boxing; readonly struct; ArrayPool<T>; FrozenDictionary/FrozenSet; LINQ vs loops in hot paths; ArgumentNullException.ThrowIfNull; ThrowIfNegative; ThrowIfZero; IReadOnlyList return types; error handling patterns; GeneratedRegex; LoggerMessage; source generators for regex and logging; avoiding Math/MathF in favor of static methods on the numeric type. DO NOT USE FOR: generic math interfaces (use dotnet-generic-math); ASP.NET Core middleware; EF Core modeling.",
             "representativeQueries": [
               "choosing struct/class/record/readonly-record-struct",
               "nullable reference types",
