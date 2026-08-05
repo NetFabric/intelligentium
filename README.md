@@ -44,6 +44,7 @@ workflows, or automation pipelines.
 | [apm-authoring](plugins/apm-authoring) | Skills for authoring, consuming, and publishing APM packages, plus configuring apm-action CI workflows |
 | [agent-authoring](plugins/agent-authoring) | Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, and converting data to/from TOON (Token-Oriented Object Notation) |
 | [agentic-discovery](plugins/agentic-discovery) | Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities |
+| [ucp](plugins/ucp) | Skills for implementing (business/merchant) and consuming (platform/agent) the Universal Commerce Protocol (UCP) for agentic commerce discovery, checkout, and payments |
 
 ### 3. Install Plugins via APM  
 Each plugin ships with an APM manifest for deterministic installation and

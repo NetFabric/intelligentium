@@ -113,6 +113,23 @@
         "catalog"
       ],
       "source": "./plugins/agentic-discovery"
+    },
+    {
+      "name": "ucp",
+      "description": "Skills for implementing (business/merchant) and consuming (platform/agent) the Universal Commerce Protocol (UCP) for agentic commerce discovery, checkout, and payments.",
+      "version": "0.1.0",
+      "tags": [
+        "ucp",
+        "universal-commerce-protocol",
+        "agentic-commerce",
+        "checkout",
+        "ecommerce",
+        "mcp",
+        "a2a",
+        "ap2",
+        "payments"
+      ],
+      "source": "./plugins/ucp"
     }
   ]
 }

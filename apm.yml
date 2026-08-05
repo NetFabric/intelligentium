@@ -90,6 +90,15 @@ marketplace:
       tag_pattern: "agentic-discovery-v{version}"
       tags: [ard, discovery, mcp, a2a, agents, catalog]
 
+    - name: ucp
+      description: Skills for implementing (business/merchant) and consuming 
+        (platform/agent) the Universal Commerce Protocol (UCP) for agentic 
+        commerce discovery, checkout, and payments.
+      source: ./plugins/ucp
+      version: 0.1.0
+      tag_pattern: "ucp-v{version}"
+      tags: [ucp, universal-commerce-protocol, agentic-commerce, checkout, ecommerce, mcp, a2a, ap2, payments]
+
 dependencies:
   apm:
     - netfabric/intelligentium/plugins/agent-authoring

@@ -1,0 +1,24 @@
+name: ucp
+version: 0.1.0
+description: Skills for implementing (business/merchant) and consuming (platform/agent) the Universal Commerce Protocol (UCP), the open standard for agentic commerce discovery, checkout, and payments.
+author: NetFabric
+license: MIT
+keywords: [ucp, universal-commerce-protocol, agentic-commerce, checkout, ecommerce, cart, order-management, mcp, a2a, ap2, payments, google-merchant-center]
+# Which agent platforms to deploy to.
+# Resolution order: --target flag > this field > auto-detect from filesystem.
+# Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf
+targets:
+- copilot
+- claude
+- cursor
+- codex
+- gemini
+- windsurf
+- kiro
+dependencies:
+  apm: []
+  mcp: []
+includes: auto
+devDependencies:
+  apm: []
+scripts: {}

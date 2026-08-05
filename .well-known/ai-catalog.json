@@ -474,6 +474,55 @@
         "URN identifier format (urn:air:<publisher>:<namespace>:<name>)",
         "hosting at /.well-known/ai-catalog.json"
       ]
+    },
+    {
+      "identifier": "urn:air:github.com:netfabric:ucp",
+      "displayName": "ucp",
+      "description": "Skills for implementing (business/merchant) and consuming (platform/agent) the Universal Commerce Protocol (UCP) for agentic commerce discovery, checkout, and payments.",
+      "tags": [
+        "ucp",
+        "universal-commerce-protocol",
+        "agentic-commerce",
+        "checkout",
+        "ecommerce",
+        "mcp",
+        "a2a",
+        "ap2",
+        "payments"
+      ],
+      "version": "0.1.0",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "urn:air:github.com:netfabric:ucp:ucp-business-integration",
+            "displayName": "ucp-business-integration",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/ucp/.apm/skills/ucp-business-integration/SKILL.md",
+            "description": "Implement the Universal Commerce Protocol (UCP) as a business/merchant: publish a /.well-known/ucp discovery profile, declare capabilities (Checkout, Cart, Order, Identity Linking) and payment handlers, implement REST checkout-session endpoints (create/get/update/complete/cancel), resolve payment instruments, sign responses and order webhooks (RFC 9421), and integrate with Google Merchant Center (product feed eligibility, Google Pay handler, order webhooks). USE FOR: building a UCP-compliant business/merchant server; publishing and hosting a UCP profile; declaring capabilities, extensions, and payment_handlers; implementing the checkout status lifecycle and error messages; signing webhook/response messages; Google UCP merchant integration. DO NOT USE FOR: building a platform/agent that consumes UCP (see ucp-platform-integration); generic e-commerce platform work unrelated to UCP; the AP2/A2A/MCP protocols outside their UCP bindings.",
+            "representativeQueries": [
+              "building a UCP-compliant business/merchant server",
+              "publishing and hosting a UCP profile",
+              "declaring capabilities, extensions, and payment_handlers",
+              "implementing the checkout status lifecycle and error messages"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:ucp:ucp-platform-integration",
+            "displayName": "ucp-platform-integration",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/ucp/.apm/skills/ucp-platform-integration/SKILL.md",
+            "description": "Consume the Universal Commerce Protocol (UCP) as a platform, app, or AI agent: discover business capabilities via /.well-known/ucp, negotiate protocol/capability versions, send the UCP-Agent header, drive the checkout session lifecycle (create/get/update/complete/cancel), process status/messages/continue_url handoff, acquire and submit payment instruments (digital wallets, tokenization, AP2 mandates), sign requests (RFC 9421), and call UCP over REST, MCP, A2A, or Embedded transports. USE FOR: building an AI shopping agent, app, or procurement system that discovers and transacts with UCP businesses; capability negotiation and version-matching logic; checkout status/error handling; payment handler execution; choosing between REST/MCP/A2A/Embedded bindings. DO NOT USE FOR: implementing a UCP business/merchant server (see ucp-business-integration); generic MCP or A2A protocol usage unrelated to commerce; non-UCP payment processing.",
+            "representativeQueries": [
+              "building an AI shopping agent, app, or procurement system that discovers and transacts with UCP businesses",
+              "capability negotiation and version-matching logic",
+              "checkout status/error handling",
+              "payment handler execution"
+            ]
+          }
+        ]
+      }
     }
   ]
 }
