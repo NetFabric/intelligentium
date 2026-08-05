@@ -5,7 +5,7 @@ Two distinct texts to get right: the `description` (routes delegation) and the p
 ## `description` field
 
 | Rule | Do | Don't |
-|---|---|---|
+| --- | --- | --- |
 | Trigger phrases, not titles | "Use for security audits, `seccheck`, vulnerability review requests" | "Backend developer" |
 | State the boundary | "...; never edits files" / "...; only for React components" | Leaving scope implicit — invites wrong dispatches |
 | Keyword-dense | Include synonyms/slash-command names/jargon a user would actually type | One abstract sentence |
@@ -21,7 +21,7 @@ flowchart LR
 ## Prompt body
 
 | Section | Purpose | Keep it to |
-|---|---|---|
+| --- | --- | --- |
 | Role (first line) | One sentence identity: "You are a \<role\> focused on \<scope\>." | 1 sentence |
 | Protocol | Numbered steps if the task is multi-step; skip if single-shot | ≤7 steps |
 | Constraints | Explicit prohibitions — what this agent must NOT do | Bullet list, imperative |
@@ -36,7 +36,7 @@ Do NOT modify files.
 ## Rules
 
 | Rule | Do | Don't |
-|---|---|---|
+| --- | --- | --- |
 | Active, imperative voice | "Identify vulnerabilities" | "Vulnerabilities should be identified" |
 | No tool restatement | Let `tools:` frontmatter speak for itself | "You have access to read and search tools..." in the body |
 | Explicit stop conditions | "Never edit files", "Stop after producing the report" | Leaving an orchestrator free to also implement fixes |

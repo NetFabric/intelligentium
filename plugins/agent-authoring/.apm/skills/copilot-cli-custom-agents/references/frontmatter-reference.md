@@ -5,7 +5,7 @@ Source: [CLI command reference §Custom agents reference](https://docs.github.co
 ## Core fields
 
 | Field | Type | Default | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `description` | string | — (required) | Shown in the agent list and to the `task` tool; the CLI routes auto-delegation on this text alone — be specific about scope/triggers, not vague ("Backend developer" won't trigger). |
 | `name` | string | filename | Display name only. |
 | `model` | string | inherits parent | Single model string. Accepts short IDs (`claude-sonnet-4.6`) or display names with vendor suffix (`"GPT-5.4 (copilot)"`). When the session model is `Auto`, subagents always use the resolved session model regardless of this field. |
@@ -18,7 +18,7 @@ Source: [CLI command reference §Custom agents reference](https://docs.github.co
 ## Additional fields (changelog-confirmed, thin/absent in the official table)
 
 | Field | Type | Notes |
-|---|---|---|
+| --- | --- | --- |
 | `deferred-tool-loading` | boolean | Opt-in tool-search discovery instead of loading the full tool list up front — for agents with a large `tools:` list. |
 | `skills` | string[] | Eagerly load named skill content into the agent's context at startup (vs. the default on-demand skill loading). |
 | `reasoning-effort` | string | `low`/`medium`/`high`/`xhigh`/`max` (model-dependent); sets the agent's reasoning effort independent of the session's `--reasoning-effort`. |
@@ -39,7 +39,7 @@ sidekick:
 ```
 
 | Sub-field | Values |
-|---|---|
+| --- | --- |
 | `triggers` | `user.message` (every message) or `session.context_changed` (cwd/repo/branch change); entries can be a bare event string (unlimited fires) or `{event, limit}` |
 | `behavior` | `restart` (cancel + relaunch fresh each trigger, for stateless gatherers) or `persistent` (one long-lived loop, state accumulates) |
 | `maxSendsPerTurn` | Max inbox sends per trigger (default `1`); resets each delivered message in `persistent` mode |
@@ -53,7 +53,7 @@ sidekick:
 ### Shell tools
 
 | Tool | Purpose |
-|---|---|
+| --- | --- |
 | `bash` / `powershell` | Execute commands |
 | `list_bash`/`list_powershell` | List active shell sessions |
 | `read_bash`/`read_powershell` | Read output from a shell session |
@@ -63,7 +63,7 @@ sidekick:
 ### File operation tools
 
 | Tool | Purpose |
-|---|---|
+| --- | --- |
 | `apply_patch` | Apply patches (used by some models instead of `edit`/`create`) |
 | `create` | Create new files |
 | `edit` | Edit files via string replacement |
@@ -72,7 +72,7 @@ sidekick:
 ### Agent/task delegation & other tools
 
 | Tool | Purpose |
-|---|---|
+| --- | --- |
 | `list_agents` | List visible agents (self/sibling/child) |
 | `read_agent` | Check a background agent's status |
 | `task` | Dispatch a subagent (built-in or custom) |
@@ -96,7 +96,7 @@ flowchart TD
 ```
 
 | Scope | Location |
-|---|---|
+| --- | --- |
 | Project | `.github/agents/` or `.claude/agents/`, walked upward from cwd to the Git root; `.github/agents/` beats `.claude/agents/` at the same level |
 | User | `~/.copilot/agents/` |
 | Plugin | `<plugin>/agents/` |

@@ -304,10 +304,14 @@
     border-radius:var(--radius);
     padding:26px;
     text-decoration:none;
+    -webkit-backdrop-filter:blur(6px);
     backdrop-filter:blur(6px);
     transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
     overflow:hidden;
   }
+  .link-accent{color:var(--accent-2);}
+  .catalog h2{margin:0 0 8px;}
+  .catalog p{color:var(--muted); max-width:560px; margin:0 auto;}
   .plugin::before{
     content:"";
     position:absolute;
@@ -433,7 +437,7 @@
   <div class="eyebrow"><span class="dot"></span> NetFabric · Open Source · MIT Licensed</div>
   <h1>The AI plugin marketplace<br>for serious agent builders.</h1>
   <p class="lead">Intelligentium is a curated marketplace of skills, agents, hooks, MCP servers, and tools —
-    versioned, deterministic, and installable in one command via <a href="https://microsoft.github.io/apm/" style="color:var(--accent-2);">APM</a>.</p>
+    versioned, deterministic, and installable in one command via <a href="https://microsoft.github.io/apm/" class="link-accent">APM</a>.</p>
   <div class="cta-row">
     <a class="btn btn-primary" href="https://github.com/NetFabric/intelligentium">★ View on GitHub</a>
     <a class="btn btn-ghost" href="#plugins">Browse Plugins</a>
@@ -463,7 +467,7 @@
     <div class="card">
       <div class="icon">🛰️</div>
       <h3>Machine-discoverable</h3>
-      <p>An <a href="#ard" style="color:var(--accent-2);">Agentic Resource Discovery</a> catalog lets other agents and registries find these capabilities programmatically.</p>
+      <p>An <a href="#ard" class="link-accent">Agentic Resource Discovery</a> catalog lets other agents and registries find these capabilities programmatically.</p>
     </div>
     <div class="card">
       <div class="icon">🧠</div>
@@ -563,9 +567,9 @@
 
 <section id="ard">
   <div class="catalog">
-    <h2 style="margin:0 0 8px;">Agentic Resource Discovery</h2>
-    <p style="color:var(--muted); max-width:560px; margin:0 auto;">
-      Intelligentium publishes an <a href="https://github.com/agentic-resource-discovery/spec" style="color:var(--accent-2);">ARD v0.9</a> catalog so agents and registries can discover its plugins and skills programmatically.
+    <h2>Agentic Resource Discovery</h2>
+    <p>
+      Intelligentium publishes an <a href="https://github.com/agentic-resource-discovery/spec" class="link-accent">ARD v0.9</a> catalog so agents and registries can discover its plugins and skills programmatically.
     </p>
     <code>https://intelligentium.ai/.well-known/ai-catalog.json</code>
   </div>
