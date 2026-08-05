@@ -6,6 +6,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { execFileSync } from "node:child_process";
 import yaml from "js-yaml";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -35,6 +36,35 @@ function repoUrl(source) {
   return `https://github.com/${REPO_OWNER}/${REPO_NAME}/tree/${REPO_BRANCH}/${relPath}`;
 }
 
+function gitLogDate(...revArgs) {
+  try {
+    const iso = execFileSync("git", ["log", "-1", "--format=%aI", ...revArgs], {
+      cwd: repoRoot,
+      encoding: "utf8",
+    }).trim();
+    return iso || null;
+  } catch {
+    return null;
+  }
+}
+
+// Real release date: the tag created by plugin-releases.yml for this version,
+// falling back to the last commit under the package's own source path.
+function releaseDate(pkg) {
+  const tag = pkg.tag_pattern?.replace("{version}", pkg.version);
+  return (tag && gitLogDate(tag)) ?? gitLogDate("--", pkg.source) ?? null;
+}
+
+function formatDate(iso) {
+  if (!iso) return null;
+  return new Date(iso).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 function jsonField(key, value) {
   return `"${key}": ${JSON.stringify(value)}`;
 }
@@ -61,9 +91,14 @@ function buildCards(packages) {
       const tags = pkg.tags
         .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
         .join("");
+      const iso = releaseDate(pkg);
+      const label = formatDate(iso);
+      const dateLine = label
+        ? `\n      <p class="plugin-date">Released ${escapeHtml(label)}</p>`
+        : "";
       return [
-        `    <a class="plugin" data-plugin data-name="${escapeHtml(pkg.name)}" data-tags="${escapeHtml(pkg.tags.join(","))}" href="${repoUrl(pkg.source)}" target="_blank" rel="noopener">`,
-        `      <h3><code>${escapeHtml(pkg.name)}</code><span class="plugin-version">v${escapeHtml(pkg.version)}</span></h3>`,
+        `    <a class="plugin" data-plugin data-name="${escapeHtml(pkg.name)}" data-tags="${escapeHtml(pkg.tags.join(","))}" data-date="${escapeHtml(iso ?? "")}" href="${repoUrl(pkg.source)}" target="_blank" rel="noopener">`,
+        `      <h3><code>${escapeHtml(pkg.name)}</code><span class="plugin-version">v${escapeHtml(pkg.version)}</span></h3>${dateLine}`,
         `      <p>${escapeHtml(pkg.description)}</p>`,
         `      <div class="tags">`,
         `        ${tags}`,

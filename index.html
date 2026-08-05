@@ -349,6 +349,16 @@
     margin-left:auto;
   }
   .plugin p{color:var(--muted); font-size:0.9rem; line-height:1.55; margin:0 0 16px; position:relative;}
+  .plugin p.plugin-date{font-size:0.78rem; margin:0 0 12px;}
+  .sort-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .sort-label{font-size:0.78rem; color:var(--muted);}
+  .sort-options{display:flex; gap:8px;}
   .tags{display:flex; flex-wrap:wrap; gap:6px; position:relative;}
   .tag{
     font-size:0.72rem;
@@ -506,62 +516,77 @@
   </div>
   <div class="plugin-filters">
     <input type="text" class="plugin-search" id="plugin-search" placeholder="Search plugins…" aria-label="Search plugins">
+    <div class="sort-row">
+      <span class="sort-label">Sort:</span>
+      <div class="sort-options" id="plugin-sort-options">
+        <button type="button" class="tag-filter active" data-sort="name">A–Z</button>
+        <button type="button" class="tag-filter" data-sort="date">Most recent</button>
+      </div>
+    </div>
     <div class="tag-filters" id="plugin-tag-filters"></div>
   </div>
   <div class="plugins-grid" id="plugins-grid">
     <!-- populated by data below, also present as static HTML for no-JS / SEO -->
     <!-- GENERATED:plugin-cards:BEGIN (source: apm.yml marketplace.packages — run `npm run generate:plugins`) -->
-    <a class="plugin" data-plugin data-name="math-foundations" data-tags="math,geometry,angles,trigonometry,vectors,coordinates" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/math-foundations" target="_blank" rel="noopener">
+    <a class="plugin" data-plugin data-name="math-foundations" data-tags="math,geometry,angles,trigonometry,vectors,coordinates" data-date="2026-08-04T21:05:53+01:00" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/math-foundations" target="_blank" rel="noopener">
       <h3><code>math-foundations</code><span class="plugin-version">v0.1.0</span></h3>
+      <p class="plugin-date">Released Aug 4, 2026</p>
       <p>Core abstract math skills for angles, trigonometry, vectors, and coordinate system conversions.</p>
       <div class="tags">
         <span class="tag">math</span><span class="tag">geometry</span><span class="tag">angles</span><span class="tag">trigonometry</span><span class="tag">vectors</span><span class="tag">coordinates</span>
       </div>
     </a>
-    <a class="plugin" data-plugin data-name="math-rotation" data-tags="math,rotation,quaternion,interpolation,orientation" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/math-rotation" target="_blank" rel="noopener">
+    <a class="plugin" data-plugin data-name="math-rotation" data-tags="math,rotation,quaternion,interpolation,orientation" data-date="2026-08-04T21:05:53+01:00" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/math-rotation" target="_blank" rel="noopener">
       <h3><code>math-rotation</code><span class="plugin-version">v0.1.0</span></h3>
+      <p class="plugin-date">Released Aug 4, 2026</p>
       <p>Abstract math skills for 3D rotation representations, quaternion algebra, and interpolation on manifolds.</p>
       <div class="tags">
         <span class="tag">math</span><span class="tag">rotation</span><span class="tag">quaternion</span><span class="tag">interpolation</span><span class="tag">orientation</span>
       </div>
     </a>
-    <a class="plugin" data-plugin data-name="math-geodesy" data-tags="math,geodesy,ellipsoid,datum,coordinates" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/math-geodesy" target="_blank" rel="noopener">
+    <a class="plugin" data-plugin data-name="math-geodesy" data-tags="math,geodesy,ellipsoid,datum,coordinates" data-date="2026-08-04T21:05:53+01:00" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/math-geodesy" target="_blank" rel="noopener">
       <h3><code>math-geodesy</code><span class="plugin-version">v0.1.0</span></h3>
+      <p class="plugin-date">Released Aug 4, 2026</p>
       <p>Abstract math skills for geodetic coordinates, reference ellipsoids, and datum transformations.</p>
       <div class="tags">
         <span class="tag">math</span><span class="tag">geodesy</span><span class="tag">ellipsoid</span><span class="tag">datum</span><span class="tag">coordinates</span>
       </div>
     </a>
-    <a class="plugin" data-plugin data-name="dotnet" data-tags="csharp,dotnet,generic-math,best-practices,simd,enumerable,linq,benchmarking,slnx,sourcelink,code-agents,aspire,hooks,file-based-apps" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/dotnet" target="_blank" rel="noopener">
+    <a class="plugin" data-plugin data-name="dotnet" data-tags="csharp,dotnet,generic-math,best-practices,simd,enumerable,linq,benchmarking,slnx,sourcelink,code-agents,aspire,hooks,file-based-apps" data-date="2026-08-05T10:25:57+01:00" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/dotnet" target="_blank" rel="noopener">
       <h3><code>dotnet</code><span class="plugin-version">v0.7.1</span></h3>
+      <p class="plugin-date">Released Aug 5, 2026</p>
       <p>C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), file-based apps (dotnet run file.cs, colon directives), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).</p>
       <div class="tags">
         <span class="tag">csharp</span><span class="tag">dotnet</span><span class="tag">generic-math</span><span class="tag">best-practices</span><span class="tag">simd</span><span class="tag">enumerable</span><span class="tag">linq</span><span class="tag">benchmarking</span><span class="tag">slnx</span><span class="tag">sourcelink</span><span class="tag">code-agents</span><span class="tag">aspire</span><span class="tag">hooks</span><span class="tag">file-based-apps</span>
       </div>
     </a>
-    <a class="plugin" data-plugin data-name="apm-authoring" data-tags="apm,skills,plugin,marketplace,authoring,ci" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/apm-authoring" target="_blank" rel="noopener">
+    <a class="plugin" data-plugin data-name="apm-authoring" data-tags="apm,skills,plugin,marketplace,authoring,ci" data-date="2026-08-04T21:05:53+01:00" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/apm-authoring" target="_blank" rel="noopener">
       <h3><code>apm-authoring</code><span class="plugin-version">v0.1.0</span></h3>
+      <p class="plugin-date">Released Aug 4, 2026</p>
       <p>Skills for authoring, consuming, and publishing APM packages, plus configuring apm-action CI workflows.</p>
       <div class="tags">
         <span class="tag">apm</span><span class="tag">skills</span><span class="tag">plugin</span><span class="tag">marketplace</span><span class="tag">authoring</span><span class="tag">ci</span>
       </div>
     </a>
-    <a class="plugin" data-plugin data-name="agent-authoring" data-tags="agents-md,skill,authoring,documentation,copilot-sdk,copilot-cli,copilot-cli-custom-agents,custom-agents,subagents,github-actions,toon,token-oriented-object-notation,tokens,llm,markdown,formatting,mermaid,diagrams" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/agent-authoring" target="_blank" rel="noopener">
+    <a class="plugin" data-plugin data-name="agent-authoring" data-tags="agents-md,skill,authoring,documentation,copilot-sdk,copilot-cli,copilot-cli-custom-agents,custom-agents,subagents,github-actions,toon,token-oriented-object-notation,tokens,llm,markdown,formatting,mermaid,diagrams" data-date="2026-08-05T17:08:04+01:00" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/agent-authoring" target="_blank" rel="noopener">
       <h3><code>agent-authoring</code><span class="plugin-version">v0.7.0</span></h3>
+      <p class="plugin-date">Released Aug 5, 2026</p>
       <p>Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown files, and following Markdown formatting best practices.</p>
       <div class="tags">
         <span class="tag">agents-md</span><span class="tag">skill</span><span class="tag">authoring</span><span class="tag">documentation</span><span class="tag">copilot-sdk</span><span class="tag">copilot-cli</span><span class="tag">copilot-cli-custom-agents</span><span class="tag">custom-agents</span><span class="tag">subagents</span><span class="tag">github-actions</span><span class="tag">toon</span><span class="tag">token-oriented-object-notation</span><span class="tag">tokens</span><span class="tag">llm</span><span class="tag">markdown</span><span class="tag">formatting</span><span class="tag">mermaid</span><span class="tag">diagrams</span>
       </div>
     </a>
-    <a class="plugin" data-plugin data-name="agentic-discovery" data-tags="ard,discovery,mcp,a2a,agents,catalog" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/agentic-discovery" target="_blank" rel="noopener">
+    <a class="plugin" data-plugin data-name="agentic-discovery" data-tags="ard,discovery,mcp,a2a,agents,catalog" data-date="2026-08-04T21:05:53+01:00" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/agentic-discovery" target="_blank" rel="noopener">
       <h3><code>agentic-discovery</code><span class="plugin-version">v0.1.0</span></h3>
+      <p class="plugin-date">Released Aug 4, 2026</p>
       <p>Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities.</p>
       <div class="tags">
         <span class="tag">ard</span><span class="tag">discovery</span><span class="tag">mcp</span><span class="tag">a2a</span><span class="tag">agents</span><span class="tag">catalog</span>
       </div>
     </a>
-    <a class="plugin" data-plugin data-name="ucp" data-tags="ucp,universal-commerce-protocol,agentic-commerce,checkout,ecommerce,mcp,a2a,ap2,payments" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/ucp" target="_blank" rel="noopener">
+    <a class="plugin" data-plugin data-name="ucp" data-tags="ucp,universal-commerce-protocol,agentic-commerce,checkout,ecommerce,mcp,a2a,ap2,payments" data-date="2026-08-05T11:01:37+01:00" href="https://github.com/NetFabric/intelligentium/tree/main/plugins/ucp" target="_blank" rel="noopener">
       <h3><code>ucp</code><span class="plugin-version">v0.1.0</span></h3>
+      <p class="plugin-date">Released Aug 5, 2026</p>
       <p>Skills for implementing (business/merchant) and consuming (platform/agent) the Universal Commerce Protocol (UCP) for agentic commerce discovery, checkout, and payments.</p>
       <div class="tags">
         <span class="tag">ucp</span><span class="tag">universal-commerce-protocol</span><span class="tag">agentic-commerce</span><span class="tag">checkout</span><span class="tag">ecommerce</span><span class="tag">mcp</span><span class="tag">a2a</span><span class="tag">ap2</span><span class="tag">payments</span>
@@ -611,11 +636,34 @@
   });
 
   (function initPluginFilters(){
+    const grid = document.getElementById('plugins-grid');
     const plugins = Array.from(document.querySelectorAll('.plugin[data-plugin]'));
     const searchInput = document.getElementById('plugin-search');
     const tagContainer = document.getElementById('plugin-tag-filters');
+    const sortContainer = document.getElementById('plugin-sort-options');
     const emptyState = document.getElementById('plugin-empty');
     const activeTags = new Set();
+    let currentSort = 'name';
+
+    function sortPlugins(){
+      const sorted = [...plugins].sort((a, b)=>{
+        if(currentSort === 'date'){
+          return new Date(b.dataset.date || 0).getTime() - new Date(a.dataset.date || 0).getTime();
+        }
+        return a.dataset.name.localeCompare(b.dataset.name);
+      });
+      sorted.forEach(el => grid.appendChild(el));
+    }
+
+    sortContainer.querySelectorAll('.tag-filter').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        if(btn.dataset.sort === currentSort) return;
+        currentSort = btn.dataset.sort;
+        sortContainer.querySelectorAll('.tag-filter').forEach(b => b.classList.toggle('active', b === btn));
+        sortPlugins();
+      });
+    });
+    sortPlugins();
 
     const allTags = [...new Set(plugins.flatMap(el => el.dataset.tags.split(',')))].sort();
     allTags.forEach(tag=>{
