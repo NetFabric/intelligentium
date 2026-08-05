@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-08-04T23:27:09.061386+00:00'
+generated_at: '2026-08-05T09:27:55.265728+00:00'
 apm_version: 0.27.0
 dependencies:
 - repo_url: netfabric/intelligentium
@@ -55,7 +55,7 @@ dependencies:
     .agents/skills/copilot-sdk/references/setup-and-auth.md: sha256:529a27967259b847aecb9226c41c46686df03796ef0e61aa0da99a8a6b35cf0a
     .agents/skills/create-skill/SKILL.md: sha256:6ed64132e6df52dc141cbe62a6f7ceb5d570e3bfff3dbc44b561b4edceaebce0
     .agents/skills/create-skill/references/research-workflow.md: sha256:ad05a64d8bf6d133a1be2a0e8b789f5a2601ef6e3b00bd9e29c69d6ca3b60f65
-    .agents/skills/create-skill/references/structure.md: sha256:1de7aebaa62274c636e1a8a1f82cd8ec314a702aeadaae28d4bcaa96f8d562e0
+    .agents/skills/create-skill/references/structure.md: sha256:0962c3f8f4d7c5b4e201dc5db7c239b26a2674df9cb1292547f7b82b89641137
     .agents/skills/create-skill/references/writing-style.md: sha256:63283a512f97aa588ef96af98228c105b32aee86de50865a92779c4a32fee106
     .agents/skills/toon/SKILL.md: sha256:81aa0780366cbf2a4174de423131787b584dea8cf3d2d6c6337f247a2aaba029
     .agents/skills/toon/references/cli-and-libraries.md: sha256:62fddd27a4c77d3adef571d605064555ad3625035ed3cef6989a31f69c81bfa0
@@ -514,7 +514,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:1de7aebaa62274c636e1a8a1f82cd8ec314a702aeadaae28d4bcaa96f8d562e0
+  content_hash: sha256:0962c3f8f4d7c5b4e201dc5db7c239b26a2674df9cb1292547f7b82b89641137
 - kind: project-relative
   target: copilot
   value: .agents/skills/create-skill/references/writing-style.md
