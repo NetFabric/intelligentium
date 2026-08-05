@@ -1,21 +1,6 @@
 # Quality & Security
 
-## Writing Rules
-
-`AGENTS.md` is re-read into context on every task, same as a skill — apply the same compact writing style: dense, table-driven, zero preamble, no loss of accuracy.
-
-| Rule | Do | Don't |
-|------|----|-------|
-| Executable over descriptive | "Run `pnpm test`" | "Make sure tests pass" |
-| Tables > prose | Bullet/table a list of commands or conventions | Multi-sentence paragraphs for scannable facts |
-| No preamble | Start with the first section heading | "This file describes how to work in this repo..." |
-| Active voice, short sentences | "Run `X` before committing" | "`X` should be run by contributors before changes are committed" |
-| Link, don't duplicate | Link to README/CONTRIBUTING for human-facing content | Copy full README prose into `AGENTS.md` |
-| Concrete over aspirational | Document what the repo's tooling actually does today | Describe a style guide nobody enforces |
-| Concise over exhaustive | Short, scannable sections | A wall of prose an agent must re-parse every run |
-| Nest instead of bloat | Per-package `AGENTS.md` for monorepos | One giant root file covering every package |
-
-Compactness never trims a command, a flag, or a caveat that changes behavior — cut words, not facts.
+See [writing-style.md](writing-style.md) for wording and formatting conventions.
 
 ## Verification Is Mandatory
 
@@ -42,10 +27,8 @@ Include a Security section whenever any of these apply (most repos):
 
 ## Anti-Patterns
 
-- ❌ Copying the entire README/CONTRIBUTING.md verbatim instead of linking to it
 - ❌ Committing secrets, tokens, or connection strings "for convenience"
 - ❌ Listing commands that don't currently pass
-- ❌ One monolithic root file for a large monorepo instead of nested per-package files
 - ❌ Baking language- or framework-specific advice into a supposedly project-agnostic template
 - ❌ Leaving placeholder/`TODO` text in a committed `AGENTS.md`
 - ❌ Symlinking `CLAUDE.md` to `AGENTS.md` instead of using the `@AGENTS.md` import directive

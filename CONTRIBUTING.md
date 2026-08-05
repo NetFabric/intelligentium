@@ -9,7 +9,7 @@ Intelligentium is an [APM](https://microsoft.github.io/apm/) marketplace: a coll
 
 ## Repository Layout
 
-```
+```text
 apm.yml                  # root manifest; marketplace.packages lists every plugin
 plugins/<name>/
   apm.yml                # plugin manifest (name, version, tags, targets, deps)

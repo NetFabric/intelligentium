@@ -53,6 +53,7 @@ scripts/release-plugins.mjs    # per-plugin GitHub Release automation
 ## PR instructions
 
 - Title: short, imperative summary.
+- All Markdown files touched by a PR must be free of linting problems — fix them using the `markdown-best-practices` skill before committing.
 - Run `apm pack` and `npm run generate:ard` before committing; commit any resulting diffs.
 - If the change touches root `apm.yml`'s `marketplace.packages`, also run `npm run generate:plugins` and commit the resulting `index.html` diff.
 - If the change touches `*.html`, also run `npm run generate:sitemap` and commit the resulting `sitemap.xml` diff.

@@ -23,7 +23,8 @@ composition, and integration straightforward.
 
 ## 🚀 Getting Started
 
-### 1. Add the Marketplace  
+### 1. Add the Marketplace
+
 Register Intelligentium as a marketplace in [APM](https://microsoft.github.io/apm/):
 
 ```bash
@@ -36,7 +37,7 @@ Browse the `plugins` folder to discover modules that extend your agents,
 workflows, or automation pipelines.
 
 | Plugin | Description |
-|--------|-------------|
+| --- | --- |
 | [math-foundations](plugins/math-foundations) | Core abstract math skills for angles, trigonometry, vectors, and coordinate system conversions |
 | [math-rotation](plugins/math-rotation) | Abstract math skills for 3D rotation representations, quaternion algebra, and interpolation on manifolds |
 | [math-geodesy](plugins/math-geodesy) | Abstract math skills for geodetic coordinates, reference ellipsoids, and datum transformations |
@@ -46,7 +47,8 @@ workflows, or automation pipelines.
 | [agentic-discovery](plugins/agentic-discovery) | Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities |
 | [ucp](plugins/ucp) | Skills for implementing (business/merchant) and consuming (platform/agent) the Universal Commerce Protocol (UCP) for agentic commerce discovery, checkout, and payments |
 
-### 3. Install Plugins via APM  
+### 3. Install Plugins via APM
+
 Each plugin ships with an APM manifest for deterministic installation and
 dependency management:
 
@@ -60,7 +62,7 @@ apm install <plugin-name>@intelligentium
 
 Intelligentium publishes an [ARD](https://github.com/agentic-resource-discovery/spec) v0.9 catalog so agents and registries can discover its plugins/skills programmatically:
 
-```
+```text
 https://intelligentium.ai/.well-known/ai-catalog.json
 ```
 

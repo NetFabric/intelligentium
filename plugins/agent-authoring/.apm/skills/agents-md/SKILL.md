@@ -47,4 +47,5 @@ Never hardcode language, framework, or tool assumptions into an AGENTS.md — ev
 |------|-----------|
 | [references/anatomy-and-discovery.md](references/anatomy-and-discovery.md) | Deciding where files live, how precedence works, or migrating from a legacy agent file |
 | [references/authoring-workflow.md](references/authoring-workflow.md) | Writing a new AGENTS.md for a greenfield or brownfield project |
+| [references/writing-style.md](references/writing-style.md) | Wording and formatting an AGENTS.md section for density and scannability |
 | [references/quality-and-security.md](references/quality-and-security.md) | Reviewing content quality, verifying commands, or covering security considerations |

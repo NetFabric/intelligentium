@@ -1,6 +1,6 @@
 # Writing Style for Custom Agents
 
-Two distinct texts to get right: the `description` (routes delegation) and the prompt body (shapes behavior). Same discipline as writing a good `SKILL.md` — specific > generic, active voice, no restatement.
+Two distinct texts to get right: the `description` (routes delegation) and the prompt body (shapes behavior). Same discipline as writing a good `SKILL.md` — specific > generic, active voice, no restatement. The whole `.agent.md` is re-read into context every invocation, so write it as compactly as the facts allow: tables over prose, no preamble, no restated frontmatter.
 
 ## `description` field
 
@@ -43,6 +43,7 @@ Do NOT modify files.
 | One role per agent | Split into a squad (see [delegation-and-squads.md](delegation-and-squads.md)) when a prompt starts listing unrelated responsibilities | A single agent that reviews security, perf, and a11y in one body |
 | Orchestrator prompts name their specialists | "Dispatch to squad-security, squad-perf, squad-a11y via `task`" | "Dispatch to the right specialist" — too vague to route reliably |
 | Sidekick prompts declare their trigger intent | State what event should make it act ("react when the repo/branch changes") | Writing a sidekick prompt identical to a normal on-demand agent |
+| Mermaid over prose | A flowchart for routing/dispatch logic or squad topology ([delegation-and-squads.md](delegation-and-squads.md)) | A diagram for facts that fit a table (frontmatter fields, tool lists) |
 
 ## Anti-patterns
 

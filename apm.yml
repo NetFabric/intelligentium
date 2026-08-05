@@ -77,11 +77,12 @@ marketplace:
         agent skills, GitHub Copilot CLI custom agents, building apps with 
         the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, 
         converting data to/from TOON (Token-Oriented Object Notation) to cut 
-        LLM token usage, and following Markdown formatting best practices.
+        LLM token usage, authoring Mermaid diagrams in markdown files, and 
+        following Markdown formatting best practices.
       source: ./plugins/agent-authoring
-      version: 0.6.0
+      version: 0.7.0
       tag_pattern: "agent-authoring-v{version}"
-      tags: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, copilot-cli-custom-agents, custom-agents, subagents, github-actions, toon, token-oriented-object-notation, tokens, llm, markdown, formatting]
+      tags: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, copilot-cli-custom-agents, custom-agents, subagents, github-actions, toon, token-oriented-object-notation, tokens, llm, markdown, formatting, mermaid, diagrams]
 
     - name: agentic-discovery
       description: Skill for the Agentic Resource Discovery (ARD) open 

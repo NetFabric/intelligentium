@@ -12,6 +12,7 @@ Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, Git
 | [copilot-sdk](.apm/skills/copilot-sdk) | Embed the GitHub Copilot agent runtime into your own application using the Copilot SDK |
 | [create-skill](.apm/skills/create-skill) | Create or update AI agent skills (SKILL.md + reference files) for any harness that supports the format |
 | [markdown-best-practices](.apm/skills/markdown-best-practices) | Write and review Markdown files for consistent, correctly-rendering formatting |
+| [mermaid-diagrams](.apm/skills/mermaid-diagrams) | Author Mermaid diagrams in `mermaid`-fenced markdown code blocks, covering every stable (non-experimental) diagram type |
 | [toon](.apm/skills/toon) | Convert data to/from TOON (Token-Oriented Object Notation) for lower-token LLM context |
 
 ## Install

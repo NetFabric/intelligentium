@@ -379,7 +379,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:agent-authoring",
       "displayName": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, and following Markdown formatting best practices.",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown files, and following Markdown formatting best practices.",
       "tags": [
         "agents-md",
         "skill",
@@ -396,9 +396,11 @@
         "tokens",
         "llm",
         "markdown",
-        "formatting"
+        "formatting",
+        "mermaid",
+        "diagrams"
       ],
-      "version": "0.6.0",
+      "version": "0.7.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -469,6 +471,18 @@
               "fixing inconsistent headings, lists, code fences, or tables",
               "choosing link/image/emphasis styles",
               "general Markdown formatting conventions"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:mermaid-diagrams",
+            "displayName": "mermaid-diagrams",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/mermaid-diagrams/SKILL.md",
+            "description": "Author Mermaid diagrams inside ```mermaid fenced code blocks in markdown files (README, AGENTS.md, PR descriptions, chat responses). Covers every stable, non-experimental diagram type: flowchart, sequence, class, state, entity relationship, user journey, Gantt, pie, quadrant, requirement, gitGraph, block, packet, kanban, XY chart, event modeling. Use when: picking a diagram type; writing correct fence syntax; documenting architecture, processes, timelines, schemas, or data relationships compactly for humans and agents alike, since a diagram conveys structure in far fewer tokens than prose. DO NOT USE FOR: the Mermaid Live Editor or mermaid.ai chat (fence syntax only); experimental or beta diagrams (swimlanes, mindmap, timeline, sankey, architecture, radar, treemap, venn, ishikawa, wardley, cynefin, treeView, ZenUML, C4); general Markdown formatting (use markdown-best-practices).",
+            "representativeQueries": [
+              "the Mermaid Live Editor or mermaid.ai chat (fence syntax only)",
+              "experimental or beta diagrams (swimlanes, mindmap, timeline, sankey, architecture, radar, treemap, venn, ishikawa, wardley, cynefin, treeView, ZenUML, C4)",
+              "general Markdown formatting (use markdown-best-practices)"
             ]
           },
           {
