@@ -240,6 +240,82 @@
   .card h3{margin:0 0 10px; font-size:1.12rem; letter-spacing:-0.01em;}
   .card p{margin:0; color:var(--muted); font-size:0.93rem; line-height:1.55;}
 
+  /* spotlight */
+  .spotlight{
+    border:1px solid rgba(124,92,255,0.35);
+    border-radius:24px;
+    padding:56px 40px;
+    background:
+      radial-gradient(500px circle at 10% 0%, rgba(124,92,255,0.16), transparent 60%),
+      radial-gradient(500px circle at 100% 100%, rgba(34,211,238,0.12), transparent 60%),
+      linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+  }
+  .spotlight-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:5px 14px;
+    border-radius:999px;
+    border:1px solid rgba(124,92,255,0.4);
+    background:rgba(124,92,255,0.12);
+    color:#c9bfff;
+    font-size:0.78rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .spotlight-head{max-width:680px; margin-bottom:44px;}
+  .spotlight-head h2{
+    font-size:clamp(1.8rem,4vw,2.5rem);
+    margin:0 0 14px;
+    letter-spacing:-0.02em;
+  }
+  .spotlight-head h2 code{
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    background:rgba(124,92,255,0.18);
+    color:#c9bfff;
+    padding:3px 10px;
+    border-radius:8px;
+    font-size:0.85em;
+  }
+  .spotlight-head p{color:var(--muted); font-size:1.02rem; line-height:1.6; margin:0;}
+  .spotlight-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;
+    margin-bottom:36px;
+  }
+  .spotlight-card{
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:22px;
+    background:rgba(255,255,255,0.03);
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .spotlight-card:hover{transform:translateY(-3px); border-color:rgba(34,211,238,0.4);}
+  .spotlight-card .spotlight-tag{
+    display:inline-block;
+    font-size:0.7rem;
+    font-weight:700;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-bottom:10px;
+  }
+  .spotlight-card h4{margin:0 0 8px; font-size:1rem; letter-spacing:-0.01em;}
+  .spotlight-card p{margin:0; color:var(--muted); font-size:0.88rem; line-height:1.55;}
+  .spotlight-cta{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    border-top:1px solid var(--border);
+    padding-top:28px;
+  }
+  .spotlight-cta .install{margin:0;}
+
   /* plugins */
   .plugin-filters{
     display:flex;
@@ -444,6 +520,7 @@
   <div class="brand"><span class="mark"></span> Intelligentium</div>
   <nav>
     <a href="#advantages">Why</a>
+    <a href="#spotlight">Spotlight</a>
     <a href="#plugins">Plugins</a>
     <a href="#ard">ARD Catalog</a>
     <a href="https://github.com/NetFabric/intelligentium">GitHub</a>
@@ -461,7 +538,7 @@
   </div>
   <div class="install">
     <span id="install-cmd">apm marketplace add netfabric/intelligentium</span>
-    <button onclick="copyInstall()">Copy</button>
+    <button onclick="copyInstall(this)">Copy</button>
   </div>
 </section>
 
@@ -505,6 +582,65 @@
       <div class="icon">🐍</div>
       <h3>Python-only scripts</h3>
       <p>Every skill's automation scripts are normalized to Python — no mixed toolchains to install, so behavior stays deterministic across every consumer.</p>
+    </div>
+  </div>
+</section>
+
+<section id="spotlight">
+  <div class="spotlight">
+    <div class="spotlight-head">
+      <div class="spotlight-badge">✨ Featured plugin</div>
+      <h2>Write better skills and agents with <code>agent-authoring</code></h2>
+      <p>Eight skills for every layer of authoring AI capabilities — from project-level <code>AGENTS.md</code> context down to individual <code>SKILL.md</code> files, custom Copilot CLI agents, and the SDKs and pipelines that run them. Follow their built-in best practices and you get skills that are both <strong>more token-efficient</strong> to load and reference, and <strong>higher quality</strong> — well-triggered, unambiguous, and correctly structured.</p>
+    </div>
+    <div class="spotlight-grid">
+      <div class="spotlight-card">
+        <span class="spotlight-tag">Quality</span>
+        <h4>create-skill</h4>
+        <p>Codifies compact writing rules, frontmatter constraints, and trigger-phrase description patterns so new skills are discoverable and unambiguous from the first draft.</p>
+      </div>
+      <div class="spotlight-card">
+        <span class="spotlight-tag">Efficiency</span>
+        <h4>toon</h4>
+        <p>Converts JSON/YAML payloads to Token-Oriented Object Notation, cutting the tokens spent on tabular data inside prompts and skill references.</p>
+      </div>
+      <div class="spotlight-card">
+        <span class="spotlight-tag">Structure</span>
+        <h4>agents-md</h4>
+        <p>The open, tool-agnostic format for giving coding agents project context — root and nested files, discovery rules, and migration from other formats.</p>
+      </div>
+      <div class="spotlight-card">
+        <span class="spotlight-tag">Automation</span>
+        <h4>copilot-cli-custom-agents</h4>
+        <p>Frontmatter fields, orchestrator/specialist squads, and auto-delegation via well-written descriptions — the same trigger-quality bar as skills.</p>
+      </div>
+      <div class="spotlight-card">
+        <span class="spotlight-tag">Integration</span>
+        <h4>copilot-sdk</h4>
+        <p>Embed the Copilot agent runtime in your own app: sessions, custom tools, hooks, sub-agent delegation, and skill/plugin directories.</p>
+      </div>
+      <div class="spotlight-card">
+        <span class="spotlight-tag">CI/CD</span>
+        <h4>copilot-github-actions</h4>
+        <p>Run Copilot CLI safely in workflows — minimal tool allowlisting, auth strategy, and prompt-injection-aware permission scoping.</p>
+      </div>
+      <div class="spotlight-card">
+        <span class="spotlight-tag">Clarity</span>
+        <h4>mermaid-diagrams</h4>
+        <p>Every stable Mermaid diagram type for conveying structure in far fewer tokens than prose — architecture, flows, and schemas included.</p>
+      </div>
+      <div class="spotlight-card">
+        <span class="spotlight-tag">Consistency</span>
+        <h4>markdown-best-practices</h4>
+        <p>Heading hierarchy, list and code-fence conventions, and table formatting so every generated document renders correctly everywhere.</p>
+      </div>
+    </div>
+    <div class="spotlight-cta">
+      <p style="margin:0; color:var(--muted); font-size:0.92rem; max-width:420px;">Install the whole plugin, or pull individual skills as you need them.</p>
+      <div class="install" style="max-width:420px;">
+        <span>apm install agent-authoring@intelligentium</span>
+        <button onclick="copyInstall(this)">Copy</button>
+      </div>
     </div>
   </div>
 </section>
@@ -617,13 +753,14 @@
 </footer>
 
 <script>
-  function copyInstall(){
-    const text = document.getElementById('install-cmd').textContent;
+  function copyInstall(btn){
+    const el = btn ? btn.closest('.install') : document.querySelector('.install');
+    const text = el.querySelector('span').textContent;
     navigator.clipboard.writeText(text).then(()=>{
-      const btn = document.querySelector('.install button');
-      const prev = btn.textContent;
-      btn.textContent = 'Copied!';
-      setTimeout(()=>{ btn.textContent = prev; }, 1500);
+      const prev = btn ? btn.textContent : el.querySelector('button').textContent;
+      const target = btn || el.querySelector('button');
+      target.textContent = 'Copied!';
+      setTimeout(()=>{ target.textContent = prev; }, 1500);
     });
   }
 
