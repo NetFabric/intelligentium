@@ -63,7 +63,7 @@ function buildCards(packages) {
         .join("");
       return [
         `    <a class="plugin" data-plugin data-name="${escapeHtml(pkg.name)}" data-tags="${escapeHtml(pkg.tags.join(","))}" href="${repoUrl(pkg.source)}" target="_blank" rel="noopener">`,
-        `      <h3><code>${escapeHtml(pkg.name)}</code></h3>`,
+        `      <h3><code>${escapeHtml(pkg.name)}</code><span class="plugin-version">v${escapeHtml(pkg.version)}</span></h3>`,
         `      <p>${escapeHtml(pkg.description)}</p>`,
         `      <div class="tags">`,
         `        ${tags}`,
