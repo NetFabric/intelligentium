@@ -60,7 +60,7 @@ marketplace:
         colon directives), and deterministic guardrails for AI code agents 
         (analyzers, hooks, Aspire, testing).
       source: ./plugins/dotnet
-      version: 0.7.0
+      version: 0.7.1
       tag_pattern: "dotnet-v{version}"
       tags: [csharp, dotnet, generic-math, best-practices, simd, enumerable, linq, benchmarking, slnx, sourcelink, code-agents, aspire, hooks, file-based-apps]
 

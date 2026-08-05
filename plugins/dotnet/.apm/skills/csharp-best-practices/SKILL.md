@@ -1,6 +1,6 @@
 ---
 name: csharp-best-practices
-description: "Modern .NET and C# best practices for code quality, performance, and correctness. USE FOR: choosing struct/class/record/readonly-record-struct; nullable reference types; pattern matching; primary constructors; collection expressions; required members; init-only properties; file-scoped namespaces; global usings; async/await patterns; ConfigureAwait; ValueTask vs Task; CancellationToken propagation; IAsyncEnumerable; Span<T>/Memory<T> usage; avoiding boxing; readonly struct; ArrayPool<T>; FrozenDictionary/FrozenSet; LINQ vs loops in hot paths; ArgumentNullException.ThrowIfNull; ThrowIfNegative; ThrowIfZero; IReadOnlyList return types; error handling patterns; GeneratedRegex; LoggerMessage; source generators for regex and logging. DO NOT USE FOR: generic math interfaces (use dotnet-generic-math); ASP.NET Core middleware; EF Core modeling."
+description: "Modern .NET and C# best practices for code quality, performance, and correctness. USE FOR: choosing struct/class/record/readonly-record-struct; nullable reference types; pattern matching; primary constructors; collection expressions; required members; init-only properties; file-scoped namespaces; global usings; async/await patterns; ConfigureAwait; ValueTask vs Task; CancellationToken propagation; IAsyncEnumerable; Span<T>/Memory<T> usage; avoiding boxing; readonly struct; ArrayPool<T>; FrozenDictionary/FrozenSet; LINQ vs loops in hot paths; ArgumentNullException.ThrowIfNull; ThrowIfNegative; ThrowIfZero; IReadOnlyList return types; error handling patterns; GeneratedRegex; LoggerMessage; source generators for regex and logging; avoiding Math/MathF in favor of static methods on the numeric type. DO NOT USE FOR: generic math interfaces (use dotnet-generic-math); ASP.NET Core middleware; EF Core modeling."
 ---
 
 # C# Best Practices
@@ -66,6 +66,12 @@ Full examples → [references/source-generators.md](references/source-generators
 - Accept `IEnumerable<T>` for input (widest contract)
 - Accept `ReadOnlySpan<T>` overloads for hot paths
 - Use `CancellationToken` as **last** parameter; default to `default`
+
+## Math APIs
+
+- Never call `Math.*` or `MathF.*` — use the equivalent static method on the operand's own type instead (`double.Sqrt(x)`, `float.Pow(x, y)`, `int.Abs(x)`), available since .NET 7 via `INumber<T>`/`IFloatingPointIeee754<T>`
+- Same rule applies generically: `T.Sqrt(x)` when `T : IRootFunctions<T>` — avoids picking the wrong precision and works uniformly across `float`/`double`/custom numeric types
+- Full generic-math interface usage (`INumber<T>`, `IFloatingPointIeee754<T>`, etc.) → use the `dotnet-generic-math` skill
 
 ## Reference Files
 

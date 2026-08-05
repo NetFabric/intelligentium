@@ -8,10 +8,10 @@ Your app talks to the SDK client; the SDK talks to the `copilot` CLI over JSON-R
 
 | Persona | Start with |
 |---|---|
-| 🧑‍💻 Hobbyist / side project | [Bundled CLI](https://github.com/github/copilot-sdk/tree/main/docs/setup/bundled-cli.md) — SDK ships the CLI, just install and go |
+| 💻 Hobbyist / side project | [Bundled CLI](https://github.com/github/copilot-sdk/tree/main/docs/setup/bundled-cli.md) — SDK ships the CLI, just install and go |
 | 🏢 Internal app developer | [GitHub OAuth](https://github.com/github/copilot-sdk/tree/main/docs/setup/github-oauth.md) for employee sign-in, then [Backend Services](https://github.com/github/copilot-sdk/tree/main/docs/setup/backend-services.md) |
 | 🚀 ISV / product for customers | [GitHub OAuth](https://github.com/github/copilot-sdk/tree/main/docs/setup/github-oauth.md) or [BYOK](https://github.com/github/copilot-sdk/tree/main/docs/auth/byok.md), plus [Backend Services](https://github.com/github/copilot-sdk/tree/main/docs/setup/backend-services.md) |
-| 🏗️ Platform developer | [Backend Services](https://github.com/github/copilot-sdk/tree/main/docs/setup/backend-services.md) + [Multi-tenancy](https://github.com/github/copilot-sdk/tree/main/docs/setup/multi-tenancy.md) + [Scaling](https://github.com/github/copilot-sdk/tree/main/docs/setup/scaling.md) |
+| 🏗 Platform developer | [Backend Services](https://github.com/github/copilot-sdk/tree/main/docs/setup/backend-services.md) + [Multi-tenancy](https://github.com/github/copilot-sdk/tree/main/docs/setup/multi-tenancy.md) + [Scaling](https://github.com/github/copilot-sdk/tree/main/docs/setup/scaling.md) |
 
 ## Decision matrix
 

@@ -1,5 +1,5 @@
 name: dotnet
-version: 0.7.0
+version: 0.7.1
 description: C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), file-based apps (dotnet run file.cs, colon directives), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).
 author: NetFabric
 license: MIT

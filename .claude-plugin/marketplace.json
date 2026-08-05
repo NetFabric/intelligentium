@@ -48,7 +48,7 @@
     {
       "name": "dotnet",
       "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), file-based apps (dotnet run file.cs, colon directives), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).",
-      "version": "0.7.0",
+      "version": "0.7.1",
       "tags": [
         "csharp",
         "dotnet",
@@ -83,13 +83,20 @@
     },
     {
       "name": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files and SKILL.md agent skills.",
-      "version": "0.1.0",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, and converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage.",
+      "version": "0.4.0",
       "tags": [
         "agents-md",
         "skill",
         "authoring",
-        "documentation"
+        "documentation",
+        "copilot-sdk",
+        "copilot-cli",
+        "github-actions",
+        "toon",
+        "token-oriented-object-notation",
+        "tokens",
+        "llm"
       ],
       "source": "./plugins/agent-authoring"
     },

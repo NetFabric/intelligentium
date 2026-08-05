@@ -1,5 +1,8 @@
 node_modules/
-
+.DS_Store
 
 # APM dependencies
 apm_modules/
+
+# apm pack output (local plugin bundles)
+build/
