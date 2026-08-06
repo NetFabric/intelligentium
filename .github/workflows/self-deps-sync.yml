@@ -1,0 +1,38 @@
+name: Sync self-installed skills
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - apm.yml
+      - "plugins/agent-authoring/**"
+      - "plugins/apm-authoring/**"
+      - "plugins/agentic-discovery/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: self-deps-sync-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: microsoft/apm-action@v1
+        with:
+          setup-only: "true"
+      # Root apm.yml self-depends on a subset of its own packages (see AGENTS.md);
+      # this re-resolves those unpinned refs to the commit just pushed and
+      # refreshes .agents/skills + apm.lock.yaml so `apm pack` never sees stale hashes.
+      - run: apm update --yes --target copilot
+      - name: Commit refreshed self-dependency output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .agents/skills apm.lock.yaml
+          git diff --cached --quiet || git commit -m "chore: resync self-installed skills [skip ci]"
+          git push
