@@ -1,5 +1,5 @@
 name: agent-authoring
-version: 0.7.0
+version: 0.7.1
 description: Skills for authoring AGENTS.md project-context files, SKILL.md agent
   skills, GitHub Copilot CLI custom agents, building apps with the GitHub
   Copilot SDK, automating Copilot CLI in GitHub Actions, converting data
