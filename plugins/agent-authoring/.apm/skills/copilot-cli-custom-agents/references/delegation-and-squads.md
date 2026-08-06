@@ -36,7 +36,29 @@ Disable specific built-ins with `--disable-agent task,explore` (or the equivalen
 task(agent_type="react-reviewer", prompt="Review src/components/Cart.tsx for hook misuse")
 ```
 
-`agent_type` can be a built-in name or any custom agent ID (filename minus extension) visible at the current location priority. Subagent runs get human-readable IDs based on the agent name (`react-reviewer-0`, not a generic `agent-0`). Nested subagents inherit the parent's tool restrictions and keep their own `model`/`reasoning-effort` across a resumed session, including with BYOK/BYOM providers.
+`task` takes exactly two parameters:
+
+| Parameter | Purpose |
+|---|---|
+| `agent_type` | A built-in name (`explore`, `general-purpose`, …) or any custom agent ID (filename minus extension) visible at the current location priority |
+| `prompt` | The task for the subagent to run — see below, this is the *only* channel of information into it |
+
+Subagent runs get human-readable IDs based on the agent name (`react-reviewer-0`, not a generic `agent-0`). Nested subagents inherit the parent's tool restrictions and keep their own `model`/`reasoning-effort` across a resumed session, including with BYOK/BYOM providers. Since [v1.0.19](https://github.com/github/copilot-cli/issues/690), `agent_type` can name any custom agent in the repo, not just built-ins — this is what makes the orchestrator + specialist squad pattern below possible.
+
+### `prompt` is the only communication channel
+
+Each `task` dispatch starts the subagent in a fresh, empty context — it does **not** inherit the orchestrator's conversation history, prior tool results, or file reads. `prompt` is the only information the subagent gets. Whatever the orchestrator has already learned (a research finding, a file path, a task brief) must be written explicitly into `prompt`, or the orchestrator must point the subagent at a file it can read for itself (e.g. a shared plan on disk).
+
+```text
+# Bad — the specialist has no idea what "it" refers to
+task(agent_type="squad-implementer", prompt="Now implement it")
+
+# Good — self-contained: states the goal and names the supporting file
+task(agent_type="squad-implementer", prompt="Implement the plan in
+/memories/session/squad-plan.md. Run tests after each file change.")
+```
+
+This is the same discipline VS Code enforces with `vscode/memory` writes before a handoff — the CLI has no equivalent shared-memory tool, so the orchestrator's `prompt` composition is the entire hand-off mechanism.
 
 ## Agent-to-agent communication
 

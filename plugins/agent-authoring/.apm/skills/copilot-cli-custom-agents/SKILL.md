@@ -38,6 +38,8 @@ Do NOT modify files.
 | CLI flag | `copilot --agent agent-name --prompt "..."` |
 | From another agent | `task(agent_type="agent-name", prompt="...")` — the CLI's subagent-dispatch tool |
 
+`task` takes exactly two parameters: `agent_type` (the target agent's ID) and `prompt` (the task to run). The subagent starts with a fresh, empty context — `prompt` is the *only* channel of information it receives, so the calling agent must write every fact the subagent needs (goal, constraints, file paths) directly into that string rather than assuming shared context. Details and examples → [references/delegation-and-squads.md](references/delegation-and-squads.md).
+
 ## Built-in agents
 
 `explore`, `task`, `general-purpose`, `code-review`, `research` (only via `/research`), `rubber-duck`, `security-review` — plus the undocumented `configure-copilot` agent for managing MCP servers/agents/skills. Full table → [references/delegation-and-squads.md](references/delegation-and-squads.md).
