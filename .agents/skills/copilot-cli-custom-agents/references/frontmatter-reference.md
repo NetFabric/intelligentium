@@ -7,7 +7,7 @@ Source: [CLI command reference §Custom agents reference](https://docs.github.co
 | Field | Type | Default | Notes |
 | --- | --- | --- | --- |
 | `description` | string | — (required) | Shown in the agent list and to the `task` tool; the CLI routes auto-delegation on this text alone — be specific about scope/triggers, not vague ("Backend developer" won't trigger). |
-| `name` | string | filename | Display name only. |
+| `name` | string | filename | Display label shown in the `/agent` picker and agent list — doesn't need to match the filename (which is still the agent's ID for `task(agent_type=...)`/`@mention`). Keep it short but meaningful; spaces are allowed (e.g. `name: Security Review`). |
 | `model` | string | inherits parent | Single model string. Accepts short IDs (`claude-sonnet-4.6`) or display names with vendor suffix (`"GPT-5.4 (copilot)"`). When the session model is `Auto`, subagents always use the resolved session model regardless of this field. |
 | `tools` | string[] | `["*"]` (all) | See [Tools](#tools) below. |
 | `mcp-servers` | object | — | Same schema as `~/.copilot/mcp-config.json`; merges with configured servers. |

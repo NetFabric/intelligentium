@@ -1,12 +1,12 @@
 lockfile_version: '1'
-generated_at: '2026-08-05T16:13:32.465805+00:00'
+generated_at: '2026-08-06T09:47:56.677386+00:00'
 apm_version: 0.27.0
 dependencies:
 - repo_url: netfabric/intelligentium
   name: agent-authoring
   host: github.com
-  resolved_commit: 62763d1cb862bbcd6cd3cad66fe6c717cea1f570
-  version: 0.7.0
+  resolved_commit: 7e8361c10b30124dda6e2276ce7a5bb2278057ac
+  version: 0.7.1
   virtual_path: plugins/agent-authoring
   is_virtual: true
   package_type: apm_package
@@ -67,7 +67,7 @@ dependencies:
     .agents/skills/copilot-cli-custom-agents/SKILL.md: sha256:f9ecf83fce58927ad17c838a356c29aded80edb8742f1ffc874def952b86efd2
     .agents/skills/copilot-cli-custom-agents/references/authoring-workflow.md: sha256:514b9db1062b641990308b0cdebd66a8be028d5f32710e54ae2faf22ff5387bb
     .agents/skills/copilot-cli-custom-agents/references/delegation-and-squads.md: sha256:0af309727884212cf439a74dc66ff281fdbebb0adeec535ba3c68d63e9ea2e0e
-    .agents/skills/copilot-cli-custom-agents/references/frontmatter-reference.md: sha256:8b780f94554ad4e1c7e70674724bfaad9a8c76efcae65ff27e4c8c7fa40d7000
+    .agents/skills/copilot-cli-custom-agents/references/frontmatter-reference.md: sha256:a64ccbdd60e76174019f297c6e8732a7478d893b55bca7b014f985fff99151be
     .agents/skills/copilot-cli-custom-agents/references/undocumented-and-gotchas.md: sha256:eec62f3eebaad727b806c088fa36266797b12daaf0bf3980f6223d53c119be5a
     .agents/skills/copilot-cli-custom-agents/references/writing-style.md: sha256:7678476d40e6cf5df959b17398ee0213729f31fd845f70789f2ff32c15dbb43b
     .agents/skills/copilot-github-actions/SKILL.md: sha256:fe472304ee2de77fae86fa76f99a2fb15e30461fe76d3ca341935858b7f5df8e
@@ -84,7 +84,7 @@ dependencies:
     .agents/skills/create-skill/references/research-workflow.md: sha256:ad05a64d8bf6d133a1be2a0e8b789f5a2601ef6e3b00bd9e29c69d6ca3b60f65
     .agents/skills/create-skill/references/structure.md: sha256:105753873d3cb6a5b3be0651c8ff34e8611998125c97c516a9153c2fd4a751a0
     .agents/skills/create-skill/references/writing-style.md: sha256:63283a512f97aa588ef96af98228c105b32aee86de50865a92779c4a32fee106
-    .agents/skills/markdown-best-practices/SKILL.md: sha256:9a8a20d3e9689d5ebb4bb105495ec9901d50c61edad5eb15a03b131652d351e6
+    .agents/skills/markdown-best-practices/SKILL.md: sha256:14b8eabe547cdfbde852d37bd5ba8df3e48d651e36d88cb9998597f6a7dfa15f
     .agents/skills/markdown-best-practices/references/headings-and-structure.md: sha256:5ab224aaac9580430c58883ae64bc8f48eea824dd4f86eeaf3c55d4c14f40874
     .agents/skills/markdown-best-practices/references/links-images-and-whitespace.md: sha256:40890f9118576259aa0eafe487b095249a2a3dcf23e8cd597d491d63e346d2f2
     .agents/skills/markdown-best-practices/references/lists-and-code-blocks.md: sha256:1a0a91658b8482252da1849690633be0fa5a6a997d12a24253737c3e83e413ae
@@ -98,12 +98,12 @@ dependencies:
     .agents/skills/toon/references/cli-and-libraries.md: sha256:62fddd27a4c77d3adef571d605064555ad3625035ed3cef6989a31f69c81bfa0
     .agents/skills/toon/references/format-spec.md: sha256:dada3b52077ed2991bf700bee6a0ed2f36c79aa93497fc6778eb438b451fac38
     .agents/skills/toon/references/llm-integration-patterns.md: sha256:cc5c20c4b740042cff6b90ad77fdfceb4ad008a02771adf1b809c078206e3c66
-  content_hash: sha256:94df170cf409ba86f73287b9497381870b0c7d578268e62be76b78cfde41bf04
+  content_hash: sha256:0f8ff6b3c034fb1569d0c35780d600cfc02c9a73d7e6b0c9faf2f7cfb4f115bf
   declared_license: MIT
 - repo_url: netfabric/intelligentium
   name: agentic-discovery
   host: github.com
-  resolved_commit: 62763d1cb862bbcd6cd3cad66fe6c717cea1f570
+  resolved_commit: 7e8361c10b30124dda6e2276ce7a5bb2278057ac
   version: 0.1.0
   virtual_path: plugins/agentic-discovery
   is_virtual: true
@@ -126,7 +126,7 @@ dependencies:
 - repo_url: netfabric/intelligentium
   name: apm-authoring
   host: github.com
-  resolved_commit: 62763d1cb862bbcd6cd3cad66fe6c717cea1f570
+  resolved_commit: 7e8361c10b30124dda6e2276ce7a5bb2278057ac
   version: 0.1.0
   virtual_path: plugins/apm-authoring
   is_virtual: true
@@ -461,7 +461,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:8b780f94554ad4e1c7e70674724bfaad9a8c76efcae65ff27e4c8c7fa40d7000
+  content_hash: sha256:a64ccbdd60e76174019f297c6e8732a7478d893b55bca7b014f985fff99151be
 - kind: project-relative
   target: copilot
   value: .agents/skills/copilot-cli-custom-agents/references/undocumented-and-gotchas.md
@@ -650,7 +650,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:9a8a20d3e9689d5ebb4bb105495ec9901d50c61edad5eb15a03b131652d351e6
+  content_hash: sha256:14b8eabe547cdfbde852d37bd5ba8df3e48d651e36d88cb9998597f6a7dfa15f
 - kind: project-relative
   target: copilot
   value: .agents/skills/markdown-best-practices/references/headings-and-structure.md
