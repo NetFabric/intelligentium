@@ -11,7 +11,9 @@ A project can host more than one graph-pattern squad at once. Pick a short, proj
 | Resource | Convention | Reason |
 | --- | --- | --- |
 | Orchestrator agent ID/filename | `<squad>-orchestrator` | Obvious in directory listings |
+| Planner agent ID/filename | `<squad>-planner` | Mandatory node present in every squad (topologies.md#mandatory-baseline-squad-shape) |
 | Node/specialist agent ID/filename | `<squad>-<node-id>` (node-id from the design's node table) | Traceable back to the graph diagram |
+| Quality gate step ID | `<squad>-quality-gate` | Only when the design includes one; may not be a separate `.agent.md` at all (see step 6) |
 | Tribunal review orchestrator | `<squad>-review-orchestrator` | Distinguishes it from the outer graph's orchestrator |
 | Tribunal reviewers | `<squad>-reviewer-a`, `<squad>-reviewer-b` | Pairs with the provider-diversity constraint in model-selection.md |
 | Agent frontmatter `name:` (display label) | `"<Squad> Orchestrator"`, `"<Squad> Reviewer A"`, etc. | `name:` is a separate, human-facing label from the filename/ID (frontmatter-reference.md) — prefixing it too avoids two squads showing indistinguishable entries anywhere it's rendered |
@@ -22,7 +24,7 @@ A project can host more than one graph-pattern squad at once. Pick a short, proj
 
 ## 2. Author each node — enforce least privilege and visibility
 
-For every node in the design, invoke `copilot-cli-custom-agents` to create its `.agent.md`. Two requirements are non-negotiable, not just conventions:
+For every node in the design, invoke `copilot-cli-custom-agents` to create its `.agent.md`. The mandatory planner node is authored the same way as any other specialist here — it's a regular LLM agent, unlike the quality gate (step 6), which is not. Two requirements are non-negotiable, not just conventions:
 
 - **`user-invocable: false` on every node except the orchestrator.** This is the field the CLI actually provides for "hide from users, keep dispatchable" (frontmatter-reference.md) — it hides the node from the `/agent` picker while leaving it reachable via `task(agent_type=...)`. Never use `disable-model-invocation` for this: it also blocks the orchestrator's own `task()` dispatch, since the CLI has no "only orchestrator X" exception.
 - **`tools:` scoped to the minimum that node's role needs** — no `task`/`list_agents` on a leaf specialist unless it is itself a nested orchestrator (e.g. a tribunal's review-orchestrator), no `edit`/`shell`/`create` on a pure reviewer/classifier node.
@@ -47,6 +49,8 @@ Invoke `copilot-cli-custom-agents` once more for the orchestrator itself:
 | Conditional `{source, target, handler}` | "If A's result contains/implies `<condition>`, dispatch to B; otherwise dispatch to C." (spell out the actual condition text) |
 | Cyclic `[Reviewer, Writer]` bounded | "If the reviewer's result says revision is needed, dispatch back to the writer with the reviewer's feedback. Repeat at most 3 times, then dispatch to the publisher regardless." |
 
+When the planner's decomposition produces multiple implementer subtasks, apply the **Fan-out** and **AND join** rows above between them by default — dispatch every implementer with no dependency on another implementer's output in parallel, and don't gate the quality gate/reviewer dispatch until all of them return. Only fall back to the **Simple** row's serial pattern for an implementer pair where one's task genuinely needs the other's output (see [topologies.md](topologies.md#implementer-stage-one-or-more-agents-parallel-when-independent)).
+
 ## 5. Scaffold a tribunal review node (if the design calls for one)
 
 When a node in the design is a review step, treat it as a nested tribunal (see [topologies.md](topologies.md#5-tribunal-review-adversarial-cross-provider)) instead of a single reviewer agent:
@@ -56,16 +60,29 @@ When a node in the design is a review step, treat it as a nested tribunal (see [
 3. Assign each reviewer's `model:` per [model-selection.md](model-selection.md#cross-provider-diversity-for-tribunal-review) — different provider from each other and from whichever agent implemented the artifact under review
 4. In the outer graph, wire the review-orchestrator as a single opaque node; its two reviewer children are invisible to the outer graph's edges
 
-## 6. Respect the stateless-subagent constraint
+## 6. Scaffold a quality gate node (if the design calls for one)
+
+A quality gate is not an LLM agent — do not invoke `copilot-cli-custom-agents`/`claude-code-custom-agents` to author reasoning/prompt content for it. It validates deterministically: it runs existing tools (test runner, linter, type-checker, schema validator, build) and reports pass/fail plus the raw tool output, with no model reasoning about the result. Realize it one of two ways:
+
+1. **Orchestrator-inline step** (preferred): the orchestrator's own prompt body includes an instruction to run the tool directly (e.g. "run `<test command>`; if it exits non-zero, dispatch back to `<squad>-implementer` with the failure output instead of proceeding to the reviewer") — no separate agent file at all.
+2. **Minimal wrapper agent** (only when the harness needs every dispatch target to be an agent): author `<squad>-quality-gate` via the harness's agent-authoring skill with `tools:` restricted to exactly the deterministic check tool(s) — no `edit`, and a prompt body limited to "run the tool(s), report pass/fail and the raw output verbatim, do not editorialize or judge quality subjectively."
+
+Either way, wire it between the last implementation node and the adversarial review stage: route a failing quality gate back to the implementer (or planner) rather than forward to the reviewer, and only dispatch to the reviewer once the quality gate passes.
+
+## 7. Respect the stateless-subagent constraint
 
 Every `task` dispatch starts with empty context — the orchestrator's own conversation history is invisible to the node. Each dispatch's `prompt` must therefore restate the original task plus every upstream node's output the target node needs, exactly like the `prompt`-is-the-only-channel rule in `copilot-cli-custom-agents`. This replaces the automatic input-propagation that native `Graph` SDKs perform for you.
 
-## 7. Validate
+## 8. Validate
 
 1. `list_agents` to confirm every node and the orchestrator are visible
 2. Restart the CLI (or start a new session) so new/edited agent files load
 3. Run the orchestrator on a sample task and confirm dispatch order matches the designed edges
-4. For cyclic graphs, confirm the iteration bound actually terminates the loop
-5. For tribunal review nodes, confirm the two reviewers' `model:` values resolve to genuinely different providers, not just different model names on the same provider
-6. Open `/agent` and confirm only the orchestrator appears — every other node must be absent from the picker
-7. If another squad already exists in the project, confirm no filename, `mcp-servers:` key, or `/memories/session/` file collides between the two prefixes
+4. Confirm the squad includes an orchestrator, a planner, and an adversarial (tribunal) review stage — all three are mandatory even if a quality gate is absent
+5. If the design has multiple implementer nodes, confirm independent ones are actually dispatched in parallel (not serialized by default) and that the quality gate/reviewer dispatch waits on all of them (AND join)
+6. For cyclic graphs, confirm the iteration bound actually terminates the loop
+7. For tribunal review nodes, confirm the two reviewers' `model:` values resolve to genuinely different providers, not just different model names on the same provider
+8. For a quality gate, confirm it spends no reasoning/tokens (tool-execution only) and runs before the adversarial reviewer, not instead of it
+9. Confirm every node has an explicit `model:` ([model-selection.md](model-selection.md)); no node's cost tier exceeds the orchestrator's, unless a tribunal-diversity exception was deliberately surfaced to the user
+10. Open `/agent` and confirm only the orchestrator appears — every other node must be absent from the picker
+11. If another squad already exists in the project, confirm no filename, `mcp-servers:` key, or `/memories/session/` file collides between the two prefixes

@@ -379,7 +379,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:agent-authoring",
       "displayName": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, Claude Code custom subagents, graph-pattern multi-agent squads/swarms, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown files, and following Markdown formatting best practices.",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, Claude Code custom subagents, graph-pattern multi-agent squads/swarms, choosing which AI model an agent should use, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown files, and following Markdown formatting best practices.",
       "tags": [
         "agents-md",
         "skill",
@@ -396,6 +396,10 @@
         "graph-orchestration",
         "squads",
         "swarms",
+        "model-selection",
+        "model",
+        "reasoning-effort",
+        "capability-tier",
         "github-actions",
         "toon",
         "token-oriented-object-notation",
@@ -406,7 +410,7 @@
         "mermaid",
         "diagrams"
       ],
-      "version": "0.9.0",
+      "version": "0.10.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -454,10 +458,10 @@
             "displayName": "copilot-cli-custom-agents",
             "type": "application/ai-skill+md",
             "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/copilot-cli-custom-agents/SKILL.md",
-            "description": "Create and maintain GitHub Copilot CLI custom agents (.agent.md files). USE FOR: authoring .github/agents or ~/.copilot/agents profiles; frontmatter fields (description, name, model, tools, mcp-servers, disable-model-invocation, user-invocable, deferred-tool-loading, skills, reasoning-effort, sidekick); writing descriptions that drive auto-delegation (the CLI routes on description quality, like skills); building orchestrator + specialist squads with the task tool; /fleet parallel subagents; built-in agents (explore, task, research, code-review, rubber-duck, security-review, general-purpose); subagent depth/concurrency limits; list_agents and write_agent coordination. DO NOT USE FOR: VS Code-only fields (agents: allowlist, handoffs, vscode/memory) or GitHub.com cloud agent configuration; MCP server authoring; SKILL.md authoring (use create-skill).",
+            "description": "Create and maintain GitHub Copilot CLI custom agents (.agent.md files). USE FOR: authoring .github/agents or ~/.copilot/agents profiles; frontmatter fields (description, target, name, model, tools, mcp-servers, disable-model-invocation, user-invocable, deferred-tool-loading, skills, reasoning-effort, sidekick); writing descriptions that drive auto-delegation (the CLI routes on description quality, like skills); building orchestrator + specialist squads with the task tool; /fleet parallel subagents; built-in agents (explore, task, research, code-review, rubber-duck, security-review, general-purpose); subagent depth/concurrency limits; list_agents and write_agent coordination. DO NOT USE FOR: VS Code-only fields beyond target (agents: allowlist, handoffs) or GitHub.com cloud agent configuration; MCP server authoring; SKILL.md authoring (use create-skill).",
             "representativeQueries": [
               "authoring .github/agents or ~/.copilot/agents profiles",
-              "frontmatter fields (description, name, model, tools, mcp-servers, disable-model-invocation, user-invocable, deferred-tool-loading, skills, reasoning-effort, sidekick)",
+              "frontmatter fields (description, target, name, model, tools, mcp-servers, disable-model-invocation, user-invocable, deferred-tool-loading, skills, reasoning-effort, sidekick)",
               "writing descriptions that drive auto-delegation (the CLI routes on description quality, like skills)",
               "building orchestrator + specialist squads with the task tool"
             ]
@@ -515,6 +519,19 @@
               "the Mermaid Live Editor or mermaid.ai chat (fence syntax only)",
               "experimental or beta diagrams (swimlanes, mindmap, timeline, sankey, architecture, radar, treemap, venn, ishikawa, wardley, cynefin, treeView, ZenUML, C4)",
               "general Markdown formatting (use markdown-best-practices)"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:model-selection",
+            "displayName": "model-selection",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/model-selection/SKILL.md",
+            "description": "Choose and tune which AI model a custom agent, subagent, or squad node should use. USE FOR: picking a model by task capability tier (general-purpose coding/writing, fast/cheap, deep reasoning/debugging, multimodal); efficiency-first vs. capability-first starting strategies; tuning an effort/reasoning-effort parameter instead of switching models; call cadence vs. provider prompt-cache TTL; cost-tier ranking and cost ceilings; cross-provider or cross-model-family diversity for independent/adversarial review; per-harness model field syntax and resolution order (GitHub Copilot CLI, Claude Code, VS Code custom agents); extending this framework to a new harness. DO NOT USE FOR: authoring the rest of an agent's frontmatter or prompt body (use copilot-cli-custom-agents, claude-code-custom-agents, or the target harness's own skill); designing squad topology (use agent-graph-orchestration); SKILL.md authoring (use create-skill).",
+            "representativeQueries": [
+              "picking a model by task capability tier (general-purpose coding/writing, fast/cheap, deep reasoning/debugging, multimodal)",
+              "efficiency-first vs. capability-first starting strategies",
+              "tuning an effort/reasoning-effort parameter instead of switching models",
+              "call cadence vs. provider prompt-cache TTL"
             ]
           },
           {
