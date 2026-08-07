@@ -280,12 +280,30 @@
     font-size:0.85em;
   }
   .spotlight-head p{color:var(--muted); font-size:1.02rem; line-height:1.6; margin:0;}
+  .spotlight-group{margin-bottom:28px;}
+  .spotlight-group-label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:14px;
+  }
+  .spotlight-group-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--border);
+  }
   .spotlight-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:18px;
-    margin-bottom:36px;
   }
+  .spotlight-group:last-of-type .spotlight-grid{margin-bottom:8px;}
   .spotlight-card{
     border:1px solid var(--border);
     border-radius:14px;
@@ -294,6 +312,42 @@
     transition:transform .2s ease, border-color .2s ease;
   }
   .spotlight-card:hover{transform:translateY(-3px); border-color:rgba(34,211,238,0.4);}
+  .spotlight-card--feature{
+    border-color:rgba(124,92,255,0.5);
+    background:rgba(124,92,255,0.09);
+  }
+  .spotlight-card-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:12px;
+  }
+  .spotlight-card-links span{
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:0.72rem;
+    padding:3px 8px;
+    border-radius:6px;
+    background:rgba(255,255,255,0.06);
+    color:var(--muted);
+  }
+  .spotlight-card-split{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:12px;
+  }
+  .spotlight-card-split div{
+    padding-top:10px;
+    border-top:1px solid var(--border);
+  }
+  .spotlight-card-split div:first-child{padding-top:0; border-top:none;}
+  .spotlight-card-split strong{
+    display:block;
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:0.8rem;
+    margin-bottom:4px;
+  }
+  .spotlight-card-split p{margin:0; color:var(--muted); font-size:0.85rem; line-height:1.5;}
   .spotlight-card .spotlight-tag{
     display:inline-block;
     font-size:0.7rem;
@@ -303,6 +357,7 @@
     color:var(--accent-2);
     margin-bottom:10px;
   }
+  .spotlight-card--feature .spotlight-tag{color:#c9bfff;}
   .spotlight-card h4{margin:0 0 8px; font-size:1rem; letter-spacing:-0.01em;}
   .spotlight-card p{margin:0; color:var(--muted); font-size:0.88rem; line-height:1.55;}
   .spotlight-cta{
@@ -592,48 +647,85 @@
     <div class="spotlight-head">
       <div class="spotlight-badge">✨ Featured plugin</div>
       <h2>Write better skills and agents with <code>agent-authoring</code></h2>
-      <p>Eight skills for every layer of authoring AI capabilities — from project-level <code>AGENTS.md</code> context down to individual <code>SKILL.md</code> files, custom Copilot CLI agents, and the SDKs and pipelines that run them. Follow their built-in best practices and you get skills that are both <strong>more token-efficient</strong> to load and reference, and <strong>higher quality</strong> — well-triggered, unambiguous, and correctly structured.</p>
+      <p>Ten skills covering every stage of building AI capabilities: author a single skill or agent, orchestrate several into a squad, embed and automate them, then polish whatever Markdown they generate. Follow their built-in best practices and you get skills that are both <strong>more token-efficient</strong> to load and reference, and <strong>higher quality</strong> — well-triggered, unambiguous, and correctly structured.</p>
     </div>
-    <div class="spotlight-grid">
-      <div class="spotlight-card">
-        <span class="spotlight-tag">Quality</span>
-        <h4>create-skill</h4>
-        <p>Codifies compact writing rules, frontmatter constraints, and trigger-phrase description patterns so new skills are discoverable and unambiguous from the first draft.</p>
+    <div class="spotlight-group">
+      <div class="spotlight-group-label">1 &middot; Author a skill or a single agent</div>
+      <div class="spotlight-grid">
+        <div class="spotlight-card">
+          <span class="spotlight-tag">Quality</span>
+          <h4>create-skill</h4>
+          <p>Codifies compact writing rules, frontmatter constraints, and trigger-phrase description patterns so new skills are discoverable and unambiguous from the first draft.</p>
+        </div>
+        <div class="spotlight-card">
+          <span class="spotlight-tag">Structure</span>
+          <h4>agents-md</h4>
+          <p>The open, tool-agnostic format for giving coding agents project context — root and nested files, discovery rules, and migration from other formats.</p>
+        </div>
+        <div class="spotlight-card">
+          <span class="spotlight-tag">Automation</span>
+          <h4>Custom agent files</h4>
+          <p>Frontmatter, single-role prompts, and auto-delegation via well-written descriptions — the same trigger-quality bar as skills, one skill per harness:</p>
+          <div class="spotlight-card-split">
+            <div>
+              <strong>copilot-cli-custom-agents</strong>
+              <p>Creates <code>.agent.md</code> agents for Copilot CLI — frontmatter fields, tool restrictions, and description-driven auto-delegation.</p>
+            </div>
+            <div>
+              <strong>claude-code-custom-agents</strong>
+              <p>Creates <code>.claude/agents/*.md</code> subagents for Claude Code — frontmatter fields, tool restrictions, and delegation-phrasing conventions.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="spotlight-card">
-        <span class="spotlight-tag">Efficiency</span>
-        <h4>toon</h4>
-        <p>Converts JSON/YAML payloads to Token-Oriented Object Notation, cutting the tokens spent on tabular data inside prompts and skill references.</p>
+    </div>
+    <div class="spotlight-group">
+      <div class="spotlight-group-label">2 &middot; Orchestrate them into a squad</div>
+      <div class="spotlight-grid">
+        <div class="spotlight-card spotlight-card--feature">
+          <span class="spotlight-tag">Orchestration</span>
+          <h4>agent-graph-orchestration</h4>
+          <p>Design multi-agent squads as a directed graph — sequential, parallel, branching, feedback-loop, and adversarial tribunal-review topologies — then delegate every node's actual file to whichever harness skill owns it.</p>
+          <div class="spotlight-card-links">
+            <span>→ copilot-cli-custom-agents</span>
+            <span>→ claude-code-custom-agents</span>
+          </div>
+        </div>
       </div>
-      <div class="spotlight-card">
-        <span class="spotlight-tag">Structure</span>
-        <h4>agents-md</h4>
-        <p>The open, tool-agnostic format for giving coding agents project context — root and nested files, discovery rules, and migration from other formats.</p>
+    </div>
+    <div class="spotlight-group">
+      <div class="spotlight-group-label">3 &middot; Embed &amp; automate</div>
+      <div class="spotlight-grid">
+        <div class="spotlight-card">
+          <span class="spotlight-tag">Integration</span>
+          <h4>copilot-sdk</h4>
+          <p>Embed the Copilot agent runtime in your own app: sessions, custom tools, hooks, sub-agent delegation, and skill/plugin directories.</p>
+        </div>
+        <div class="spotlight-card">
+          <span class="spotlight-tag">CI/CD</span>
+          <h4>copilot-github-actions</h4>
+          <p>Run Copilot CLI safely in workflows — minimal tool allowlisting, auth strategy, and prompt-injection-aware permission scoping.</p>
+        </div>
       </div>
-      <div class="spotlight-card">
-        <span class="spotlight-tag">Automation</span>
-        <h4>copilot-cli-custom-agents</h4>
-        <p>Frontmatter fields, orchestrator/specialist squads, and auto-delegation via well-written descriptions — the same trigger-quality bar as skills.</p>
-      </div>
-      <div class="spotlight-card">
-        <span class="spotlight-tag">Integration</span>
-        <h4>copilot-sdk</h4>
-        <p>Embed the Copilot agent runtime in your own app: sessions, custom tools, hooks, sub-agent delegation, and skill/plugin directories.</p>
-      </div>
-      <div class="spotlight-card">
-        <span class="spotlight-tag">CI/CD</span>
-        <h4>copilot-github-actions</h4>
-        <p>Run Copilot CLI safely in workflows — minimal tool allowlisting, auth strategy, and prompt-injection-aware permission scoping.</p>
-      </div>
-      <div class="spotlight-card">
-        <span class="spotlight-tag">Clarity</span>
-        <h4>mermaid-diagrams</h4>
-        <p>Every stable Mermaid diagram type for conveying structure in far fewer tokens than prose — architecture, flows, and schemas included.</p>
-      </div>
-      <div class="spotlight-card">
-        <span class="spotlight-tag">Consistency</span>
-        <h4>markdown-best-practices</h4>
-        <p>Heading hierarchy, list and code-fence conventions, and table formatting so every generated document renders correctly everywhere.</p>
+    </div>
+    <div class="spotlight-group">
+      <div class="spotlight-group-label">4 &middot; Polish every generated file</div>
+      <div class="spotlight-grid">
+        <div class="spotlight-card">
+          <span class="spotlight-tag">Consistency</span>
+          <h4>markdown-best-practices</h4>
+          <p>Heading hierarchy, list and code-fence conventions, and table formatting so every generated document renders correctly everywhere — the other skill-and-agent-authoring skills all run it before calling a file finished.</p>
+        </div>
+        <div class="spotlight-card">
+          <span class="spotlight-tag">Clarity</span>
+          <h4>mermaid-diagrams</h4>
+          <p>Every stable Mermaid diagram type for conveying structure in far fewer tokens than prose — architecture, flows, and schemas included.</p>
+        </div>
+        <div class="spotlight-card">
+          <span class="spotlight-tag">Efficiency</span>
+          <h4>toon</h4>
+          <p>Converts JSON/YAML payloads to Token-Oriented Object Notation, cutting the tokens spent on tabular data inside prompts and skill references.</p>
+        </div>
       </div>
     </div>
     <div class="spotlight-cta">
