@@ -17,7 +17,7 @@ Sourced from `github/copilot-cli`'s own `changelog.md` — details not (yet) ref
 ## Fields/behaviors missing from the official frontmatter table
 
 | Item | Evidence |
-|---|---|
+| --- | --- |
 | `deferred-tool-loading` (boolean) | Changelog: "Custom agents support opt-in deferred tool loading via `deferred-tool-loading` in agent frontmatter, enabling tool-search discovery for agents with large tool lists." |
 | `skills` (array) | Changelog: "Custom agents can now declare a `skills` field to eagerly load skill content into agent context at startup." |
 | `reasoning-effort` | Changelog: "Let custom agents set reasoning effort in their definitions" (exact YAML key inferred from naming convention shared with `--reasoning-effort`/`disable-model-invocation`; verify against your installed CLI version if pinning behavior on it). |

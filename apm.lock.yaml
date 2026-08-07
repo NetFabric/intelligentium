@@ -1,22 +1,36 @@
 lockfile_version: '1'
-generated_at: '2026-08-07T16:52:13.013342+00:00'
+generated_at: '2026-08-07T18:18:56.457234+00:00'
 apm_version: 0.28.0
 dependencies:
 - repo_url: netfabric/intelligentium
   name: agent-authoring
   host: github.com
-  resolved_commit: 9f55d10a2973a4a398ed018051b271d930867838
-  version: 0.7.1
+  resolved_commit: 51aa0676f846c6b8d1ae6cd2fcc37843d759893e
+  version: 0.9.0
   virtual_path: plugins/agent-authoring
   is_virtual: true
   package_type: apm_package
   deployed_files:
+  - .agents/skills/agent-graph-orchestration
+  - .agents/skills/agent-graph-orchestration/SKILL.md
+  - .agents/skills/agent-graph-orchestration/references/graph-concepts.md
+  - .agents/skills/agent-graph-orchestration/references/harness-implementation.md
+  - .agents/skills/agent-graph-orchestration/references/model-selection.md
+  - .agents/skills/agent-graph-orchestration/references/scaffolding-workflow.md
+  - .agents/skills/agent-graph-orchestration/references/topologies.md
   - .agents/skills/agents-md
   - .agents/skills/agents-md/SKILL.md
   - .agents/skills/agents-md/references/anatomy-and-discovery.md
   - .agents/skills/agents-md/references/authoring-workflow.md
   - .agents/skills/agents-md/references/quality-and-security.md
   - .agents/skills/agents-md/references/writing-style.md
+  - .agents/skills/claude-code-custom-agents
+  - .agents/skills/claude-code-custom-agents/SKILL.md
+  - .agents/skills/claude-code-custom-agents/references/authoring-workflow.md
+  - .agents/skills/claude-code-custom-agents/references/delegation-and-squads.md
+  - .agents/skills/claude-code-custom-agents/references/frontmatter-reference.md
+  - .agents/skills/claude-code-custom-agents/references/undocumented-and-gotchas.md
+  - .agents/skills/claude-code-custom-agents/references/writing-style.md
   - .agents/skills/copilot-cli-custom-agents
   - .agents/skills/copilot-cli-custom-agents/SKILL.md
   - .agents/skills/copilot-cli-custom-agents/references/authoring-workflow.md
@@ -59,16 +73,28 @@ dependencies:
   - .agents/skills/toon/references/format-spec.md
   - .agents/skills/toon/references/llm-integration-patterns.md
   deployed_file_hashes:
-    .agents/skills/agents-md/SKILL.md: sha256:c8ea10bb39c4be306126ae071e90c5e36c92754c97ef8381740e65c3d44311d5
+    .agents/skills/agent-graph-orchestration/SKILL.md: sha256:591ea02a8f519a46609bbea0239a8e8895f00a66f30127103ed1aa49e3114278
+    .agents/skills/agent-graph-orchestration/references/graph-concepts.md: sha256:5c45dcd98ecbcc19eb4277b1ff9adad21573da0c1136ce00a72e94cc1d64cef0
+    .agents/skills/agent-graph-orchestration/references/harness-implementation.md: sha256:df35df608b788f142feca01ca7048e34c973c3d18d7f8b1701893ffd51b1187a
+    .agents/skills/agent-graph-orchestration/references/model-selection.md: sha256:4984a002a9629a5964b4b35aa0cd6f0e7d00957cfbcdfc9b616ebe62631e8101
+    .agents/skills/agent-graph-orchestration/references/scaffolding-workflow.md: sha256:19dbbbb93d2735593b6bc721d82cbff7cdc8c372e6ba947b6fe4eb68793157f9
+    .agents/skills/agent-graph-orchestration/references/topologies.md: sha256:0ac6a45bf1e28c953461f61d0c50d2269a96f1f89b90e8f03dc8ebd48b427f7a
+    .agents/skills/agents-md/SKILL.md: sha256:975642ad7250b0296b486a76ae417c065bad42074964e1eab9218ea6fff53418
     .agents/skills/agents-md/references/anatomy-and-discovery.md: sha256:a1146d237f8973a3d78052290cf55a58d23ed0bb8030d8f6c11ac38849c04795
     .agents/skills/agents-md/references/authoring-workflow.md: sha256:efad24313e8ed24a26c018eebf37023aae3c3cd1a37b652de942eb3122d15e23
     .agents/skills/agents-md/references/quality-and-security.md: sha256:8d012daa691723d6f251243fccf8feb60d6bb0392ef23d8df419aeb5c75509fa
     .agents/skills/agents-md/references/writing-style.md: sha256:4355b8ad0224943ebdf6026fee810d4d64f3117e17bd86e664f0ef7dc868adb3
-    .agents/skills/copilot-cli-custom-agents/SKILL.md: sha256:1b6bd9bfd0ac5fedc562c9342a9ea45cd349dabd90c2312a7ede0f2438b4f7e4
-    .agents/skills/copilot-cli-custom-agents/references/authoring-workflow.md: sha256:514b9db1062b641990308b0cdebd66a8be028d5f32710e54ae2faf22ff5387bb
-    .agents/skills/copilot-cli-custom-agents/references/delegation-and-squads.md: sha256:483a9a1e686a259fee79a7a94d432771556d326da887eb8815d7279488e7282e
+    .agents/skills/claude-code-custom-agents/SKILL.md: sha256:0e34b44224571e26a6d982551fe6d9b19b017eee97b79a70bcef18abc5807337
+    .agents/skills/claude-code-custom-agents/references/authoring-workflow.md: sha256:dd0418bf03608722731071aa61c59354006786356fb04a4cda19a49b8fee9fd2
+    .agents/skills/claude-code-custom-agents/references/delegation-and-squads.md: sha256:8c809373e596060f8369488edc0011ad6aed475c37db946df8bb6c68a01fae22
+    .agents/skills/claude-code-custom-agents/references/frontmatter-reference.md: sha256:e4704d175268eb35269ab16e4a2e17c6dbb6aacd691c2dddeaca4170ae696683
+    .agents/skills/claude-code-custom-agents/references/undocumented-and-gotchas.md: sha256:757c39e849a320d0d21d60705e51fb6240f9ac3c40bab65460ee285faea81e12
+    .agents/skills/claude-code-custom-agents/references/writing-style.md: sha256:d83fd35125731affc384459b54d85ee3a780764281a57b8411d52e38d748b7b4
+    .agents/skills/copilot-cli-custom-agents/SKILL.md: sha256:b24fe6a3bbf31b590b8b0b11da730db639b635bbbf3290975eabdab26ef96d9f
+    .agents/skills/copilot-cli-custom-agents/references/authoring-workflow.md: sha256:397c50c4c4463f29f89387b97f2a8f86589c9eb398c31f4b138b04c0cebf50f7
+    .agents/skills/copilot-cli-custom-agents/references/delegation-and-squads.md: sha256:ca0aa19f8277f818124c3b0c6d6517ff03b0566a65745de63ad36b5407ccb272
     .agents/skills/copilot-cli-custom-agents/references/frontmatter-reference.md: sha256:a64ccbdd60e76174019f297c6e8732a7478d893b55bca7b014f985fff99151be
-    .agents/skills/copilot-cli-custom-agents/references/undocumented-and-gotchas.md: sha256:eec62f3eebaad727b806c088fa36266797b12daaf0bf3980f6223d53c119be5a
+    .agents/skills/copilot-cli-custom-agents/references/undocumented-and-gotchas.md: sha256:f70b0b665105826165e187a4da23779827e24fd9566822829c0b30f23ad66b1c
     .agents/skills/copilot-cli-custom-agents/references/writing-style.md: sha256:7678476d40e6cf5df959b17398ee0213729f31fd845f70789f2ff32c15dbb43b
     .agents/skills/copilot-github-actions/SKILL.md: sha256:fe472304ee2de77fae86fa76f99a2fb15e30461fe76d3ca341935858b7f5df8e
     .agents/skills/copilot-github-actions/references/authentication.md: sha256:dd8989e7dbb184fbc9ea4cca33159bbb7c46cd425b75782315976d105f83ee2a
@@ -80,7 +106,7 @@ dependencies:
     .agents/skills/copilot-sdk/references/core-session-api.md: sha256:52602af806dd9ee95a214e1a25b1d8853f2f183f2cc4d4575a6502d1602ae8e2
     .agents/skills/copilot-sdk/references/language-quickstarts.md: sha256:d754b0268c63db6576c0edcc6d6f5539e1f8e91279b0586ed7e2bdf6d0095718
     .agents/skills/copilot-sdk/references/setup-and-auth.md: sha256:b17b03ee2b6335971a47ea7cbfe16c88f4cf4ca1cf8e440dca2517352ae22861
-    .agents/skills/create-skill/SKILL.md: sha256:d2c247fd88a2daf7ab30ae7d25ed42e6bb406ac17aafd89808dd029817a8fb83
+    .agents/skills/create-skill/SKILL.md: sha256:6051d71f55d09d437a6412053d91580a56320fc22e65d0227a2c51428c5b0c3d
     .agents/skills/create-skill/references/research-workflow.md: sha256:ad05a64d8bf6d133a1be2a0e8b789f5a2601ef6e3b00bd9e29c69d6ca3b60f65
     .agents/skills/create-skill/references/structure.md: sha256:105753873d3cb6a5b3be0651c8ff34e8611998125c97c516a9153c2fd4a751a0
     .agents/skills/create-skill/references/writing-style.md: sha256:63283a512f97aa588ef96af98228c105b32aee86de50865a92779c4a32fee106
@@ -89,7 +115,7 @@ dependencies:
     .agents/skills/markdown-best-practices/references/links-images-and-whitespace.md: sha256:40890f9118576259aa0eafe487b095249a2a3dcf23e8cd597d491d63e346d2f2
     .agents/skills/markdown-best-practices/references/lists-and-code-blocks.md: sha256:1a0a91658b8482252da1849690633be0fa5a6a997d12a24253737c3e83e413ae
     .agents/skills/markdown-best-practices/references/tables.md: sha256:d4c8af9952b9e19ce9856d2b4919c6f445e596dffd09209962aa28951b1d1ec0
-    .agents/skills/mermaid-diagrams/SKILL.md: sha256:0cc9965be6a9fbb7789879522bc37839071ef836f52ca6ce537660b01d502d1d
+    .agents/skills/mermaid-diagrams/SKILL.md: sha256:c1293957d97e3fd5cbf7f82a84900f17832a7e5fbe6cbba22448aa10549dcc24
     .agents/skills/mermaid-diagrams/references/charts-and-comparison.md: sha256:dda0c2a90075e10fd387d365e11e4c285c539624ed7ab9a5cd0735f4be4fa1de
     .agents/skills/mermaid-diagrams/references/planning-and-tracking.md: sha256:5212334877d83869278319da0c1ca78bf7108084d6352582ad9b6b07d782c774
     .agents/skills/mermaid-diagrams/references/process-and-time.md: sha256:46b2aa577e0b8e00c0043572c952dcfa4204d258bc6bfec48bc88ba7fa335f1b
@@ -98,12 +124,12 @@ dependencies:
     .agents/skills/toon/references/cli-and-libraries.md: sha256:62fddd27a4c77d3adef571d605064555ad3625035ed3cef6989a31f69c81bfa0
     .agents/skills/toon/references/format-spec.md: sha256:dada3b52077ed2991bf700bee6a0ed2f36c79aa93497fc6778eb438b451fac38
     .agents/skills/toon/references/llm-integration-patterns.md: sha256:cc5c20c4b740042cff6b90ad77fdfceb4ad008a02771adf1b809c078206e3c66
-  content_hash: sha256:257f02e82cfff1360d133b3140974d8ae53904d42a989f2125fcc70a7877cb68
+  content_hash: sha256:24be62e15ccd61c7504ec7b659a1aff19ab0a3a0e2c8633f858ebeb91887d93a
   declared_license: MIT
 - repo_url: netfabric/intelligentium
   name: agentic-discovery
   host: github.com
-  resolved_commit: 9f55d10a2973a4a398ed018051b271d930867838
+  resolved_commit: 51aa0676f846c6b8d1ae6cd2fcc37843d759893e
   version: 0.1.0
   virtual_path: plugins/agentic-discovery
   is_virtual: true
@@ -126,7 +152,7 @@ dependencies:
 - repo_url: netfabric/intelligentium
   name: apm-authoring
   host: github.com
-  resolved_commit: 9f55d10a2973a4a398ed018051b271d930867838
+  resolved_commit: 51aa0676f846c6b8d1ae6cd2fcc37843d759893e
   version: 0.1.0
   virtual_path: plugins/apm-authoring
   is_virtual: true
@@ -165,6 +191,69 @@ dependencies:
   content_hash: sha256:4173f71550cb70457beb2e3b0e5ac60fef1319d17644e47273fe4c5967f24342
   declared_license: MIT
 deployments:
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-graph-orchestration
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-graph-orchestration/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:591ea02a8f519a46609bbea0239a8e8895f00a66f30127103ed1aa49e3114278
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-graph-orchestration/references/graph-concepts.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:5c45dcd98ecbcc19eb4277b1ff9adad21573da0c1136ce00a72e94cc1d64cef0
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-graph-orchestration/references/harness-implementation.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:df35df608b788f142feca01ca7048e34c973c3d18d7f8b1701893ffd51b1187a
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-graph-orchestration/references/model-selection.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:4984a002a9629a5964b4b35aa0cd6f0e7d00957cfbcdfc9b616ebe62631e8101
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-graph-orchestration/references/scaffolding-workflow.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:19dbbbb93d2735593b6bc721d82cbff7cdc8c372e6ba947b6fe4eb68793157f9
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-graph-orchestration/references/topologies.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:0ac6a45bf1e28c953461f61d0c50d2269a96f1f89b90e8f03dc8ebd48b427f7a
 - kind: project-relative
   target: copilot
   value: .agents/skills/agentic-resource-discovery
@@ -236,7 +325,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:c8ea10bb39c4be306126ae071e90c5e36c92754c97ef8381740e65c3d44311d5
+  content_hash: sha256:975642ad7250b0296b486a76ae417c065bad42074964e1eab9218ea6fff53418
 - kind: project-relative
   target: copilot
   value: .agents/skills/agents-md/references/anatomy-and-discovery.md
@@ -419,6 +508,69 @@ deployments:
   content_hash: sha256:c94aa32c926e030c9f1e366a37c075ba2fdc0f2974259e201fc7424867d4a90f
 - kind: project-relative
   target: copilot
+  value: .agents/skills/claude-code-custom-agents
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/claude-code-custom-agents/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:0e34b44224571e26a6d982551fe6d9b19b017eee97b79a70bcef18abc5807337
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/claude-code-custom-agents/references/authoring-workflow.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:dd0418bf03608722731071aa61c59354006786356fb04a4cda19a49b8fee9fd2
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/claude-code-custom-agents/references/delegation-and-squads.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:8c809373e596060f8369488edc0011ad6aed475c37db946df8bb6c68a01fae22
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/claude-code-custom-agents/references/frontmatter-reference.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:e4704d175268eb35269ab16e4a2e17c6dbb6aacd691c2dddeaca4170ae696683
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/claude-code-custom-agents/references/undocumented-and-gotchas.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:757c39e849a320d0d21d60705e51fb6240f9ac3c40bab65460ee285faea81e12
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/claude-code-custom-agents/references/writing-style.md
+  runtime: null
+  scope: project
+  owners:
+  - netfabric/intelligentium/plugins/agent-authoring
+  active_owner: netfabric/intelligentium/plugins/agent-authoring
+  content_hash: sha256:d83fd35125731affc384459b54d85ee3a780764281a57b8411d52e38d748b7b4
+- kind: project-relative
+  target: copilot
   value: .agents/skills/copilot-cli-custom-agents
   runtime: null
   scope: project
@@ -434,7 +586,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:1b6bd9bfd0ac5fedc562c9342a9ea45cd349dabd90c2312a7ede0f2438b4f7e4
+  content_hash: sha256:b24fe6a3bbf31b590b8b0b11da730db639b635bbbf3290975eabdab26ef96d9f
 - kind: project-relative
   target: copilot
   value: .agents/skills/copilot-cli-custom-agents/references/authoring-workflow.md
@@ -443,7 +595,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:514b9db1062b641990308b0cdebd66a8be028d5f32710e54ae2faf22ff5387bb
+  content_hash: sha256:397c50c4c4463f29f89387b97f2a8f86589c9eb398c31f4b138b04c0cebf50f7
 - kind: project-relative
   target: copilot
   value: .agents/skills/copilot-cli-custom-agents/references/delegation-and-squads.md
@@ -452,7 +604,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:483a9a1e686a259fee79a7a94d432771556d326da887eb8815d7279488e7282e
+  content_hash: sha256:ca0aa19f8277f818124c3b0c6d6517ff03b0566a65745de63ad36b5407ccb272
 - kind: project-relative
   target: copilot
   value: .agents/skills/copilot-cli-custom-agents/references/frontmatter-reference.md
@@ -470,7 +622,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:eec62f3eebaad727b806c088fa36266797b12daaf0bf3980f6223d53c119be5a
+  content_hash: sha256:f70b0b665105826165e187a4da23779827e24fd9566822829c0b30f23ad66b1c
 - kind: project-relative
   target: copilot
   value: .agents/skills/copilot-cli-custom-agents/references/writing-style.md
@@ -605,7 +757,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:d2c247fd88a2daf7ab30ae7d25ed42e6bb406ac17aafd89808dd029817a8fb83
+  content_hash: sha256:6051d71f55d09d437a6412053d91580a56320fc22e65d0227a2c51428c5b0c3d
 - kind: project-relative
   target: copilot
   value: .agents/skills/create-skill/references/research-workflow.md
@@ -704,7 +856,7 @@ deployments:
   owners:
   - netfabric/intelligentium/plugins/agent-authoring
   active_owner: netfabric/intelligentium/plugins/agent-authoring
-  content_hash: sha256:0cc9965be6a9fbb7789879522bc37839071ef836f52ca6ce537660b01d502d1d
+  content_hash: sha256:c1293957d97e3fd5cbf7f82a84900f17832a7e5fbe6cbba22448aa10549dcc24
 - kind: project-relative
   target: copilot
   value: .agents/skills/mermaid-diagrams/references/charts-and-comparison.md
