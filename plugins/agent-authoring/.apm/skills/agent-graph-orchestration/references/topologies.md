@@ -12,8 +12,10 @@ flowchart LR
     Planner --> Implementer["Implementer(s)"]
     Implementer --> QualityGate["Quality gate (optional)"]
     QualityGate --> Reviewer["Adversarial review (tribunal)"]
-    Reviewer --> Publisher
+    Reviewer --> Publisher["Publisher (optional)"]
 ```
+
+`Publisher` is an **optional** fifth role, not a mandatory one — only the four rows in the table below are actually required. When present, it's the node that *acts* on the artifact once review passes, rather than validating it: opening a pull request, updating a tracking ticket (Jira, GitHub Issues, ...), publishing/deploying to an environment, or any combination of these. When absent, the orchestrator itself simply concludes and reports back — don't scaffold a dedicated `<squad>-publisher` node unless the design genuinely needs one of these concrete post-review actions; see [scaffolding-workflow.md](scaffolding-workflow.md#1-choose-a-squad-prefix-multiple-squads-coexist-in-one-project) for its naming convention when it is scaffolded.
 
 | Role | Required? | Node type | Validates by |
 | --- | --- | --- | --- |
@@ -21,6 +23,9 @@ flowchart LR
 | Planner | Always | Agent | Decomposes the task into the implementation stage's node sequence/edges before any implementation work runs |
 | Quality gate | Optional (common) | Deterministic custom step — not an LLM agent | Running tools (tests, linters, schema/build/type checks) — no model tokens spent |
 | Adversarial review | Always | Nested tribunal (see [Tribunal review](#5-tribunal-review-adversarial-cross-provider) below) | Reasoning over the artifact against review criteria — tokens spent |
+| Publisher | Optional | Agent or deterministic tool-execution step, task-specific | N/A — acts on the already-approved artifact (open a PR, update a ticket, publish/deploy) rather than validating it |
+
+Never silently decide either optional role on the task's behalf: ask the user explicitly whether the squad needs a quality gate (and, if so, what it should check — tests, linter, type/schema/build checks, a custom command) and whether it needs a publisher (and, if so, what it should do — open a PR, update a tracking ticket, publish/deploy, or a combination), the same way [harness-implementation.md](harness-implementation.md#always-ask-first-never-assume) requires asking which harness to target. Only after both answers are in hand should a concrete graph be proposed back to the user for approval.
 
 ### Implementer stage: one or more agents, parallel when independent
 
@@ -34,7 +39,7 @@ flowchart LR
     ImplementerA --> QualityGate["Quality gate (optional)"]
     ImplementerB --> QualityGate
     QualityGate --> Reviewer["Adversarial review (tribunal)"]
-    Reviewer --> Publisher
+    Reviewer --> Publisher["Publisher (optional)"]
 ```
 
 Only serialize two implementer subtasks when one's output is a genuine input dependency for the other — don't default to sequential dispatch just because the planner produced multiple implementers.

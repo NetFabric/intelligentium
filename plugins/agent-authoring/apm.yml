@@ -1,5 +1,5 @@
 name: agent-authoring
-version: 0.10.0
+version: 0.10.1
 description: Skills for authoring AGENTS.md project-context files, SKILL.md agent
   skills, GitHub Copilot CLI custom agents, Claude Code custom subagents,
   graph-pattern multi-agent squads/swarms, choosing which AI model an agent
