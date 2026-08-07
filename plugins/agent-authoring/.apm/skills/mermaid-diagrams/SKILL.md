@@ -30,6 +30,8 @@ flowchart LR
 
 The first line inside the fence is always the diagram's keyword (`flowchart`, `sequenceDiagram`, `classDiagram`, ...) — this is what selects the diagram type; everything else is that diagram's own syntax.
 
+This skill only covers syntax inside the fence — run `markdown-best-practices` over the surrounding file (blank lines around the fence, heading/list hygiene) before treating the edit as finished.
+
 ## Which Diagram? (Quick Reference)
 
 | Diagram | Keyword | Use When |

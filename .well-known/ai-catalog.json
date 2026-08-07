@@ -379,7 +379,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:agent-authoring",
       "displayName": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown files, and following Markdown formatting best practices.",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, Claude Code custom subagents, graph-pattern multi-agent squads/swarms, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown files, and following Markdown formatting best practices.",
       "tags": [
         "agents-md",
         "skill",
@@ -388,8 +388,14 @@
         "copilot-sdk",
         "copilot-cli",
         "copilot-cli-custom-agents",
-        "custom-agents",
+        "claude-code",
+        "claude-code-custom-agents",
         "subagents",
+        "custom-agents",
+        "multi-agent",
+        "graph-orchestration",
+        "squads",
+        "swarms",
         "github-actions",
         "toon",
         "token-oriented-object-notation",
@@ -400,11 +406,24 @@
         "mermaid",
         "diagrams"
       ],
-      "version": "0.7.1",
+      "version": "0.9.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
         "entries": [
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:agent-graph-orchestration",
+            "displayName": "agent-graph-orchestration",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/agent-graph-orchestration/SKILL.md",
+            "description": "Design and scaffold multi-agent squads/swarms using the graph orchestration pattern (nodes = agents, edges = dependencies/data flow). USE FOR: designing a coordination topology for a multi-agent squad (sequential pipeline, parallel fan-out/aggregation, branching, feedback loop, cyclic); building an orchestrator agent that delegates to specialist agents; setting up an adversarial/tribunal code or document review with independent reviewers; scaffolding a squad's agent files for a target coding-agent harness (e.g. Copilot CLI or Claude Code custom agents). DO NOT USE FOR: authoring a single agent's frontmatter/prompt body (use copilot-cli-custom-agents, claude-code-custom-agents, or the target harness's own skill); SKILL.md authoring (use create-skill); ad-hoc multi-agent chat with no explicit topology.",
+            "representativeQueries": [
+              "designing a coordination topology for a multi-agent squad (sequential pipeline, parallel fan-out/aggregation, branching, feedback loop, cyclic)",
+              "building an orchestrator agent that delegates to specialist agents",
+              "setting up an adversarial/tribunal code or document review with independent reviewers",
+              "scaffolding a squad's agent files for a target coding-agent harness (e.g. Copilot CLI or Claude Code custom agents)"
+            ]
+          },
           {
             "identifier": "urn:air:github.com:netfabric:agent-authoring:agents-md",
             "displayName": "agents-md",
@@ -415,6 +434,19 @@
               "authoring SKILL.md skill files (use create-skill)",
               "APM package/plugin authoring (use apm-producer)",
               "language-specific style rules (use language skills e.g. csharp-best-practices)"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:claude-code-custom-agents",
+            "displayName": "claude-code-custom-agents",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/claude-code-custom-agents/SKILL.md",
+            "description": "Create and maintain Claude Code custom subagents (.claude/agents/*.md files). USE FOR: authoring project (.claude/agents/) or user (~/.claude/agents/) subagent files; frontmatter fields (name, description, tools, disallowedTools, model, permissionMode, maxTurns, skills, mcpServers, hooks, memory, background, effort, isolation, color, initialPrompt); writing descriptions that drive automatic delegation and 'use proactively' phrasing; invoking subagents via natural language, @-mention, session-wide --agent, or the Agent tool; restricting which subagent types a coordinator can spawn with Agent(name1, name2); nested subagents and depth limits; built-in subagents (Explore, Plan, general-purpose, claude); troubleshooting a subagent that won't load or isn't invoked. DO NOT USE FOR: GitHub Copilot CLI custom agents (use copilot-cli-custom-agents); agent teams/teammates (a different, session-spanning feature); MCP server authoring; SKILL.md authoring (use create-skill).",
+            "representativeQueries": [
+              "authoring project (.claude/agents/) or user (~/.claude/agents/) subagent files",
+              "frontmatter fields (name, description, tools, disallowedTools, model, permissionMode, maxTurns, skills, mcpServers, hooks, memory, background, effort, isolation, color, initialPrompt)",
+              "writing descriptions that drive automatic delegation and 'use proactively' phrasing",
+              "invoking subagents via natural language, @-mention, session-wide --agent, or the Agent tool"
             ]
           },
           {

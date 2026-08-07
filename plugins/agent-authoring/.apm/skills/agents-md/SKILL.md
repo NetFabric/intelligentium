@@ -41,6 +41,8 @@ flowchart TD
 
 Never hardcode language, framework, or tool assumptions into an AGENTS.md — every instruction must reflect the target repo's actual, verified stack and commands, not a generic template left unfilled.
 
+AGENTS.md is still a Markdown file: run `markdown-best-practices` over the draft before treating it as finished (heading spacing, table/list consistency, fenced-code language tags).
+
 ## Reference Files
 
 | File | Load When |

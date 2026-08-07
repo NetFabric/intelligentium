@@ -10,7 +10,7 @@ A custom agent is a Markdown file (`.agent.md` or `.md`) with YAML frontmatter p
 ## Anatomy
 
 | Part | Purpose |
-|---|---|
+| --- | --- |
 | Frontmatter | `description` (required) + optional `name`, `model`, `tools`, `mcp-servers`, `disable-model-invocation`, `user-invocable`, `deferred-tool-loading`, `skills`, `reasoning-effort`, `sidekick` |
 | Body | System prompt: role, protocol, constraints. Max 30,000 characters |
 | Location | `.github/agents/` or `.claude/agents/` (project, walked to Git root, deepest wins) > `~/.copilot/agents/` (user) > `<plugin>/agents/` (plugin, lowest priority) |
@@ -31,7 +31,7 @@ Do NOT modify files.
 ## Invocation
 
 | Method | Syntax |
-|---|---|
+| --- | --- |
 | Auto-delegation | Main agent matches your prompt against every agent's `description` |
 | Inline mention | `@agent-name your prompt` |
 | Slash command | `/agent` (browse/select), then enter a prompt |
@@ -53,11 +53,12 @@ Do NOT modify files.
 5. Restart the CLI (or start a new session) to load new/edited agent files
 6. Check [references/authoring-workflow.md](references/authoring-workflow.md) if the agent doesn't load or isn't invoked
 7. Check [references/undocumented-and-gotchas.md](references/undocumented-and-gotchas.md) for fields/behaviors missing from the official reference table
+8. Run `markdown-best-practices` over the finished `.agent.md` — it's still a Markdown file (frontmatter fences, heading/list hygiene in the prompt body)
 
 ## Reference Files
 
 | File | Load When |
-|---|---|
+| --- | --- |
 | [references/frontmatter-reference.md](references/frontmatter-reference.md) | Writing or reviewing any frontmatter field, tool name/alias, or file location/priority rule |
 | [references/writing-style.md](references/writing-style.md) | Writing or reviewing a `description` or prompt body — trigger phrasing, constraints, output format |
 | [references/delegation-and-squads.md](references/delegation-and-squads.md) | Building an orchestrator, a specialist squad, using `task`/`list_agents`/`write_agent`, or `/fleet` |

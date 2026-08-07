@@ -13,7 +13,7 @@ flowchart LR
 ## Create an agent
 
 | Method | How |
-|---|---|
+| --- | --- |
 | Interactive wizard | `/agent` → create → choose Project (`.github/agents/`) or User (`~/.copilot/agents/`) scope → fill description/tools in a guided form |
 | Manual file | Create `.github/agents/<name>.agent.md` (or `.md`) directly with frontmatter + prompt body |
 | Via `configure-copilot` | Ask the built-in `configure-copilot` agent to scaffold a new agent for you |
@@ -24,7 +24,7 @@ Naming: lowercase, hyphenated; filename → agent ID (`react-reviewer.agent.md` 
 ## Load & reload
 
 | Trigger | Effect |
-|---|---|
+| --- | --- |
 | Restart CLI / new session | Only way to pick up new or edited agent files mid-work |
 | `/clear`, `/new` | Also reset which agent is currently selected |
 | `/cd` | Re-discovers agents in the new directory; persists that directory across a resumed session |
@@ -40,7 +40,7 @@ Naming: lowercase, hyphenated; filename → agent ID (`react-reviewer.agent.md` 
 ## Troubleshooting
 
 | Symptom | Cause / fix |
-|---|---|
+| --- | --- |
 | Agent never auto-invoked | `description` too generic, or `disable-model-invocation: true`/`infer: false` set. Since v1.0.42 the CLI is also more conservative about delegating at all — see [delegation-and-squads.md](delegation-and-squads.md). |
 | Agent missing from `/agent` picker | `user-invocable: false` — by design, still reachable via `task`. |
 | Edits keep going through the wrong agent's constraints | Confirm file location priority: project `.github/agents/` (deepest ancestor) > `.claude/agents/` > user `~/.copilot/agents/` > plugin. A same-named agent higher in this order silently wins. |

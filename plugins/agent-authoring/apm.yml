@@ -1,14 +1,15 @@
 name: agent-authoring
-version: 0.7.1
+version: 0.9.0
 description: Skills for authoring AGENTS.md project-context files, SKILL.md agent
-  skills, GitHub Copilot CLI custom agents, building apps with the GitHub
+  skills, GitHub Copilot CLI custom agents, Claude Code custom subagents,
+  graph-pattern multi-agent squads/swarms, building apps with the GitHub
   Copilot SDK, automating Copilot CLI in GitHub Actions, converting data
   to/from TOON (Token-Oriented Object Notation) to cut LLM token usage,
   authoring Mermaid diagrams in markdown files, and following Markdown
   formatting best practices.
 author: NetFabric
 license: MIT
-keywords: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, copilot-cli-custom-agents, custom-agents, subagents, github-actions, toon, token-oriented-object-notation, tokens, llm, markdown, formatting, mermaid, diagrams]
+keywords: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, copilot-cli-custom-agents, claude-code, claude-code-custom-agents, subagents, custom-agents, multi-agent, graph-orchestration, squads, swarms, github-actions, toon, token-oriented-object-notation, tokens, llm, markdown, formatting, mermaid, diagrams]
 # Which agent platforms to deploy to.
 # Resolution order: --target flag > this field > auto-detect from filesystem.
 # Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf

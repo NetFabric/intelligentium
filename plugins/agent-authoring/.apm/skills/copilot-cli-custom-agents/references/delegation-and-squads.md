@@ -18,7 +18,7 @@ Since v1.0.42 the CLI is more selective about delegating at all — it weighs wh
 ## Built-in agents
 
 | Agent | Role |
-|---|---|
+| --- | --- |
 | `explore` | Read-only codebase exploration/Q&A |
 | `task` | Generic task execution subagent |
 | `general-purpose` | Default fallback subagent for miscellaneous work |
@@ -32,14 +32,14 @@ Disable specific built-ins with `--disable-agent task,explore` (or the equivalen
 
 ## The `task` tool (dispatch)
 
-```
+```text
 task(agent_type="react-reviewer", prompt="Review src/components/Cart.tsx for hook misuse")
 ```
 
 `task` takes exactly two parameters:
 
 | Parameter | Purpose |
-|---|---|
+| --- | --- |
 | `agent_type` | A built-in name (`explore`, `general-purpose`, …) or any custom agent ID (filename minus extension) visible at the current location priority |
 | `prompt` | The task for the subagent to run — see below, this is the *only* channel of information into it |
 
@@ -63,7 +63,7 @@ This is the same discipline VS Code enforces with `vscode/memory` writes before 
 ## Agent-to-agent communication
 
 | Tool | Purpose |
-|---|---|
+| --- | --- |
 | `list_agents` | List agents visible to the caller — scoped to self, sibling, or child relations |
 | `read_agent` | Poll a running background agent for status/output |
 | `write_agent` | Send a follow-up message to an already-running agent (multi-turn subagents are always enabled — you can message a subagent while it's still working) |
@@ -105,7 +105,7 @@ You are the security specialist in a review squad...
 Conventions that substitute for the CLI's missing `agents:` allowlist:
 
 | Convention | Effect |
-|---|---|
+| --- | --- |
 | Naming prefix (`squad-*`) | Makes intended callers/callees obvious in the orchestrator prompt & directory listing |
 | `user-invocable: false` on specialists | Hides them from `/agent` picker & `@mention` — reachable only via `task`, so users go through the orchestrator |
 | Narrow `tools:` on specialists (no `task`) | Prevents specialists from spawning their own sub-squads unless intended |
@@ -119,7 +119,7 @@ No allowlist ⇒ *any* agent with `task` can still dispatch to `squad-security` 
 ## Limits
 
 | Limit | Default | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Max subagent nesting depth | `4` | Lowered from `6` to curb runaway recursive delegation; usage-based billing users can raise it (up to `128`) via `subagents.maxDepth` in settings or `/settings`. |
 | Max concurrent subagents | Plan-dependent | Configurable via `/settings` (usage-based billing users) |
 

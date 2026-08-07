@@ -36,6 +36,7 @@ description: "<≤1024 chars>"  # double-quoted; trigger phrases; relevance cont
 3. Draft SKILL.md skeleton (tables, code blocks, ref table)
 4. Extract detail → reference files
 5. Validate frontmatter length (`echo -n "..." | wc -c`)
+6. Run `markdown-best-practices` over every new/edited `.md` file — heading spacing, table/list consistency, fenced-code language tags
 
 ## Workflow: Update Skill
 
@@ -43,6 +44,7 @@ description: "<≤1024 chars>"  # double-quoted; trigger phrases; relevance cont
 2. Edit only the reference file(s) that changed
 3. Update SKILL.md summary + reference table if needed
 4. Verify description ≤1024 chars
+5. Re-run `markdown-best-practices` over every file touched
 
 ## Writing Rules (summary)
 
