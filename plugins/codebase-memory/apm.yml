@@ -1,0 +1,27 @@
+name: codebase-memory
+version: 0.1.0
+description: Skill for installing, verifying, and integrating codebase-memory-mcp
+  (CBM) — a local, zero-dependency knowledge-graph code intelligence server —
+  into agents, skills, and prompts that operate on a codebase, replacing
+  grep/search/file-read exploration with structural graph queries via its CLI.
+author: NetFabric
+license: MIT
+keywords: [codebase-memory-mcp, cbm, mcp, code-intelligence, knowledge-graph, code-search, call-graph, cypher, tree-sitter, agent-authoring, code-agents]
+# Which agent platforms to deploy to.
+# Resolution order: --target flag > this field > auto-detect from filesystem.
+# Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf
+targets:
+- copilot
+- claude
+- cursor
+- codex
+- gemini
+- windsurf
+- kiro
+dependencies:
+  apm: []
+  mcp: []
+includes: auto
+devDependencies:
+  apm: []
+scripts: {}

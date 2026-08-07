@@ -83,8 +83,8 @@
     },
     {
       "name": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, and following Markdown formatting best practices.",
-      "version": "0.6.0",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown files, and following Markdown formatting best practices.",
+      "version": "0.7.1",
       "tags": [
         "agents-md",
         "skill",
@@ -101,7 +101,9 @@
         "tokens",
         "llm",
         "markdown",
-        "formatting"
+        "formatting",
+        "mermaid",
+        "diagrams"
       ],
       "source": "./plugins/agent-authoring"
     },
@@ -135,6 +137,25 @@
         "payments"
       ],
       "source": "./plugins/ucp"
+    },
+    {
+      "name": "codebase-memory",
+      "description": "Skill for installing, verifying, and integrating codebase-memory-mcp (CBM), a local knowledge-graph code intelligence server, into agents, skills, and prompts that operate on a codebase, replacing grep/search/file-read exploration with structural graph queries via its CLI.",
+      "version": "0.1.0",
+      "tags": [
+        "codebase-memory-mcp",
+        "cbm",
+        "mcp",
+        "code-intelligence",
+        "knowledge-graph",
+        "code-search",
+        "call-graph",
+        "cypher",
+        "tree-sitter",
+        "agent-authoring",
+        "code-agents"
+      ],
+      "source": "./plugins/codebase-memory"
     }
   ]
 }

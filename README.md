@@ -46,6 +46,7 @@ workflows, or automation pipelines.
 | [agent-authoring](plugins/agent-authoring) | Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, converting data to/from TOON (Token-Oriented Object Notation), and following Markdown formatting best practices |
 | [agentic-discovery](plugins/agentic-discovery) | Skill for the Agentic Resource Discovery (ARD) open specification for publishing and discovering AI capabilities |
 | [ucp](plugins/ucp) | Skills for implementing (business/merchant) and consuming (platform/agent) the Universal Commerce Protocol (UCP) for agentic commerce discovery, checkout, and payments |
+| [codebase-memory](plugins/codebase-memory) | Skill for installing, verifying, and integrating codebase-memory-mcp (CBM), a local knowledge-graph code intelligence server, into agents, skills, and prompts that operate on a codebase |
 
 ### 3. Install Plugins via APM
 

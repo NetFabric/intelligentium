@@ -101,6 +101,17 @@ marketplace:
       tag_pattern: "ucp-v{version}"
       tags: [ucp, universal-commerce-protocol, agentic-commerce, checkout, ecommerce, mcp, a2a, ap2, payments]
 
+    - name: codebase-memory
+      description: Skill for installing, verifying, and integrating 
+        codebase-memory-mcp (CBM), a local knowledge-graph code intelligence 
+        server, into agents, skills, and prompts that operate on a codebase, 
+        replacing grep/search/file-read exploration with structural graph 
+        queries via its CLI.
+      source: ./plugins/codebase-memory
+      version: 0.1.0
+      tag_pattern: "codebase-memory-v{version}"
+      tags: [codebase-memory-mcp, cbm, mcp, code-intelligence, knowledge-graph, code-search, call-graph, cypher, tree-sitter, agent-authoring, code-agents]
+
 dependencies:
   apm:
     - netfabric/intelligentium/plugins/agent-authoring

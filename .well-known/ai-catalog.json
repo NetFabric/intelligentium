@@ -568,6 +568,33 @@
           }
         ]
       }
+    },
+    {
+      "identifier": "urn:air:github.com:netfabric:codebase-memory",
+      "displayName": "codebase-memory",
+      "description": "Skill for installing, verifying, and integrating codebase-memory-mcp (CBM), a local knowledge-graph code intelligence server, into agents, skills, and prompts that operate on a codebase, replacing grep/search/file-read exploration with structural graph queries via its CLI.",
+      "tags": [
+        "codebase-memory-mcp",
+        "cbm",
+        "mcp",
+        "code-intelligence",
+        "knowledge-graph",
+        "code-search",
+        "call-graph",
+        "cypher",
+        "tree-sitter",
+        "agent-authoring",
+        "code-agents"
+      ],
+      "version": "0.1.0",
+      "type": "application/ai-skill+md",
+      "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/codebase-memory/.apm/skills/codebase-memory/SKILL.md",
+      "representativeQueries": [
+        "creating or editing any agent/skill/prompt/subagent that reads, searches, or reasons about a codebase — CBM's CLI must replace grep/ripgrep/glob-and-read exploration for structural questions (who calls X, dead code, architecture overview, diff impact, Cypher queries)",
+        "checking whether `codebase-memory-mcp` is installed",
+        "installing/updating it",
+        "checking whether a project's index is fresh/in sync (`index_status`)"
+      ]
     }
   ]
 }

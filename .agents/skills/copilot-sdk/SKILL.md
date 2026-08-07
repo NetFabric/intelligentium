@@ -24,7 +24,7 @@ Library for embedding the GitHub Copilot agent (via the `copilot` CLI over JSON-
 
 ## Pattern: deterministic scripts, non-deterministic steps
 
-A skill's `scripts/` automation doesn't have to be 100% deterministic. Have the script call the SDK for one bounded, ambiguous sub-step (classify input, pick a strategy, summarize a diff), then resume plain code for the rest — the AI call is scoped and its output validated/parsed like any other function result, so the surrounding pipeline stays testable and reproducible. See [create-skill](../create-skill/SKILL.md)'s Scripts & Assets conventions for where this fits in a skill's folder layout.
+A skill's `scripts/` automation doesn't have to be 100% deterministic. Have the script call the SDK for one bounded, ambiguous sub-step (classify input, pick a strategy, summarize a diff), then resume plain code for the rest — the AI call is scoped and its output validated/parsed like any other function result, so the surrounding pipeline stays testable and reproducible. See [create-skill](../../../apm_modules/netfabric/intelligentium/plugins/agent-authoring/.apm/skills/create-skill/SKILL.md)'s Scripts & Assets conventions for where this fits in a skill's folder layout.
 
 ## Language support
 
