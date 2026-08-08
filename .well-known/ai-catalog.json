@@ -410,7 +410,7 @@
         "mermaid",
         "diagrams"
       ],
-      "version": "0.10.1",
+      "version": "0.10.2",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",

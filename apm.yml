@@ -82,7 +82,7 @@ marketplace:
         Mermaid diagrams in markdown files, and following Markdown formatting 
         best practices.
       source: ./plugins/agent-authoring
-      version: 0.10.1
+      version: 0.10.2
       tag_pattern: "agent-authoring-v{version}"
       tags: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, copilot-cli-custom-agents, claude-code, claude-code-custom-agents, subagents, custom-agents, multi-agent, graph-orchestration, squads, swarms, model-selection, model, reasoning-effort, capability-tier, github-actions, toon, token-oriented-object-notation, tokens, llm, markdown, formatting, mermaid, diagrams]
 
