@@ -151,7 +151,7 @@
     {
       "name": "codebase-memory",
       "description": "Skill for installing, verifying, and integrating codebase-memory-mcp (CBM), a local knowledge-graph code intelligence server, into agents, skills, and prompts that operate on a codebase, replacing grep/search/file-read exploration with structural graph queries via its CLI.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "tags": [
         "codebase-memory-mcp",
         "cbm",
