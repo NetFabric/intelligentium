@@ -13,6 +13,8 @@ const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const REPO_OWNER = "NetFabric";
 const REPO_NAME = "intelligentium";
 const REPO_BRANCH = "main";
+// Keep plugin cards scannable: only genuinely distinguishing search terms belong here.
+const MAX_TAGS = 12;
 
 const NUMBER_WORDS = [
   "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven",
@@ -125,6 +127,14 @@ function main() {
   const packages = apmYml.marketplace?.packages ?? [];
   if (packages.length === 0) {
     throw new Error("No marketplace.packages found in apm.yml");
+  }
+
+  for (const pkg of packages) {
+    if ((pkg.tags?.length ?? 0) > MAX_TAGS) {
+      throw new Error(
+        `Package "${pkg.name}" has ${pkg.tags.length} tags, exceeding the MAX_TAGS cap of ${MAX_TAGS}. Trim to only the most distinguishing search terms.`,
+      );
+    }
   }
 
   const indexPath = join(repoRoot, "index.html");
