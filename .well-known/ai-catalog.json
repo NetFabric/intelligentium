@@ -379,7 +379,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:agent-authoring",
       "displayName": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, Claude Code custom subagents, graph-pattern multi-agent squads/swarms, choosing which AI model an agent should use, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown files, and following Markdown formatting best practices.",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, Claude Code custom subagents, graph-pattern multi-agent squads/swarms, choosing which AI model an agent should use, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown files, following Markdown formatting best practices, and finding, querying, and troubleshooting logs, transcripts, and OpenTelemetry traces from coding-agent harnesses.",
       "tags": [
         "agents-md",
         "skill",
@@ -408,9 +408,16 @@
         "markdown",
         "formatting",
         "mermaid",
-        "diagrams"
+        "diagrams",
+        "agent-harness-logs",
+        "logs",
+        "transcripts",
+        "opentelemetry",
+        "telemetry",
+        "troubleshooting",
+        "debugging"
       ],
-      "version": "0.10.2",
+      "version": "0.11.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -426,6 +433,19 @@
               "building an orchestrator agent that delegates to specialist agents",
               "setting up an adversarial/tribunal code or document review with independent reviewers",
               "scaffolding a squad's agent files for a target coding-agent harness (e.g. Copilot CLI or Claude Code custom agents)"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:agent-harness-logs",
+            "displayName": "agent-harness-logs",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/agent-harness-logs/SKILL.md",
+            "description": "Find, inspect, query, redact, and troubleshoot logs, transcripts, sessions, and OpenTelemetry data from coding-agent harnesses on Windows, macOS, Linux, and WSL. USE FOR: GitHub Copilot in VS Code; Copilot CLI; Claude Code; OpenAI Codex; Gemini CLI; OpenCode; Cursor, Windsurf, Kiro, or other VS Code-family editors; locating log files; diagnosing tool or model failures; correlating turns, subagents, and tool calls; querying JSONL, plaintext, or SQLite without spending model tokens; preparing sanitized diagnostics. DO NOT USE FOR: application logs unrelated to coding agents; uploading raw logs; treating unstable transcript schemas as public APIs.",
+            "representativeQueries": [
+              "GitHub Copilot in VS Code",
+              "Copilot CLI",
+              "Claude Code",
+              "OpenAI Codex"
             ]
           },
           {
