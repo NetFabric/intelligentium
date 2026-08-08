@@ -11,7 +11,7 @@ description: Skills for authoring AGENTS.md project-context files, SKILL.md agen
   agent harnesses.
 author: NetFabric
 license: MIT
-keywords: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, copilot-cli-custom-agents, claude-code, claude-code-custom-agents, subagents, custom-agents, multi-agent, graph-orchestration, squads, swarms, model-selection, model, reasoning-effort, capability-tier, github-actions, toon, token-oriented-object-notation, tokens, llm, markdown, formatting, mermaid, diagrams, agent-harness-logs, logs, transcripts, opentelemetry, telemetry, troubleshooting, debugging]
+keywords: [agents-md, skill-authoring, copilot-cli, claude-code, multi-agent, model-selection, copilot-sdk, github-actions, toon, markdown, mermaid, troubleshooting]
 # Which agent platforms to deploy to.
 # Resolution order: --target flag > this field > auto-detect from filesystem.
 # Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf

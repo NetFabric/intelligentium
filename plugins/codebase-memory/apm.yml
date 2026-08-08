@@ -6,7 +6,7 @@ description: Skill for installing, verifying, and integrating codebase-memory-mc
   grep/search/file-read exploration with structural graph queries via its CLI.
 author: NetFabric
 license: MIT
-keywords: [codebase-memory-mcp, cbm, mcp, code-intelligence, knowledge-graph, code-search, call-graph, cypher, tree-sitter, agent-authoring, code-agents]
+keywords: [codebase-memory-mcp, cbm, mcp, code-intelligence, knowledge-graph, code-search, call-graph, cypher, tree-sitter, code-agents]
 # Which agent platforms to deploy to.
 # Resolution order: --target flag > this field > auto-detect from filesystem.
 # Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf

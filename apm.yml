@@ -33,7 +33,7 @@ marketplace:
       source: ./plugins/math-foundations
       version: 0.1.0
       tag_pattern: "math-foundations-v{version}"
-      tags: [math, geometry, angles, trigonometry, vectors, coordinates]
+      tags: [math, geometry, trigonometry, vectors, coordinates]
 
     - name: math-rotation
       description: Abstract math skills for 3D rotation representations, 
@@ -62,7 +62,7 @@ marketplace:
       source: ./plugins/dotnet
       version: 0.7.1
       tag_pattern: "dotnet-v{version}"
-      tags: [csharp, dotnet, generic-math, best-practices, simd, enumerable, linq, benchmarking, slnx, sourcelink, code-agents, aspire, hooks, file-based-apps]
+      tags: [csharp, dotnet, generic-math, simd, linq, benchmarking, aspire, code-agents, file-based-apps]
 
     - name: apm-authoring
       description: Skills for authoring, consuming, and publishing APM packages,
@@ -85,7 +85,7 @@ marketplace:
       source: ./plugins/agent-authoring
       version: 0.11.0
       tag_pattern: "agent-authoring-v{version}"
-      tags: [agents-md, skill, authoring, documentation, copilot-sdk, copilot-cli, copilot-cli-custom-agents, claude-code, claude-code-custom-agents, subagents, custom-agents, multi-agent, graph-orchestration, squads, swarms, model-selection, model, reasoning-effort, capability-tier, github-actions, toon, token-oriented-object-notation, tokens, llm, markdown, formatting, mermaid, diagrams, agent-harness-logs, logs, transcripts, opentelemetry, telemetry, troubleshooting, debugging]
+      tags: [agents-md, skill-authoring, copilot-cli, claude-code, multi-agent, model-selection, copilot-sdk, github-actions, toon, markdown, mermaid, troubleshooting]
 
     - name: agentic-discovery
       description: Skill for the Agentic Resource Discovery (ARD) open 
@@ -102,7 +102,7 @@ marketplace:
       source: ./plugins/ucp
       version: 0.1.0
       tag_pattern: "ucp-v{version}"
-      tags: [ucp, universal-commerce-protocol, agentic-commerce, checkout, ecommerce, mcp, a2a, ap2, payments]
+      tags: [ucp, universal-commerce-protocol, agentic-commerce, checkout, mcp, a2a, ap2, payments]
 
     - name: codebase-memory
       description: Skill for installing, verifying, and integrating 
@@ -113,7 +113,7 @@ marketplace:
       source: ./plugins/codebase-memory
       version: 0.1.1
       tag_pattern: "codebase-memory-v{version}"
-      tags: [codebase-memory-mcp, cbm, mcp, code-intelligence, knowledge-graph, code-search, call-graph, cypher, tree-sitter, agent-authoring, code-agents]
+      tags: [codebase-memory-mcp, cbm, mcp, code-intelligence, knowledge-graph, code-search, call-graph, cypher, tree-sitter, code-agents]
 
 dependencies:
   apm:
