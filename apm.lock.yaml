@@ -1,10 +1,10 @@
 lockfile_version: '1'
-generated_at: '2026-08-08T14:04:50.069421+00:00'
+generated_at: '2026-08-09T07:58:12.323309+00:00'
 apm_version: 0.14.0
 dependencies:
 - repo_url: netfabric/intelligentium
   host: github.com
-  resolved_commit: 53cbd50aacb873fe81c589546b7a7070cb509476
+  resolved_commit: 5da09a5111a0b225e5459eaae1399ffd9d60e58a
   virtual_path: plugins/agent-authoring
   is_virtual: true
   package_type: apm_package
@@ -20,11 +20,12 @@ dependencies:
   - .agents/skills/markdown-best-practices
   - .agents/skills/mermaid-diagrams
   - .agents/skills/model-selection
+  - .agents/skills/ripgrep
   - .agents/skills/toon
-  content_hash: sha256:62d5cb01a4e4f4eb48e4f5133875d77c6b1a9a3fc3fab295371d2332cd34af7e
+  content_hash: sha256:727702c0edf5d7a8ad1d60f197d75d1ad938bb43ee30e7f2b9394d3046e75c09
 - repo_url: netfabric/intelligentium
   host: github.com
-  resolved_commit: 53cbd50aacb873fe81c589546b7a7070cb509476
+  resolved_commit: 5da09a5111a0b225e5459eaae1399ffd9d60e58a
   virtual_path: plugins/agentic-discovery
   is_virtual: true
   package_type: apm_package
@@ -33,7 +34,7 @@ dependencies:
   content_hash: sha256:d33ad0153e511f873a694c6c463bd95fc570224ad3268e598634cd138abf6931
 - repo_url: netfabric/intelligentium
   host: github.com
-  resolved_commit: 53cbd50aacb873fe81c589546b7a7070cb509476
+  resolved_commit: 5da09a5111a0b225e5459eaae1399ffd9d60e58a
   virtual_path: plugins/apm-authoring
   is_virtual: true
   package_type: apm_package
