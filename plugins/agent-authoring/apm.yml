@@ -1,5 +1,5 @@
 name: agent-authoring
-version: 0.12.0
+version: 0.13.0
 description: Skills for authoring AGENTS.md project-context files, SKILL.md agent
   skills, GitHub Copilot CLI custom agents, Claude Code custom subagents,
   graph-pattern multi-agent squads/swarms, choosing which AI model an agent
@@ -7,8 +7,10 @@ description: Skills for authoring AGENTS.md project-context files, SKILL.md agen
   CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object
   Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown
   files, following Markdown formatting best practices, searching files and code
-  with ripgrep, and finding, querying, and troubleshooting logs, transcripts,
-  and OpenTelemetry traces from coding-agent harnesses.
+  with ripgrep, producing and consuming Open Knowledge Format bundles,
+  generating agent-maintained documentation with OpenWiki, and finding,
+  querying, and troubleshooting logs, transcripts, and OpenTelemetry traces
+  from coding-agent harnesses.
 author: NetFabric
 license: MIT
 keywords: [agents-md, skill-authoring, copilot-cli, claude-code, multi-agent, model-selection, copilot-sdk, github-actions, toon, markdown, mermaid, troubleshooting]

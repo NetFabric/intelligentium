@@ -373,7 +373,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:agent-authoring",
       "displayName": "agent-authoring",
-      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, Claude Code custom subagents, graph-pattern multi-agent squads/swarms, choosing which AI model an agent should use, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown files, following Markdown formatting best practices, searching files and code with ripgrep, and finding, querying, and troubleshooting logs, transcripts, and OpenTelemetry traces from coding-agent harnesses.",
+      "description": "Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, Claude Code custom subagents, graph-pattern multi-agent squads/swarms, choosing which AI model an agent should use, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, authoring Mermaid diagrams in markdown files, following Markdown formatting best practices, searching files and code with ripgrep, producing and consuming Open Knowledge Format bundles, generating agent-maintained documentation with OpenWiki, and finding, querying, and troubleshooting logs, transcripts, and OpenTelemetry traces from coding-agent harnesses.",
       "tags": [
         "agents-md",
         "skill-authoring",
@@ -388,7 +388,7 @@
         "mermaid",
         "troubleshooting"
       ],
-      "version": "0.12.0",
+      "version": "0.13.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -523,6 +523,32 @@
               "efficiency-first vs. capability-first starting strategies",
               "tuning an effort/reasoning-effort parameter instead of switching models",
               "call cadence vs. provider prompt-cache TTL"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:okf",
+            "displayName": "okf",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/okf/SKILL.md",
+            "description": "Produce, consume, validate, and navigate Open Knowledge Format (OKF) bundles. Use when: creating an OKF knowledge bundle; converting catalogs, wikis, schemas, metrics, runbooks, or APIs to OKF; parsing or indexing OKF; designing an OKF producer or consumer; validating OKF v0.2 conformance; traversing index.md files and concept links; minimizing agent context while reading OKF documentation; handling provenance, trust, lifecycle, sources, or Attested Computation concepts. DO NOT USE FOR: OpenAPI schemas; generic Markdown documentation with no OKF bundle; knowledge graphs that do not use OKF files; runtime packaging or serving protocols not defined by OKF.",
+            "representativeQueries": [
+              "OpenAPI schemas",
+              "generic Markdown documentation with no OKF bundle",
+              "knowledge graphs that do not use OKF files",
+              "runtime packaging or serving protocols not defined by OKF"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:agent-authoring:openwiki",
+            "displayName": "openwiki",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/openwiki/SKILL.md",
+            "description": "Install, verify, configure, and use the OpenWiki CLI for agent-maintained repository or personal documentation. Use when: checking whether OpenWiki is installed; installing or updating the openwiki npm package; running openwiki --init or --update; generating a codebase wiki; building a personal wiki; configuring model providers, credentials, connectors, CI updates, .openwikiignore, or the visualizer; troubleshooting PATH, Node.js, better-sqlite3, provider, or non-interactive failures. DO NOT USE FOR: editing arbitrary wikis unrelated to OpenWiki; DeepWiki; generic documentation generators; implementing Open Knowledge Format consumers or producers directly (use the okf skill).",
+            "representativeQueries": [
+              "editing arbitrary wikis unrelated to OpenWiki",
+              "DeepWiki",
+              "generic documentation generators",
+              "implementing Open Knowledge Format consumers or producers directly (use the okf skill)"
             ]
           },
           {
