@@ -53,7 +53,7 @@ Commit the regenerated `.claude-plugin/marketplace.json` — it's consumed direc
 
 ## Releasing a Plugin
 
-Bump the package's `version` in both root [apm.yml](apm.yml) and `plugins/<name>/apm.yml`. Once merged to `main`, `.github/workflows/plugin-releases.yml` tags the commit (`<name>-v<version>`, per that package's `tag_pattern`) and creates a GitHub Release listing the commits under `plugins/<name>` since its previous release. No manual tagging needed.
+Bump the package's `version` in both root [apm.yml](apm.yml) and `plugins/<name>/apm.yml`. Once merged to `main`, `.github/workflows/plugin-releases.yml` creates the annotated tag (`<name>-v<version>`, per `tag_pattern`), creates the GitHub Release, and regenerates the website with that tag's release date. No manual tagging or release-date editing is needed.
 
 ## Pull Requests
 

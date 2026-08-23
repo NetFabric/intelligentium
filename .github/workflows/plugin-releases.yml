@@ -10,6 +10,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: plugin-release-listing-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -28,3 +32,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           npm run release:plugins
+      - name: Update website with released versions and dates
+        run: |
+          npm run generate:plugins
+          git add index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update plugin releases and sitemap [skip ci]"
+            npm run generate:sitemap
+            git add sitemap.xml
+            git commit --amend --no-edit
+            git pull --rebase origin main
+            git push
+          fi

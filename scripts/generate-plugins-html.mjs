@@ -38,23 +38,25 @@ function repoUrl(source) {
   return `https://github.com/${REPO_OWNER}/${REPO_NAME}/tree/${REPO_BRANCH}/${relPath}`;
 }
 
-function gitLogDate(...revArgs) {
+function tagDate(tag) {
   try {
-    const iso = execFileSync("git", ["log", "-1", "--format=%aI", ...revArgs], {
-      cwd: repoRoot,
-      encoding: "utf8",
-    }).trim();
+    const iso = execFileSync(
+      "git",
+      ["for-each-ref", "--format=%(taggerdate:iso-strict)", `refs/tags/${tag}`],
+      { cwd: repoRoot, encoding: "utf8" },
+    ).trim();
     return iso || null;
   } catch {
     return null;
   }
 }
 
-// Real release date: the tag created by plugin-releases.yml for this version,
-// falling back to the last commit under the package's own source path.
+// A package is released only after plugin-releases.yml creates its annotated tag.
+// Never substitute a source commit date: shallow CI clones can make every package
+// appear to have been released by the same checkout commit.
 function releaseDate(pkg) {
   const tag = pkg.tag_pattern?.replace("{version}", pkg.version);
-  return (tag && gitLogDate(tag)) ?? gitLogDate("--", pkg.source) ?? null;
+  return tag ? tagDate(tag) : null;
 }
 
 function formatDate(iso) {
