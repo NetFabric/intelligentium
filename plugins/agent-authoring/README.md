@@ -1,6 +1,6 @@
 # agent-authoring
 
-Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, Claude Code custom subagents, graph-pattern multi-agent squads/swarms, choosing which AI model an agent should use, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, following Markdown formatting best practices, searching files and code with ripgrep, producing and consuming Open Knowledge Format bundles, creating polished Python terminal interfaces and skill scripts with Textual and Rich, and finding, querying, and troubleshooting logs, transcripts, and OpenTelemetry traces from coding-agent harnesses.
+Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, GitHub Copilot CLI custom agents, Claude Code custom subagents, compact agent-facing Markdown, graph-pattern multi-agent squads/swarms, choosing which AI model an agent should use, building apps with the GitHub Copilot SDK, automating Copilot CLI in GitHub Actions, converting data to/from TOON (Token-Oriented Object Notation) to cut LLM token usage, following general Markdown formatting best practices, searching files and code with ripgrep, producing and consuming Open Knowledge Format bundles, creating polished Python terminal interfaces and skill scripts with Textual and Rich, and finding, querying, and troubleshooting logs, transcripts, and OpenTelemetry traces from coding-agent harnesses.
 
 ## Skills
 
@@ -8,6 +8,7 @@ Skills for authoring AGENTS.md project-context files, SKILL.md agent skills, Git
 | --- | --- |
 | [agent-graph-orchestration](.apm/skills/agent-graph-orchestration) | Design and scaffold multi-agent squads/swarms using the graph orchestration pattern, delegating node authoring to the target harness's agent-authoring skill |
 | [agent-harness-logs](.apm/skills/agent-harness-logs) | Find, inspect, query, redact, and troubleshoot logs, transcripts, sessions, and OpenTelemetry data from coding-agent harnesses |
+| [agent-markdown-best-practices](.apm/skills/agent-markdown-best-practices) | Write compact, executable, and reliably routed agent-facing Markdown |
 | [agents-md](.apm/skills/agents-md) | Author and maintain AGENTS.md files — the open, tool-agnostic format for giving coding agents project context |
 | [claude-code-custom-agents](.apm/skills/claude-code-custom-agents) | Create and maintain Claude Code custom subagents (.claude/agents/*.md files) |
 | [copilot-cli-custom-agents](.apm/skills/copilot-cli-custom-agents) | Create and maintain GitHub Copilot CLI custom agents (.agent.md files) |

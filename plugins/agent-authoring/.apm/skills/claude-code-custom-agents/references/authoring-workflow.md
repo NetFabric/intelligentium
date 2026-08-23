@@ -9,6 +9,12 @@
 
 As of v2.1.198, `/agents` no longer opens an interactive creation wizard — running it just prints a reminder to ask Claude or edit `.claude/agents/` directly. The file format and locations are unchanged.
 
+## Write the description and prompt body
+
+Claude delegates on `description`. Name concrete tasks and trigger conditions; add "use proactively" or "use immediately after ..." only when the role should run eagerly. State exclusions and operating limits when nearby subagents overlap. A technology label such as "Python agent" is not enough to route reliably.
+
+The body is the subagent's system prompt, not an extension of the parent conversation. Start with a one-sentence role, then provide concrete invocation steps, domain criteria, constraints, and the output format the parent can use directly. Restate any required project convention that Claude Code does not reliably inject; do not restate frontmatter fields.
+
 ## Choosing a scope
 
 | Scope | Location | Use when |
@@ -34,7 +40,7 @@ Otherwise, edits to an existing subagent file are picked up within seconds — t
 
 | Symptom | Likely cause | Fix |
 | --- | --- | --- |
-| Subagent never gets delegated to | `description` too vague, or missing "use proactively" for an eager-delegation role | Rewrite with concrete trigger phrases → [writing-style.md](writing-style.md) |
+| Subagent never gets delegated to | `description` too vague, or missing "use proactively" for an eager-delegation role | Rewrite with concrete trigger phrases using `agent-markdown-best-practices` |
 | New subagent invisible after creation | First agent file in a newly-created `agents/` directory | Restart Claude Code |
 | "Agent would be spawned with zero tools" error | Every entry in `tools` is misspelled or names a tool unavailable to subagents | Check spelling against [Available tools](frontmatter-reference.md#available-tools) |
 | Coordinator can't spawn a specific subagent | `Agent(...)` allowlist on the coordinator's `tools` omits that type | Add the type to the parenthesized list, or use bare `Agent` |

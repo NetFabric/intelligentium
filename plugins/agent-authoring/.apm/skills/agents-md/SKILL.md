@@ -41,7 +41,7 @@ flowchart TD
 
 Never hardcode language, framework, or tool assumptions into an AGENTS.md — every instruction must reflect the target repo's actual, verified stack and commands, not a generic template left unfilled.
 
-AGENTS.md is still a Markdown file: run `markdown-best-practices` over the draft before treating it as finished (heading spacing, table/list consistency, fenced-code language tags).
+Run `agent-markdown-best-practices` over the content for compact, executable, agent-facing instructions. Then run `markdown-best-practices` for Markdown syntax and rendering hygiene.
 
 ## Reference Files
 
@@ -49,5 +49,4 @@ AGENTS.md is still a Markdown file: run `markdown-best-practices` over the draft
 |------|-----------|
 | [references/anatomy-and-discovery.md](references/anatomy-and-discovery.md) | Deciding where files live, how precedence works, or migrating from a legacy agent file |
 | [references/authoring-workflow.md](references/authoring-workflow.md) | Writing a new AGENTS.md for a greenfield or brownfield project |
-| [references/writing-style.md](references/writing-style.md) | Wording and formatting an AGENTS.md section for density and scannability |
 | [references/quality-and-security.md](references/quality-and-security.md) | Reviewing content quality, verifying commands, or covering security considerations |

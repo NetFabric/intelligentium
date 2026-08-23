@@ -36,7 +36,8 @@ description: "<≤1024 chars>"  # double-quoted; trigger phrases; relevance cont
 3. Draft SKILL.md skeleton (tables, code blocks, ref table)
 4. Extract detail → reference files
 5. Validate frontmatter length (`echo -n "..." | wc -c`)
-6. Run `markdown-best-practices` over every new/edited `.md` file — heading spacing, table/list consistency, fenced-code language tags
+6. Run `agent-markdown-best-practices` for compact agent-facing content, routing descriptions, and reference boundaries
+7. Run `markdown-best-practices` over every new/edited `.md` file — heading spacing, table/list consistency, fenced-code language tags
 
 ## Workflow: Update Skill
 
@@ -44,19 +45,18 @@ description: "<≤1024 chars>"  # double-quoted; trigger phrases; relevance cont
 2. Edit only the reference file(s) that changed
 3. Update SKILL.md summary + reference table if needed
 4. Verify description ≤1024 chars
-5. Re-run `markdown-best-practices` over every file touched
+5. Re-run `agent-markdown-best-practices` and `markdown-best-practices` over every file touched
 
 ## Writing Rules (summary)
 
 - Tables > prose; omit preamble; active voice
 - Comments only when code can't show intent
 - No restatements, no obvious callouts
-- Full rules → [references/writing-style.md](references/writing-style.md)
+- Full content rules → `agent-markdown-best-practices`
 
 ## Reference Files
 
 | File | Load When |
 |------|-----------|
 | [references/structure.md](references/structure.md) | Designing folder layout, frontmatter, or reference conventions |
-| [references/writing-style.md](references/writing-style.md) | Writing or reviewing content for token efficiency |
 | [references/research-workflow.md](references/research-workflow.md) | Researching a new or updated skill topic |

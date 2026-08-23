@@ -17,7 +17,7 @@ Some harnesses also accept their own native path alongside `.agents/skills/`: `.
 ## SKILL.md Frontmatter Spec
 
 | Field | Required | Constraint | Notes |
-|-------|----------|-----------|-------|
+| --- | --- | --- | --- |
 | `name` | yes | kebab-case | Must match folder name |
 | `description` | yes | ≤1024 chars | Semantic trigger for agent |
 
@@ -28,20 +28,22 @@ Some harnesses also accept their own native path alongside `.agents/skills/`: `.
 ```
 
 - Lead with verb: "Create", "Configure", "Debug", "Migrate"
+- Name concrete tasks and include terms users actually type; do not reword the skill name as a description
 - Trigger list: semicolons, no articles, keyword-dense
 - Exclusions prevent false activations — include them
+- Name the better skill when excluding a nearby scope
 - Count chars: `echo -n "text" | wc -c`
 
 ## YAML Safety in Descriptions
 
-**Always wrap the `description` value in double quotes** (`description: "..."`). Trigger-phrase descriptions routinely contain colons ("USE FOR:", "DO NOT USE FOR:", "Use when:"), and an unquoted YAML plain scalar treats `: ` (colon + space) mid-value as the start of a new mapping key — this throws a real parse error (`bad indentation of a mapping entry` / `mapping values are not allowed in this context`) in any strict YAML parser, including tools that load SKILL.md frontmatter directly. Earlier guidance in this repo assumed that was "tolerated" because apm's own frontmatter reader was regex-based — that assumption was wrong: other tooling (e.g. editor extensions) does strict-parse this frontmatter and fails loudly. Quoting is the only reliable fix; don't rely on rewording to dodge colons.
+**Always wrap the `description` value in double quotes** (`description: "..."`). Trigger-phrase descriptions routinely contain colons ("USE FOR:", "DO NOT USE FOR:", "Use when:"), and an unquoted YAML plain scalar treats a colon followed by a space mid-value as the start of a new mapping key — this throws a real parse error (`bad indentation of a mapping entry` / `mapping values are not allowed in this context`) in any strict YAML parser, including tools that load SKILL.md frontmatter directly. Earlier guidance in this repo assumed that was "tolerated" because apm's own frontmatter reader was regex-based — that assumption was wrong: other tooling (e.g. editor extensions) does strict-parse this frontmatter and fails loudly. Quoting is the only reliable fix; don't rely on rewording to dodge colons.
 
 Inside a double-quoted scalar, only two characters need escaping: `\"` and `\\`. Everything else — colons, single quotes/apostrophes, backticks, parentheses — is safe as-is.
 
 | Sequence | Effect | Fix |
-|----------|--------|-----|
-| `: ` (colon + space) mid-value | Starts a new mapping key in an unquoted scalar — parse error | Wrap the whole value in double quotes |
-| ` #` (space + hash) | Starts a YAML comment — silently drops everything after it, with no error, even when quoted incorrectly | Keep the value inside the quotes; never let a `#` fall outside them |
+| --- | --- | --- |
+| Colon + space mid-value | Starts a new mapping key in an unquoted scalar — parse error | Wrap the whole value in double quotes |
+| Space + `#` | Starts a YAML comment — silently drops everything after it, with no error, even when quoted incorrectly | Keep the value inside the quotes; never let a `#` fall outside them |
 | Literal `"` inside the value | Would end the quoted scalar early | Escape as `\"` |
 | Leading `- ? : , [ ] { } # & * ! \| > ' " % @` \` (if ever unquoted) | A scalar can't start with these unquoted | Moot once the whole value is quoted |
 
@@ -50,7 +52,7 @@ Verify: `node -e "const yaml=require('js-yaml'); const fm=require('fs').readFile
 ## Reference File Conventions
 
 | Convention | Rule |
-|-----------|------|
+| --- | --- |
 | Naming | lowercase, hyphen-separated |
 | Scope | one topic per file |
 | Size | ≤200 lines; split if larger |
@@ -60,7 +62,7 @@ Verify: `node -e "const yaml=require('js-yaml'); const fm=require('fs').readFile
 ## Scripts & Assets
 
 | Directory | Use For | Notes |
-|-----------|---------|-------|
+| --- | --- | --- |
 | `scripts/` | Automation run by skill (e.g. codegen, scaffolding) | Python preferred; any language permitted |
 | `assets/` | Templates, sample data, images | Link from SKILL.md or reference files |
 
@@ -72,6 +74,22 @@ A `scripts/` script isn't limited to pure deterministic code — it can embed th
 2. Anatomy table (files + purpose + size)
 3. Core quick-reference (tables/code, ≤3 sections)
 4. Reference file table (file | load when)
+
+## Content Placement
+
+Keep in `SKILL.md`:
+
+- Scope, trigger phrases, and exclusions
+- Anatomy and quick-reference facts
+- The shortest complete workflow
+- Reference links with precise load conditions
+
+Move to references:
+
+- Full API or field tables
+- Extended examples
+- Edge cases and compatibility notes
+- Background needed only for uncommon decisions
 
 ## Anti-patterns
 
