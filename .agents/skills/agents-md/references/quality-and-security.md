@@ -1,6 +1,14 @@
 # Quality & Security
 
-See [writing-style.md](writing-style.md) for wording and formatting conventions.
+Run `agent-markdown-best-practices` for wording, density, and agent-facing content conventions.
+
+## AGENTS.md Content Boundaries
+
+- Keep the project overview to one short paragraph.
+- Keep each setup, build, test, code-style, and PR section to 3–8 operational bullets where practical.
+- Keep required operational instructions local; link supporting detail in human-facing project documentation instead of copying it into agent context.
+- Split package-specific instructions into nested `AGENTS.md` files before the root becomes a package-by-package manual.
+- Document only the target repository's verified stack, commands, and enforced conventions.
 
 ## Verification Is Mandatory
 

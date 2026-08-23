@@ -1,5 +1,5 @@
 name: codebase-memory
-version: 0.1.1
+version: 0.1.2
 description: Skill for installing, verifying, and integrating codebase-memory-mcp
   (CBM) — a local, zero-dependency knowledge-graph code intelligence server —
   into agents, skills, and prompts that operate on a codebase, replacing

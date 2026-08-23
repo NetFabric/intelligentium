@@ -27,6 +27,7 @@ If the target operates on a codebase (reads code, answers "what calls X", maps a
 | Need | Do this |
 | --- | --- |
 | Is it installed? | `command -v codebase-memory-mcp && codebase-memory-mcp --version` |
+| Minimum recommended version | v0.10.8; earlier v0.10 releases contain correctness or packaging defects fixed by v0.10.8 |
 | Install it | `curl -fsSL https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.sh \| bash` (see [references/installation.md](references/installation.md)) |
 | Is a project's index in sync? | `codebase-memory-mcp cli index_status --project <name>` |
 | What tools exist? | [references/tools.md](references/tools.md) — full 15-tool table |

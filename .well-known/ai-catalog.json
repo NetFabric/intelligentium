@@ -674,7 +674,7 @@
         "tree-sitter",
         "code-agents"
       ],
-      "version": "0.1.1",
+      "version": "0.1.2",
       "type": "application/ai-skill+md",
       "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/codebase-memory/.apm/skills/codebase-memory/SKILL.md",
       "representativeQueries": [

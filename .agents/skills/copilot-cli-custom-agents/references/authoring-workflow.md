@@ -21,6 +21,14 @@ flowchart LR
 
 Naming: lowercase, hyphenated; filename → agent ID (`react-reviewer.agent.md` → `react-reviewer`). Nested subdirectories under `.github/agents/`/`.claude/agents/` are discovered recursively, even when the session starts from a subdirectory of the repo root.
 
+## Write the description and prompt body
+
+The CLI routes on `description` alone. Name concrete tasks, likely user phrases, commands, and domain terms in 1–3 sentences. State exclusions when sibling agents overlap, and declare consequential limits such as read-only behavior. A title such as "Backend developer" is not a routing description.
+
+Keep one role per agent. Start the body with a one-sentence role, then add only the protocol, constraints, stop conditions, and output format the role needs. Let frontmatter declare tools and model instead of restating them. Orchestrators must name their specialists; sidekicks must name the event that should trigger them.
+
+A dispatched agent starts with fresh context. Put task-specific goals, paths, facts, and constraints in each `task` prompt rather than assuming shared conversation context or hardcoding one task into the reusable body.
+
 ## Load & reload
 
 | Trigger | Effect |

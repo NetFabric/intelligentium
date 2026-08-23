@@ -19,7 +19,7 @@ codebase-memory-mcp cli query_graph --project my-project --query 'MATCH (f:Funct
 | Tool | Purpose |
 | --- | --- |
 | `index_repository` | Index a repository into the graph. Auto-sync (background watcher) keeps it fresh afterward. |
-| `list_projects` | List all indexed projects with node/edge counts. |
+| `list_projects` | List indexed projects. v0.10.8+ returns a lean default view; use `offset`, `limit`, and `include_details` for pagination and node/edge counts. |
 | `delete_project` | Remove a project and all its graph data. |
 | `index_status` | Check indexing status of a project — the freshness/sync check. |
 
@@ -67,3 +67,5 @@ Additional analysis/cross-service edges documented elsewhere in the same referen
 ### Cypher subset (`query_graph`)
 
 Read-only openCypher subset: `MATCH`/`OPTIONAL MATCH` (multiple), `WHERE`, `WITH` (+ `WITH … WHERE`), `RETURN`, `ORDER BY`, `SKIP`, `LIMIT`, `DISTINCT`, `UNWIND`, `UNION`/`UNION ALL`, `CASE`; label alternation `(n:A|B)`; variable-length paths `[*1..3]`; comparison/boolean/`IN`/`CONTAINS`/`STARTS WITH`/`ENDS WITH`/`IS [NOT] NULL`/regex `=~`/label test `n:Label`; single-hop `EXISTS { (n)-[:TYPE]->() }` (useful for dead-code queries, e.g. `WHERE NOT EXISTS { (f)<-[:CALLS]-() }`); aggregates `count`/`sum`/`avg`/`min`/`max`/`collect`; a curated function set (`labels`, `type`, `id`, `toLower`, `size`, `coalesce`, `substring`, etc.). Write clauses, `MERGE`/`CALL`, list/map literals, comprehensions, and parameters are outside the subset and fail with an explicit `unsupported …` error rather than silently returning empty results.
+
+Use v0.10.8+ for exhaustive aggregates: it fixes candidate and relationship-expansion truncation that could make earlier `count()` and `collect()` results too small. In v0.10.8+, `max_rows` limits returned rows only, not the rows seen by aggregation.

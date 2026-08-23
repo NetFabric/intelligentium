@@ -18,16 +18,10 @@ codebase-memory-mcp install --dry-run
 
 ## Install
 
-One-line install (macOS / Linux):
+One-line install (macOS / Linux; the graph UI is included):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.sh | bash
-```
-
-Add the 3D graph visualization UI variant:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.sh | bash -s -- --ui
 ```
 
 Windows (PowerShell — inspect the script first, then unblock it since it was downloaded from the internet):
@@ -35,7 +29,7 @@ Windows (PowerShell — inspect the script first, then unblock it since it was d
 ```powershell
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.ps1 -OutFile install.ps1
 Unblock-File .\install.ps1
-.\install.ps1            # add -ui for the graph UI
+.\install.ps1
 ```
 
 Also published on npm, PyPI, Homebrew, Scoop, Winget, Chocolatey, AUR (`codebase-memory-mcp-bin`), and `go install`. Package-manager installs only verify and cache the binary; running the native `install` command (which the shell/PowerShell scripts do for you) is what activates it account-wide and configures detected agent/editor clients.
@@ -47,13 +41,17 @@ The `install` command auto-detects installed coding agents/editors (Claude Code,
 ```bash
 git clone https://github.com/DeusData/codebase-memory-mcp.git
 cd codebase-memory-mcp
-scripts/build.sh              # standard binary
-scripts/build.sh --with-ui    # with graph visualization
+scripts/build.sh              # development build without the UI
+scripts/build.sh --with-ui    # shipped composition with graph visualization
 ```
+
+Every release-channel install includes the graph UI. A source build without `--with-ui` is for development only.
 
 ## Update
 
 Updates are run from the install script, not from inside the running binary (a running executable can't safely replace its own image, especially on Windows). Re-running `install.sh`/`install.ps1` is the update path — it stops the daemon, retires the old binary, installs the new one. Running `codebase-memory-mcp update` validates flags and prints the exact command to run rather than fetching anything itself. Installed via npm/pip? Use that package manager instead: `npm install -g codebase-memory-mcp@latest` / `pip install -U codebase-memory-mcp`.
+
+Use v0.10.8 or newer. The `0.10.7` npm/PyPI packages were deprecated or yanked because their release tag omitted the required `v` prefix, so package-manager downloads could not resolve their assets. Direct binaries from that release were unaffected.
 
 ## Check if a project's index is in sync
 

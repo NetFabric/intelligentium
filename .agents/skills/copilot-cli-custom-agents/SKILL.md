@@ -48,7 +48,7 @@ Do NOT modify files.
 ## Workflow
 
 1. Scope one focused role per agent — read [references/frontmatter-reference.md](references/frontmatter-reference.md) for every field
-2. Write a specific, keyword-dense `description` and a constraint-driven prompt body → [references/writing-style.md](references/writing-style.md) — vague descriptions never get auto-invoked
+2. Run `agent-markdown-best-practices` to write a specific, keyword-dense `description` and a constraint-driven prompt body — vague descriptions never get auto-invoked
 3. Restrict `tools:` to the minimum the role needs; strip `edit` from orchestrators and normally strip `shell` so they delegate. Retain narrowly scoped shell access only for an explicit orchestrator-owned dependency readiness preflight (for example, CBM installation/index verification), and forbid all other shell work in the prompt body
 4. Choose `model:` (and `reasoning-effort:`) using the `model-selection` skill before finalizing frontmatter — never leave it unset on the assumption an inherited default is adequate
 5. For multi-agent squads, adopt a naming prefix and use `user-invocable: false` on internal specialists → [references/delegation-and-squads.md](references/delegation-and-squads.md)
@@ -56,14 +56,13 @@ Do NOT modify files.
 7. Restart the CLI (or start a new session) to load new/edited agent files
 8. Check [references/authoring-workflow.md](references/authoring-workflow.md) if the agent doesn't load or isn't invoked
 9. Check [references/undocumented-and-gotchas.md](references/undocumented-and-gotchas.md) for fields/behaviors missing from the official reference table
-10. Run `markdown-best-practices` over the finished `.agent.md` — it's still a Markdown file (frontmatter fences, heading/list hygiene in the prompt body)
+10. Run `markdown-best-practices` over the finished `.agent.md` for frontmatter fences, heading/list hygiene, and other Markdown rendering rules
 
 ## Reference Files
 
 | File | Load When |
 | --- | --- |
 | [references/frontmatter-reference.md](references/frontmatter-reference.md) | Writing or reviewing any frontmatter field, tool name/alias, or file location/priority rule |
-| [references/writing-style.md](references/writing-style.md) | Writing or reviewing a `description` or prompt body — trigger phrasing, constraints, output format |
 | [references/delegation-and-squads.md](references/delegation-and-squads.md) | Building an orchestrator, a specialist squad, using `task`/`list_agents`/`write_agent`, or `/fleet` |
 | [references/authoring-workflow.md](references/authoring-workflow.md) | Creating an agent via the CLI wizard, testing it, or troubleshooting why it won't load/invoke |
 | [references/undocumented-and-gotchas.md](references/undocumented-and-gotchas.md) | Hitting a field or behavior the official CLI reference table omits; reconciling CLI vs. VS Code vs. cloud-agent differences |

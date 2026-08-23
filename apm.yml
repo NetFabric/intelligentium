@@ -115,7 +115,7 @@ marketplace:
         replacing grep/search/file-read exploration with structural graph 
         queries via its CLI.
       source: ./plugins/codebase-memory
-      version: 0.1.1
+      version: 0.1.2
       tag_pattern: "codebase-memory-v{version}"
       tags: [codebase-memory-mcp, cbm, mcp, code-intelligence, knowledge-graph, code-search, call-graph, cypher, tree-sitter, code-agents]
 
