@@ -46,20 +46,41 @@
     },
     {
       "name": "dotnet",
-      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), file-based apps (dotnet run file.cs, colon directives), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).",
-      "version": "0.7.1",
+      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, System.Threading.Channels producer-consumer pipelines, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), file-based apps (dotnet run file.cs, colon directives), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).",
+      "version": "0.8.0",
       "tags": [
         "csharp",
         "dotnet",
         "generic-math",
         "simd",
         "linq",
+        "channels",
+        "producer-consumer",
         "benchmarking",
         "aspire",
         "code-agents",
         "file-based-apps"
       ],
       "source": "./plugins/dotnet"
+    },
+    {
+      "name": "dotnet-rx",
+      "description": "Rx.NET and ReactiveUI skills for composable observable pipelines, concurrency, lifetimes, MVVM state, commands, bindings, and deterministic testing.",
+      "version": "0.1.0",
+      "tags": [
+        "csharp",
+        "dotnet",
+        "rx",
+        "reactive-extensions",
+        "system-reactive",
+        "observables",
+        "reactiveui",
+        "mvvm",
+        "reactive-programming",
+        "scheduling",
+        "testing"
+      ],
+      "source": "./plugins/dotnet-rx"
     },
     {
       "name": "apm-authoring",

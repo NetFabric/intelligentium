@@ -196,19 +196,21 @@
     {
       "identifier": "urn:air:github.com:netfabric:dotnet",
       "displayName": "dotnet",
-      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), file-based apps (dotnet run file.cs, colon directives), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).",
+      "description": "C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, System.Threading.Channels producer-consumer pipelines, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), file-based apps (dotnet run file.cs, colon directives), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).",
       "tags": [
         "csharp",
         "dotnet",
         "generic-math",
         "simd",
         "linq",
+        "channels",
+        "producer-consumer",
         "benchmarking",
         "aspire",
         "code-agents",
         "file-based-apps"
       ],
-      "version": "0.7.1",
+      "version": "0.8.0",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -263,6 +265,16 @@
             ]
           },
           {
+            "identifier": "urn:air:github.com:netfabric:dotnet:dotnet-channels",
+            "displayName": "dotnet-channels",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/dotnet/.apm/skills/dotnet-channels/SKILL.md",
+            "description": "Design, implement, debug, test, and review in-process producer-consumer pipelines with System.Threading.Channels. USE FOR: Channel<T>, ChannelReader<T>, ChannelWriter<T>, bounded/unbounded queues, BoundedChannelFullMode, backpressure, TryWrite, WriteAsync, ReadAsync, ReadAllAsync, completion, cancellation, concurrent producers/consumers, BackgroundService workers, in-memory event queues, overload protection, and channel performance. DO NOT USE FOR: durable or cross-process messaging, distributed pub/sub, broker delivery guarantees, Rx.NET stream composition, task-parallel dataflow blocks, or simple thread-safe collections with no asynchronous producer-consumer requirement.",
+            "representativeQueries": [
+              "Channel<T>, ChannelReader<T>, ChannelWriter<T>, bounded/unbounded queues, BoundedChannelFullMode, backpressure, TryWrite, WriteAsync, ReadAsync, ReadAllAsync, completion, cancellation, concurrent producers/consumers, BackgroundService workers, in-memory event queues, overload protection, and channel performance"
+            ]
+          },
+          {
             "identifier": "urn:air:github.com:netfabric:dotnet:dotnet-enumerable",
             "displayName": "dotnet-enumerable",
             "type": "application/ai-skill+md",
@@ -312,6 +324,57 @@
               "choosing .sln vs .slnx",
               "sharing MSBuild properties (TargetFramework, LangVersion, Nullable, ImplicitUsings, TreatWarningsAsErrors, EnforceCodeStyleInBuild, EnableNETAnalyzers, Deterministic) across every project",
               "configuring SourceLink for debuggable NuGet packages"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "urn:air:github.com:netfabric:dotnet-rx",
+      "displayName": "dotnet-rx",
+      "description": "Rx.NET and ReactiveUI skills for composable observable pipelines, concurrency, lifetimes, MVVM state, commands, bindings, and deterministic testing.",
+      "tags": [
+        "csharp",
+        "dotnet",
+        "rx",
+        "reactive-extensions",
+        "system-reactive",
+        "observables",
+        "reactiveui",
+        "mvvm",
+        "reactive-programming",
+        "scheduling",
+        "testing"
+      ],
+      "version": "0.1.0",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "urn:air:github.com:netfabric:dotnet-rx:dotnet-rx",
+            "displayName": "dotnet-rx",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/dotnet-rx/.apm/skills/dotnet-rx/SKILL.md",
+            "description": "Design, implement, debug, review, and test Reactive Extensions for .NET (Rx.NET) pipelines with System.Reactive. USE FOR: IObservable<T>/IObserver<T>; Observable creation and adapters; LINQ-style operator selection; hot/cold/connectable streams; Subjects; Publish/Replay/RefCount/AutoConnect; schedulers and concurrency; disposal and cancellation; errors/retry; backpressure limits; Task/event/IAsyncEnumerable interop; virtual-time TestScheduler tests; Rx.NET 7 migration and UI packages. DO NOT USE FOR: ReactiveUI application architecture; RxJS/RxJava syntax; simple .NET events with no stream composition; producer-consumer workloads requiring built-in backpressure (prefer Channels or IAsyncEnumerable).",
+            "representativeQueries": [
+              "IObservable<T>/IObserver<T>",
+              "Observable creation and adapters",
+              "LINQ-style operator selection",
+              "hot/cold/connectable streams"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:dotnet-rx:reactiveui",
+            "displayName": "reactiveui",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/dotnet-rx/.apm/skills/reactiveui/SKILL.md",
+            "description": "Design, implement, migrate, debug, review, and test ReactiveUI 24+ applications. USE FOR: ReactiveObject; WhenAnyValue; ObservableAsPropertyHelper/ToProperty; ReactiveCommand; WhenActivated; Bind/OneWayBind/BindCommand; Interaction; routing and view location; RxAppBuilder; source generators; ReactiveUI.Primitives vs *.Reactive distributions; schedulers; DynamicData; validation; WPF, Avalonia, MAUI, WinUI, WinForms, Blazor. DO NOT USE FOR: generic Rx.NET pipelines without MVVM (use dotnet-rx); unrelated MVVM frameworks; visual UI design.",
+            "representativeQueries": [
+              "ReactiveObject",
+              "WhenAnyValue",
+              "ObservableAsPropertyHelper/ToProperty",
+              "ReactiveCommand"
             ]
           }
         ]

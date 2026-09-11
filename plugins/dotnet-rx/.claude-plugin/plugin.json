@@ -1,0 +1,22 @@
+{
+  "name": "dotnet-rx",
+  "version": "0.1.0",
+  "description": "Rx.NET and ReactiveUI skills for composable observable pipelines, concurrency, lifetimes, MVVM state, commands, bindings, and deterministic testing.",
+  "author": {
+    "name": "NetFabric"
+  },
+  "license": "MIT",
+  "keywords": [
+    "csharp",
+    "dotnet",
+    "rx",
+    "reactive-extensions",
+    "system-reactive",
+    "observables",
+    "reactiveui",
+    "mvvm",
+    "reactive-programming",
+    "scheduling",
+    "testing"
+  ]
+}
