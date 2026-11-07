@@ -3,7 +3,7 @@
 ## New Skill: Step-by-Step
 
 1. **Scope** — Define: subject, primary users, trigger phrases, explicit exclusions
-2. **Library docs** — `mcp_context7_resolve-library-id` → `mcp_context7_get-library-docs`
+2. **Library docs** — Consult the library's official documentation for current APIs and behavior
 3. **MS docs** — `microsoft_docs_search` → `microsoft_docs_fetch` for depth
 4. **Code samples** — `microsoft_code_sample_search` for practical patterns
 5. **Authoritative sources** — cross-reference ≥2 sources (see priority below)
@@ -11,19 +11,17 @@
 7. **Draft** — write SKILL.md skeleton; push detail to reference files
 8. **Validate** — check description ≤1024 chars; verify reference table is complete
 
-## MCP Tools
+## Microsoft Learn Tools
 
 | Goal | Tool | Method |
 |------|------|--------|
-| Resolve library ID | context7 | `mcp_context7_resolve-library-id` |
-| Get library docs | context7 | `mcp_context7_get-library-docs` |
 | Search MS/Azure topics | microsoftdocs | `microsoft_docs_search` |
 | Fetch full MS page | microsoftdocs | `microsoft_docs_fetch` |
 | Find code samples | microsoftdocs | `microsoft_code_sample_search` |
 
 ## Source Priority
 
-1. Official language / framework docs (context7)
+1. Official language / framework documentation
 2. Microsoft Learn (microsoftdocs MCP)
 3. RFC / IETF / ISO specifications
 4. Core maintainer blogs or repos (e.g., language designers, project leads)
