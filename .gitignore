@@ -6,3 +6,5 @@ apm_modules/
 
 # apm pack output (local plugin bundles)
 build/
+
+.aspire
