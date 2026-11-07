@@ -1,5 +1,5 @@
 name: dotnet
-version: 0.8.0
+version: 0.8.1
 description: C# and .NET skills for modern language best practices, generic math over System.Numerics, SIMD vectorization, enumerable/LINQ iteration performance, System.Threading.Channels producer-consumer pipelines, BenchmarkDotNet benchmarking, solution/project setup (Directory.Build.props, central package management, SourceLink), file-based apps (dotnet run file.cs, colon directives), and deterministic guardrails for AI code agents (analyzers, hooks, Aspire, testing).
 author: NetFabric
 license: MIT
@@ -17,7 +17,11 @@ targets:
 - kiro
 dependencies:
   apm: []
-  mcp: []
+  mcp:
+  - name: microsoft-learn
+    registry: false
+    transport: streamable-http
+    url: https://learn.microsoft.com/api/mcp
 includes: auto
 devDependencies:
   apm: []

@@ -61,7 +61,7 @@ marketplace:
         colon directives), and deterministic guardrails for AI code agents 
         (analyzers, hooks, Aspire, testing).
       source: ./plugins/dotnet
-      version: 0.8.0
+      version: 0.8.1
       tag_pattern: "dotnet-v{version}"
       tags: [csharp, dotnet, generic-math, simd, linq, channels, producer-consumer, benchmarking, aspire, code-agents, file-based-apps]
 
@@ -70,7 +70,7 @@ marketplace:
         concurrency, lifetimes, MVVM state, commands, bindings, and deterministic
         testing.
       source: ./plugins/dotnet-rx
-      version: 0.1.0
+      version: 0.1.1
       tag_pattern: "dotnet-rx-v{version}"
       tags: [csharp, dotnet, rx, reactive-extensions, system-reactive, observables, reactiveui, mvvm, reactive-programming, scheduling, testing]
 
@@ -97,7 +97,7 @@ marketplace:
         querying, and troubleshooting logs, transcripts, and OpenTelemetry traces
         from coding-agent harnesses.
       source: ./plugins/agent-authoring
-      version: 0.15.0
+      version: 0.15.1
       tag_pattern: "agent-authoring-v{version}"
       tags: [agents-md, skill-authoring, copilot-cli, claude-code, multi-agent, model-selection, copilot-sdk, github-actions, toon, markdown, mermaid, troubleshooting]
 

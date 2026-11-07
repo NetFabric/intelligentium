@@ -210,7 +210,7 @@
         "code-agents",
         "file-based-apps"
       ],
-      "version": "0.8.0",
+      "version": "0.8.1",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -346,7 +346,7 @@
         "scheduling",
         "testing"
       ],
-      "version": "0.1.0",
+      "version": "0.1.1",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -451,7 +451,7 @@
         "mermaid",
         "troubleshooting"
       ],
-      "version": "0.15.0",
+      "version": "0.15.1",
       "type": "application/ai-catalog+json",
       "data": {
         "specVersion": "1.0",
@@ -557,7 +557,7 @@
             "displayName": "create-skill",
             "type": "application/ai-skill+md",
             "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/agent-authoring/.apm/skills/create-skill/SKILL.md",
-            "description": "Create or update AI agent skills (SKILL.md + reference files) for any harness that supports the format: GitHub Copilot, Claude Code, Cursor, Codex, Gemini CLI, Windsurf, Kiro, OpenCode, and more. Use when: authoring a new skill from scratch, improving or restructuring an existing skill, deciding how to split content across files, writing skill frontmatter, choosing trigger phrases for the description field, organizing reference files. Covers skill architecture, compact writing rules, frontmatter constraints, and research workflow via context7/microsoftdocs MCPs. DO NOT USE FOR: general coding tasks, VS Code extension development, non-skill documentation.",
+            "description": "Create or update AI agent skills (SKILL.md + reference files) for any harness that supports the format: GitHub Copilot, Claude Code, Cursor, Codex, Gemini CLI, Windsurf, Kiro, OpenCode, and more. Use when: authoring a new skill from scratch, improving or restructuring an existing skill, deciding how to split content across files, writing skill frontmatter, choosing trigger phrases for the description field, organizing reference files. Covers skill architecture, compact writing rules, frontmatter constraints, and research using official documentation and Microsoft Learn. DO NOT USE FOR: general coding tasks, VS Code extension development, non-skill documentation.",
             "representativeQueries": [
               "general coding tasks, VS Code extension development, non-skill documentation"
             ]

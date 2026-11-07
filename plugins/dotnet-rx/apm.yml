@@ -1,5 +1,5 @@
 name: dotnet-rx
-version: 0.1.0
+version: 0.1.1
 description: Rx.NET and ReactiveUI skills for composable observable pipelines, concurrency, lifetimes, MVVM state, commands, bindings, and deterministic testing.
 author: NetFabric
 license: MIT
@@ -14,7 +14,11 @@ targets:
   - kiro
 dependencies:
   apm: []
-  mcp: []
+  mcp:
+    - name: microsoft-learn
+      registry: false
+      transport: streamable-http
+      url: https://learn.microsoft.com/api/mcp
 includes: auto
 devDependencies:
   apm: []
