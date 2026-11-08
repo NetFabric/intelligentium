@@ -1,10 +1,10 @@
 lockfile_version: '1'
-generated_at: '2026-11-07T19:59:54.967180+00:00'
+generated_at: '2026-11-08T12:22:06.248161+00:00'
 apm_version: 0.14.0
 dependencies:
 - repo_url: netfabric/intelligentium
   host: github.com
-  resolved_commit: edcbc6844e4bb04d85cab05266cb680e0e570e68
+  resolved_commit: 63cc80def5d4301b6e472cf7a0bc1dc3db4c6d45
   virtual_path: plugins/agent-authoring
   is_virtual: true
   package_type: apm_package
@@ -28,7 +28,7 @@ dependencies:
   content_hash: sha256:af4a0e279c3b5cf6724192eb4238fd08c8d8c04857ac5c928b46fbe62277fc91
 - repo_url: netfabric/intelligentium
   host: github.com
-  resolved_commit: edcbc6844e4bb04d85cab05266cb680e0e570e68
+  resolved_commit: 63cc80def5d4301b6e472cf7a0bc1dc3db4c6d45
   virtual_path: plugins/agentic-discovery
   is_virtual: true
   package_type: apm_package
@@ -37,7 +37,7 @@ dependencies:
   content_hash: sha256:d33ad0153e511f873a694c6c463bd95fc570224ad3268e598634cd138abf6931
 - repo_url: netfabric/intelligentium
   host: github.com
-  resolved_commit: edcbc6844e4bb04d85cab05266cb680e0e570e68
+  resolved_commit: 63cc80def5d4301b6e472cf7a0bc1dc3db4c6d45
   virtual_path: plugins/apm-authoring
   is_virtual: true
   package_type: apm_package
