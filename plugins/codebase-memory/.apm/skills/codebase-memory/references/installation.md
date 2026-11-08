@@ -32,9 +32,9 @@ Unblock-File .\install.ps1
 .\install.ps1
 ```
 
-Also published on npm, PyPI, Homebrew, Scoop, Winget, Chocolatey, AUR (`codebase-memory-mcp-bin`), and `go install`. Package-manager installs only verify and cache the binary; running the native `install` command (which the shell/PowerShell scripts do for you) is what activates it account-wide and configures detected agent/editor clients.
+Also published on npm, PyPI, Homebrew, Scoop, AUR (`codebase-memory-mcp-bin`), and `go install`. Winget and Chocolatey are not currently published. Package-manager installs only verify and cache the binary; running the native `install` command (which the shell/PowerShell scripts do for you) is what activates it account-wide and configures detected agent/editor clients.
 
-The `install` command auto-detects installed coding agents/editors (Claude Code, Copilot CLI/VS Code, Cursor, Codex, Gemini CLI, Windsurf, Kiro, and more) and writes their MCP server entry plus durable instructions/skills/hooks where supported. Restart the agent afterward, then say "Index this project."
+The `install` command supports automatic or conditional integrations for multiple coding agents and editors. Depending on the client, it may configure the MCP server, durable instructions, skills, agent profiles, or hooks; activation and feature coverage vary by client and platform. Review the installer plan before applying it, then restart or trust the client as required by its integration.
 
 ### Build from source
 
@@ -51,7 +51,7 @@ Every release-channel install includes the graph UI. A source build without `--w
 
 Updates are run from the install script, not from inside the running binary (a running executable can't safely replace its own image, especially on Windows). Re-running `install.sh`/`install.ps1` is the update path — it stops the daemon, retires the old binary, installs the new one. Running `codebase-memory-mcp update` validates flags and prints the exact command to run rather than fetching anything itself. Installed via npm/pip? Use that package manager instead: `npm install -g codebase-memory-mcp@latest` / `pip install -U codebase-memory-mcp`.
 
-Use v0.10.8 or newer. The `0.10.7` npm/PyPI packages were deprecated or yanked because their release tag omitted the required `v` prefix, so package-manager downloads could not resolve their assets. Direct binaries from that release were unaffected.
+Use v0.12.1 or newer. This is the latest release checked for this skill; it fixes the v0.12.0 npm, PyPI, and Go wrapper installs, updates the Homebrew formula, and adds Windows arm64 builds. The `0.10.7` npm/PyPI packages were deprecated or yanked because their release tag omitted the required `v` prefix, so package-manager downloads could not resolve their assets. Direct binaries from that release were unaffected. For another release, consult its release notes and the installed command's `--help` output.
 
 ## Check if a project's index is in sync
 
@@ -62,6 +62,8 @@ codebase-memory-mcp cli index_status --project <name>
 ```
 
 Reports whether the index is current or stale. A background watcher (`auto_watch`, default `true`) re-indexes incrementally on git-based change detection once a project is registered, so most sessions never need a manual reindex — `index_status` is how you confirm that instead of assuming it. For a fresh clone with no local index yet but a committed team-shared graph artifact (`.codebase-memory/graph.db.zst`), `index_repository` imports that artifact first and only incrementally indexes the local diff — check `index_status` afterward, not before, to see the result.
+
+The first index of each existing project after upgrading to v0.12.1 is a full rebuild. v0.12.1 changes image identities: images without an explicit registry keep their written name and use `registry: unknown`, rather than being rewritten to Docker Hub paths. Allow the rebuild to complete before relying on old graph results.
 
 If the project is absent, stale, or not `ready`, index the current repository
 and then confirm status again:

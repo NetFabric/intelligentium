@@ -724,7 +724,7 @@
     {
       "identifier": "urn:air:github.com:netfabric:codebase-memory",
       "displayName": "codebase-memory",
-      "description": "Skill for installing, verifying, and integrating codebase-memory-mcp (CBM), a local knowledge-graph code intelligence server, into agents, skills, and prompts that operate on a codebase, replacing grep/search/file-read exploration with structural graph queries via its CLI.",
+      "description": "Skills for integrating codebase-memory-mcp (CBM) into agents, exploring its graph and local Lens UI, and analyzing change and test impact.",
       "tags": [
         "codebase-memory-mcp",
         "cbm",
@@ -734,18 +734,68 @@
         "code-search",
         "call-graph",
         "cypher",
-        "tree-sitter",
-        "code-agents"
+        "graph-exploration",
+        "code-agents",
+        "cbm-lens",
+        "test-impact"
       ],
-      "version": "0.1.2",
-      "type": "application/ai-skill+md",
-      "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/codebase-memory/.apm/skills/codebase-memory/SKILL.md",
-      "representativeQueries": [
-        "creating or editing any agent/skill/prompt/subagent that reads, searches, or reasons about a codebase — CBM's CLI must replace grep/ripgrep/glob-and-read exploration for structural questions (who calls X, dead code, architecture overview, diff impact, Cypher queries)",
-        "checking whether `codebase-memory-mcp` is installed",
-        "installing/updating it",
-        "checking whether a project's index is fresh/in sync (`index_status`)"
-      ]
+      "version": "0.3.0",
+      "type": "application/ai-catalog+json",
+      "data": {
+        "specVersion": "1.0",
+        "entries": [
+          {
+            "identifier": "urn:air:github.com:netfabric:codebase-memory:codebase-memory",
+            "displayName": "codebase-memory",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/codebase-memory/.apm/skills/codebase-memory/SKILL.md",
+            "description": "Install, update, and integrate codebase-memory-mcp (CBM), a local knowledge-graph server for codebases. USE FOR: checking CBM installation and index readiness; installing or updating the binary; configuring its CLI/MCP workflows in agents, skills, prompts, and subagents. DO NOT USE FOR: exploring code with graph queries; use codebase-memory-exploration. For the visual UI use codebase-memory-lens; for affected-test selection use codebase-memory-test-impact.",
+            "representativeQueries": [
+              "checking CBM installation and index readiness",
+              "installing or updating the binary",
+              "configuring its CLI/MCP workflows in agents, skills, prompts, and subagents"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:codebase-memory:codebase-memory-exploration",
+            "displayName": "codebase-memory-exploration",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/codebase-memory/.apm/skills/codebase-memory-exploration/SKILL.md",
+            "description": "Explore a codebase with codebase-memory-mcp's knowledge graph. USE FOR: understanding unfamiliar code; finding symbols, callers, dependencies, and architecture; following documentation, service, or deployment relationships; comparing indexed snapshots; checking graph evidence and coverage. DO NOT USE FOR: installing or configuring CBM; use the codebase-memory skill. For human visual exploration, use codebase-memory-lens.",
+            "representativeQueries": [
+              "understanding unfamiliar code",
+              "finding symbols, callers, dependencies, and architecture",
+              "following documentation, service, or deployment relationships",
+              "comparing indexed snapshots"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:codebase-memory:codebase-memory-lens",
+            "displayName": "codebase-memory-lens",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/codebase-memory/.apm/skills/codebase-memory-lens/SKILL.md",
+            "description": "Explore a codebase visually with codebase-memory-mcp Lens. USE FOR: starting or using CBM Lens; browsing source alongside graph relationships; viewing architecture, routes, hotspots, and index coverage; editing architecture decision records through the local UI. DO NOT USE FOR: agent-driven structural code discovery when the CLI is available; use the codebase-memory skill.",
+            "representativeQueries": [
+              "starting or using CBM Lens",
+              "browsing source alongside graph relationships",
+              "viewing architecture, routes, hotspots, and index coverage",
+              "editing architecture decision records through the local UI"
+            ]
+          },
+          {
+            "identifier": "urn:air:github.com:netfabric:codebase-memory:codebase-memory-test-impact",
+            "displayName": "codebase-memory-test-impact",
+            "type": "application/ai-skill+md",
+            "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/codebase-memory/.apm/skills/codebase-memory-test-impact/SKILL.md",
+            "description": "Use codebase-memory-mcp to estimate which tests a code change can affect. USE FOR: graph-based test selection; test-impact analysis from a diff; deciding whether CBM evidence supports a targeted test run. DO NOT USE FOR: replacing test execution or claiming full coverage from a partial graph.",
+            "representativeQueries": [
+              "graph-based test selection",
+              "test-impact analysis from a diff",
+              "deciding whether CBM evidence supports a targeted test run"
+            ]
+          }
+        ]
+      }
     },
     {
       "identifier": "urn:air:github.com:netfabric:vscode",

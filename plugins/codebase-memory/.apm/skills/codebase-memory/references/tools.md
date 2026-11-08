@@ -1,71 +1,73 @@
-# CBM Tools, Graph Model, and CLI Invocation
+# CBM v0.12.1 Tools and Graph Model
 
-Source: [github.com/DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) README ("MCP Tools", "Graph Data Model" sections) and `docs/llms.txt`.
+Source: [v0.12.1 MCP tool registry](https://github.com/DeusData/codebase-memory-mcp/blob/v0.12.1/src/mcp/mcp.c), [tagged README](https://github.com/DeusData/codebase-memory-mcp/blob/v0.12.1/README.md), and [release notes](https://github.com/DeusData/codebase-memory-mcp/releases/tag/v0.12.1). The registry exposes 17 tools. The tagged `docs/llms.txt` says 15; use the registry for the current tool names.
 
-## CLI vs MCP — always use the CLI
+## CLI and MCP
 
-Every tool below is exposed both as an MCP tool (JSON-RPC over stdio, for an MCP-connected client) and as a **one-shot CLI command**: `codebase-memory-mcp cli <tool_name> [flags]`. The CLI never starts or connects to the coordination daemon and leaves no standing process — it holds a lease only for the command's lifetime. **Prefer the CLI in every skill, agent, or prompt you author or edit**: it is a plain subprocess call with plain stdout, so it costs a small fraction of the tokens an MCP round trip does. Use `codebase-memory-mcp cli <tool_name> --help` to see flags generated from that tool's input schema; `--json` returns the full MCP result envelope when needed; JSON args can be piped on stdin instead of flags.
+Call tools as one-shot CLI commands or through an existing MCP connection. Prefer the CLI in authored agent workflows; inspect the installed schema for exact flags:
 
 ```bash
+codebase-memory-mcp cli <tool_name> --help
 codebase-memory-mcp cli search_graph --project my-project --name-pattern '.*Handler.*' --label Function
 codebase-memory-mcp cli trace_path --project my-project --function-name Search --direction both
 codebase-memory-mcp cli query_graph --project my-project --query 'MATCH (f:Function) RETURN f.name LIMIT 5'
 ```
 
-## The 15 tools
+The CLI accepts `--json` when the full MCP result envelope is needed. Use CLI `--help` instead of guessing flags when the schema or invocation is unclear.
 
-### Indexing
-
-| Tool | Purpose |
-| --- | --- |
-| `index_repository` | Index a repository into the graph. Auto-sync (background watcher) keeps it fresh afterward. |
-| `list_projects` | List indexed projects. v0.10.8+ returns a lean default view; use `offset`, `limit`, and `include_details` for pagination and node/edge counts. |
-| `delete_project` | Remove a project and all its graph data. |
-| `index_status` | Check indexing status of a project — the freshness/sync check. |
-
-### Querying & analysis
+## All 17 tools
 
 | Tool | Purpose |
 | --- | --- |
-| `search_graph` | Structured search by label, name pattern, file pattern, degree filters; paginated via limit/offset. Also accepts `semantic_query` for vector (meaning-based) search over the whole graph, powered by bundled nomic-embed-code embeddings — no API key, fully local. |
-| `trace_path` | BFS traversal of who calls a function and what it calls (alias: `trace_call_path`). Depth 1-5. |
-| `detect_changes` | Maps an uncommitted git diff to affected symbols and blast radius, with risk classification. |
-| `query_graph` | Executes read-only Cypher-like graph queries (openCypher subset — see below). |
-| `get_graph_schema` | Node/edge counts, relationship patterns, property definitions per label. Run this first when exploring an unfamiliar project. |
-| `get_code_snippet` | Reads source code for a function by qualified name (`<project>.<path_parts>.<name>` — discover exact names via `search_graph` first). |
-| `get_architecture` | Codebase overview in one call: languages, packages, entry points, routes, hotspots, boundaries, layers, clusters. |
-| `search_code` | Grep-like text search, but scoped to indexed project files only (graph-augmented, not a raw filesystem grep). |
-| `manage_adr` | CRUD for Architecture Decision Records, persisted alongside the graph so design rationale survives across sessions. |
-| `ingest_traces` | Ingests runtime traces to validate `HTTP_CALLS` edges against real request activity. |
-| `check_index_coverage` | Targeted index-coverage check for a set of paths — confirms whether specific files were fully parsed/indexed before you trust an absence result (e.g. "no callers found"). |
+| `index_repository` | Index or reindex a repository; supports `full`, `moderate`, `fast`, and `cross-repo-intelligence` modes. |
+| `index_status` | Check a project's indexing state, freshness, and watcher status. |
+| `list_projects` | List indexed projects; paginate large results. |
+| `delete_project` | Delete a project's index and graph data. Treat as destructive; do not call without explicit authorization. |
+| `search_graph` | Find graph nodes by text, regular-expression/name, qualified-name, file, label, relationship, or semantic query; results are paginated. |
+| `search_code` | Search text within indexed project files. |
+| `trace_path` | Trace calls, data flow, cross-service relationships, infrastructure topology, deployment paths, or what a service runs. Call depth is bounded; defaults omit tests. |
+| `query_graph` | Run read-only Cypher-subset queries, including graph traversals and aggregation. Results are bounded and may require continuation. |
+| `get_graph_schema` | Inspect graph labels, edge types, counts, and optionally queryable properties. |
+| `get_architecture` | Get a bounded static architecture summary; it is not a full data-flow analysis or runtime trace. |
+| `get_code_snippet` | Read a symbol's source by qualified name; discover the exact name first. Large source responses may be paged or outlined. |
+| `get_file_outline` | List declarations in an exact repository-relative file path, optionally filtered by node label and paginated. |
+| `compare_graphs` | Compare two indexed project snapshots for target-only additions and base-only removals; review result limits and truncation metadata. |
+| `check_index_coverage` | Check whether requested paths were parsed/indexed and inspect recorded gaps before relying on absence claims. |
+| `detect_changes` | Analyze changes against the graph, including affected symbols and supported test-impact analysis. |
+| `manage_adr` | Read or change architecture decision records stored with the graph. Writes change persistent state. |
+| `ingest_traces` | Store externally observed runtime call paths; this writes graph state and does not collect traces itself. |
 
-## Graph data model
+`index_repository`, `delete_project`, `manage_adr`, and `ingest_traces` change persistent state. Restrict writes to the requested task; never treat `delete_project` as routine cleanup.
 
-### Node labels
+## Graph features
 
-`Project`, `Package`, `Folder`, `File`, `Module`, `Class`, `Function`, `Method`, `Interface`, `Enum`, `Type`, `Route`, `Resource` (the last two also cover Infrastructure-as-Code: Kubernetes/Kustomize resources and modules).
+### Code and semantic search
 
-### Edge types
+The v0.12.1 release parses 158 languages with vendored grammars. Hybrid LSP-style type resolution is available for a smaller set of language families; parser support does not imply equal relationship-resolution depth. `search_graph` can use local bundled embeddings for semantic search; no model, hosted service, or API key is required.
 
-Core structural edges (from the Graph Data Model reference):
+Common code labels include `Project`, `Package`, `Folder`, `File`, `Module`, `Class`, `Function`, `Method`, `Interface`, `Enum`, `Type`, and `Route`. Documentation and infrastructure add entities such as ADRs, diagrams, images, charts, and resources. Use `get_graph_schema` for the labels, relationships, and properties actually present in a project.
 
-`CONTAINS_PACKAGE`, `CONTAINS_FOLDER`, `CONTAINS_FILE`, `DEFINES`, `DEFINES_METHOD`, `IMPORTS`, `CALLS`, `CALL_REFERENCE`, `HTTP_CALLS`, `ASYNC_CALLS`, `IMPLEMENTS`, `HANDLES`, `USAGE`, `CONFIGURES`, `WRITES`, `MEMBER_OF`, `TESTS`, `USES_TYPE`, `FILE_CHANGES_WITH`.
+Graph relationships include containment, definitions, imports, calls, references, inheritance, implementation, type use, data flow, HTTP and asynchronous calls, pub/sub (`EMITS`/`LISTENS_ON`), documentation mentions (`MENTIONS`), deployment (`DEPLOYS`), cross-repository links, near-clone (`SIMILAR_TO`), and vocabulary-mismatch (`SEMANTICALLY_RELATED`) relationships. This is representative, not a guarantee of extraction for every language or file format. Inspect schema and coverage before relying on an edge or its absence.
 
-Additional analysis/cross-service edges documented elsewhere in the same reference:
+### Documentation and API descriptions
 
-| Edge | Meaning |
-| --- | --- |
-| `INHERITS` | Class/interface inheritance, alongside `IMPLEMENTS`. |
-| `EMITS` / `LISTENS_ON` | Pub-sub channel detection (Socket.IO, EventEmitter, generic message buses) across 8 languages, with constant resolution. |
-| `DATA_FLOWS` | Value flow from argument to parameter, including field-access chains. |
-| `SIMILAR_TO` | Near-duplicate/copy-pasted code — MinHash + LSH, Jaccard scored. |
-| `SEMANTICALLY_RELATED` | Conceptually similar functions with mismatched vocabulary (same language, score ≥ 0.80) — vector/embedding based, not name matching. |
-| `CROSS_*` | Cross-repo edges linking nodes across multiple repositories indexed under the same store (cross-repo intelligence). |
+v0.12.0 added supported doc-comment and document references, Markdown, reStructuredText/Sphinx, AsciiDoc/Antora, PDF text pages, ADRs, Mermaid, PlantUML, Graphviz, D2, draw.io and Excalidraw diagrams, and OpenAPI/Swagger operations. Documentation and code are linked only when a reference resolves according to the indexer's rules; unresolved or ambiguous references are not proof that no relationship exists. PDF extraction is text-based, not OCR.
 
-`USAGE` specifically means an identifier is used but no unique callable target could be proven (ambiguous/complex expression) — it is the graph's explicit "uncertain" edge, as opposed to `CALLS`/`CALL_REFERENCE` which resolve to one exact target.
+### Infrastructure and deployment
 
-### Cypher subset (`query_graph`)
+Supported inputs include Docker/Compose, Kubernetes, Helm, Kustomize, and deployment-related configuration such as supported CI files and scripts. v0.12.1 links Helm charts to rendered Kubernetes objects and literal image references, and values files to charts. Image names without a declared registry remain as written with `registry: unknown`. These are statically inferred relationships, not confirmation of a live deployment.
 
-Read-only openCypher subset: `MATCH`/`OPTIONAL MATCH` (multiple), `WHERE`, `WITH` (+ `WITH … WHERE`), `RETURN`, `ORDER BY`, `SKIP`, `LIMIT`, `DISTINCT`, `UNWIND`, `UNION`/`UNION ALL`, `CASE`; label alternation `(n:A|B)`; variable-length paths `[*1..3]`; comparison/boolean/`IN`/`CONTAINS`/`STARTS WITH`/`ENDS WITH`/`IS [NOT] NULL`/regex `=~`/label test `n:Label`; single-hop `EXISTS { (n)-[:TYPE]->() }` (useful for dead-code queries, e.g. `WHERE NOT EXISTS { (f)<-[:CALLS]-() }`); aggregates `count`/`sum`/`avg`/`min`/`max`/`collect`; a curated function set (`labels`, `type`, `id`, `toLower`, `size`, `coalesce`, `substring`, etc.). Write clauses, `MERGE`/`CALL`, list/map literals, comprehensions, and parameters are outside the subset and fail with an explicit `unsupported …` error rather than silently returning empty results.
+### Cypher subset
 
-Use v0.10.8+ for exhaustive aggregates: it fixes candidate and relationship-expansion truncation that could make earlier `count()` and `collect()` results too small. In v0.10.8+, `max_rows` limits returned rows only, not the rows seen by aggregation.
+`query_graph` is read-only. Supported constructs include `MATCH`/`OPTIONAL MATCH`, `WHERE`, `WITH`, `RETURN`, ordering and pagination, `UNWIND`, `UNION`, `CASE`, variable-length paths, `EXISTS`, aggregates, and selected functions. It is not full openCypher: write clauses, `CALL`, parameters, list/map literals, and comprehensions are unsupported. Use `get_graph_schema` to inspect queryable properties and `--help` for current query and continuation options.
+
+For example, find functions without incoming `CALLS` edges:
+
+```cypher
+MATCH (f:Function)
+WHERE NOT EXISTS { (f)<-[:CALLS]-() }
+RETURN f.name, f.file_path
+LIMIT 50
+```
+
+Zero callers is only a candidate, not proof of dead code. Check entry points, index coverage, pagination, and unresolved relationships; read flagged source ranges before making an absence claim.

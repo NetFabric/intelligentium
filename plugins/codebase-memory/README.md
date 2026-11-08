@@ -1,12 +1,15 @@
 # codebase-memory
 
-Skill for installing, verifying, and integrating [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) (CBM) — a local, zero-dependency knowledge-graph code intelligence server — into agents, skills, and prompts that operate on a codebase, replacing grep/search/file-read exploration with structural graph queries via its CLI.
+Skills for integrating and exploring [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) (CBM), using its local Lens UI, and analyzing change impact.
 
 ## Skills
 
 | Skill | Description |
 | --- | --- |
-| [codebase-memory](.apm/skills/codebase-memory) | Install, verify, and integrate codebase-memory-mcp (CBM); lists all 15 tools, the graph data model, and how to wire the CLI into agent workflows in place of grep/search |
+| [codebase-memory](.apm/skills/codebase-memory) | Install, update, and integrate CBM into agent workflows |
+| [codebase-memory-exploration](.apm/skills/codebase-memory-exploration) | Explore code, documentation, relationships, and architecture using the CBM graph |
+| [codebase-memory-lens](.apm/skills/codebase-memory-lens) | Start and use the local Lens UI to explore source, architecture, routes, and index coverage |
+| [codebase-memory-test-impact](.apm/skills/codebase-memory-test-impact) | Estimate test impact conservatively and report evidence limitations |
 
 ## Install
 

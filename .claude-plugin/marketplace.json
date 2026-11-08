@@ -148,8 +148,8 @@
     },
     {
       "name": "codebase-memory",
-      "description": "Skill for installing, verifying, and integrating codebase-memory-mcp (CBM), a local knowledge-graph code intelligence server, into agents, skills, and prompts that operate on a codebase, replacing grep/search/file-read exploration with structural graph queries via its CLI.",
-      "version": "0.1.2",
+      "description": "Skills for integrating codebase-memory-mcp (CBM) into agents, exploring its graph and local Lens UI, and analyzing change and test impact.",
+      "version": "0.3.0",
       "tags": [
         "codebase-memory-mcp",
         "cbm",
@@ -159,8 +159,10 @@
         "code-search",
         "call-graph",
         "cypher",
-        "tree-sitter",
-        "code-agents"
+        "graph-exploration",
+        "code-agents",
+        "cbm-lens",
+        "test-impact"
       ],
       "source": "./plugins/codebase-memory"
     },

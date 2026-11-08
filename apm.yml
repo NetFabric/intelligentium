@@ -119,15 +119,13 @@ marketplace:
       tags: [ucp, universal-commerce-protocol, agentic-commerce, checkout, mcp, a2a, ap2, payments]
 
     - name: codebase-memory
-      description: Skill for installing, verifying, and integrating 
-        codebase-memory-mcp (CBM), a local knowledge-graph code intelligence 
-        server, into agents, skills, and prompts that operate on a codebase, 
-        replacing grep/search/file-read exploration with structural graph 
-        queries via its CLI.
+      description: Skills for integrating codebase-memory-mcp (CBM) into
+        agents, exploring its graph and local Lens UI, and analyzing change
+        and test impact.
       source: ./plugins/codebase-memory
-      version: 0.1.2
+      version: 0.3.0
       tag_pattern: "codebase-memory-v{version}"
-      tags: [codebase-memory-mcp, cbm, mcp, code-intelligence, knowledge-graph, code-search, call-graph, cypher, tree-sitter, code-agents]
+      tags: [codebase-memory-mcp, cbm, mcp, code-intelligence, knowledge-graph, code-search, call-graph, cypher, graph-exploration, code-agents, cbm-lens, test-impact]
 
     - name: vscode
       description: Skills for building, maintaining, debugging, and reviewing Visual Studio Code extensions.
