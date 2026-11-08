@@ -129,6 +129,13 @@ marketplace:
       tag_pattern: "codebase-memory-v{version}"
       tags: [codebase-memory-mcp, cbm, mcp, code-intelligence, knowledge-graph, code-search, call-graph, cypher, tree-sitter, code-agents]
 
+    - name: vscode
+      description: Skills for building, maintaining, debugging, and reviewing Visual Studio Code extensions.
+      source: ./plugins/vscode
+      version: 0.1.0
+      tag_pattern: "vscode-v{version}"
+      tags: [vscode, visual-studio-code, extension, extension-development, extension-api, webview, testing, publishing, typescript, marketplace]
+
 dependencies:
   apm:
     - netfabric/intelligentium/plugins/agent-authoring

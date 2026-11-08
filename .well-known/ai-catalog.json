@@ -746,6 +746,30 @@
         "installing/updating it",
         "checking whether a project's index is fresh/in sync (`index_status`)"
       ]
+    },
+    {
+      "identifier": "urn:air:github.com:netfabric:vscode",
+      "displayName": "vscode",
+      "description": "Skills for building, maintaining, debugging, and reviewing Visual Studio Code extensions.",
+      "tags": [
+        "vscode",
+        "visual-studio-code",
+        "extension",
+        "extension-development",
+        "extension-api",
+        "webview",
+        "testing",
+        "publishing",
+        "typescript",
+        "marketplace"
+      ],
+      "version": "0.1.0",
+      "type": "application/ai-skill+md",
+      "url": "https://raw.githubusercontent.com/NetFabric/intelligentium/main/plugins/vscode/.apm/skills/vscode-extension/SKILL.md",
+      "representativeQueries": [
+        "general web applications or Copilot agent customization",
+        "use the relevant web-development or agent-authoring guidance"
+      ]
     }
   ]
 }

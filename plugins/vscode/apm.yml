@@ -1,0 +1,21 @@
+name: vscode
+version: 0.1.0
+description: Skills for building, maintaining, debugging, and reviewing Visual Studio Code extensions.
+author: NetFabric
+license: MIT
+keywords: [vscode, visual-studio-code, extension, extension-development, extension-api, webview, testing, publishing, typescript, marketplace]
+targets:
+  - copilot
+  - claude
+  - cursor
+  - codex
+  - gemini
+  - windsurf
+  - kiro
+dependencies:
+  apm: []
+  mcp: []
+includes: auto
+devDependencies:
+  apm: []
+scripts: {}
