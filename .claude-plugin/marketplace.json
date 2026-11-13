@@ -169,7 +169,7 @@
     {
       "name": "vscode",
       "description": "Skills for building, maintaining, debugging, and reviewing Visual Studio Code extensions.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "tags": [
         "vscode",
         "visual-studio-code",

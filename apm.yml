@@ -130,7 +130,7 @@ marketplace:
     - name: vscode
       description: Skills for building, maintaining, debugging, and reviewing Visual Studio Code extensions.
       source: ./plugins/vscode
-      version: 0.1.0
+      version: 0.1.1
       tag_pattern: "vscode-v{version}"
       tags: [vscode, visual-studio-code, extension, extension-development, extension-api, webview, testing, publishing, typescript, marketplace]
 
